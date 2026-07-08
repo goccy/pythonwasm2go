@@ -1,5 +1,5 @@
 PYTHON_WASM_REPO     ?= goccy/python-wasm
-PYTHON_WASM_VERSION  ?= v0.1.0
+PYTHON_WASM_VERSION  ?= v0.1.4
 # python-wasm emits its release attestations from release.yml (the v* tag
 # workflow), NOT build.yml — releasing lives only in release.yml there.
 PYTHON_WASM_WORKFLOW ?= goccy/python-wasm/.github/workflows/release.yml
