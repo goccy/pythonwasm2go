@@ -38,13 +38,9 @@ verify-release:
 ## verify-attestation: confirm every in-tree artifact is a signed
 ## subject of the upstream SLSA build attestation. The release emits one
 ## attestation whose subject list covers every file in the tarball, so
-## we fetch the bundle once from the public attestation API and then
-## offline-verify each file via `gh attestation verify --bundle`.
-## The fetch works anonymously, but anonymous api.github.com is rate
-## limited to 60 req/hr per IP — enough to 403 on shared CI runners — so
-## when GH_API_TOKEN is set (CI passes ${{ github.token }}) the request
-## is authenticated, raising the limit to 5000/hr. The offline
-## `gh attestation verify` below stays tokenless regardless.
+## we fetch the bundle once anonymously from the public attestation
+## API and then offline-verify each file via `gh attestation verify
+## --bundle`. No GH access token is required.
 verify-attestation:
 	@set -eu; \
 	tmpdir=$$(mktemp -d); \
@@ -53,8 +49,7 @@ verify-attestation:
 	probe=$$(awk 'NR==1 {print $$2}' $(SHA256SUMS) | sed 's|^\./||'); \
 	digest=$$(shasum -a 256 $$probe | awk '{print $$1}'); \
 	echo "==> fetching attestation bundle via $$probe (sha256:$$digest)"; \
-	if [ -n "$${GH_API_TOKEN:-}" ]; then set -- -H "Authorization: Bearer $$GH_API_TOKEN"; else set --; fi; \
-	curl -fsSL --proto '=https' --tlsv1.2 "$$@" \
+	curl -fsSL --proto '=https' --tlsv1.2 \
 	  "$(ATTESTATION_API)/sha256:$$digest" \
 	  | jq -c '.attestations[].bundle' > $$bundle; \
 	files=$$(awk '{print $$2}' $(SHA256SUMS) | sed 's|^\./||'); \
