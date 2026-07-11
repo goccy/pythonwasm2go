@@ -15,6 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify wasm2go bundle (release diff + attestation)
+        # Authenticate the attestation-API fetch so it isn't rate limited
+        # (anonymous api.github.com is 60 req/hr per IP and 403s on shared
+        # runners). The offline `gh attestation verify` stays tokenless.
+        env:
+          GH_API_TOKEN: ${{ github.token }}
         run: make verify
 
   build:

@@ -77,6 +77,49 @@ type EnvImports interface {
 	Dlopen(m *Module, l0 int32, l1 int32) int32
 	Dlerror(m *Module) int32
 	Dlsym(m *Module, l0 int32, l1 int32) int32
+	Mpd_ieee_context(m *Module, l0 int32, l1 int32) int32
+	Mpd_qsettraps(m *Module, l0 int32, l1 int32) int32
+	Mpd_qsetstatus(m *Module, l0 int32, l1 int32) int32
+	Mpd_qsetprec(m *Module, l0 int32, l1 int32) int32
+	Mpd_qsetround(m *Module, l0 int32, l1 int32) int32
+	Mpd_qsetemin(m *Module, l0 int32, l1 int32) int32
+	Mpd_qsetemax(m *Module, l0 int32, l1 int32) int32
+	Mpd_qsetclamp(m *Module, l0 int32, l1 int32) int32
+	Mpd_maxcontext(m *Module, l0 int32)
+	Mpd_setminalloc(m *Module, l0 int32)
+	Mpd_getprec(m *Module, l0 int32) int32
+	Mpd_getemax(m *Module, l0 int32) int32
+	Mpd_getemin(m *Module, l0 int32) int32
+	Mpd_getround(m *Module, l0 int32) int32
+	Mpd_getclamp(m *Module, l0 int32) int32
+	X_PyTestInternalCapi_Init_PyTime(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Abstract(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_GetArgs(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Complex(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Set(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Structmember(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Exceptions(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Buffer(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_GC(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Object(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Config(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Import(m *Module, l0 int32) int32
+	X_PyTestCapi_Init_Frame(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Abstract(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Bytes(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Codec(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Complex(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Dict(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Float(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Import(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_List(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Long(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Object(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Set(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Tuple(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Unicode(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_File(m *Module, l0 int32) int32
+	X_PyTestLimitedCAPI_Init_Weakref(m *Module, l0 int32) int32
 }
 type Module struct {
 	Memory                 []byte
@@ -86,6 +129,7 @@ type Module struct {
 	G0                     int32
 	Wasi_snapshot_preview1 Wasi_snapshot_preview1Imports
 	Env                    EnvImports
+	MemMu                  sync.Mutex
 }
 
 func I32(x int32) int32 { return x }
@@ -102,6 +146,27 @@ func Ui32(x int32) uint32 { return uint32(x) }
 
 func Ui64(x int64) uint64 { return uint64(x) }
 
+// b2i32 materialises a wasm comparison result — an i32 that is 0 or 1 — from
+// the Go bool the comparison expression evaluates to.
+//
+// It exists as a named helper rather than an inline `func() int32 { ... }()`
+// because the gcasm backend requires every direct call left in the compiled
+// output to be either a package-local FnN or something the Go inliner removed.
+// A func literal is normally inlined at its call site, but the inliner gives up
+// once the ENCLOSING function grows past its budget — and a single wasm function
+// can translate to tens of thousands of lines of Go, as an interpreter's
+// bytecode dispatch loop does. The literal is then outlined into a real closure
+// symbol (FnN.funcA.funcB), which reaches the assembler as a direct call gcasm
+// cannot marshal. A named helper this small is always inlined, and if it ever
+// were not, it would fail loudly at its own symbol rather than as a nested
+// closure.
+func B2i32(b bool) int32 {
+	if b {
+		return 1
+	}
+	return 0
+}
+
 func F32(x float32) float32 { runtime.KeepAlive(&x); return x }
 
 func F64(x float64) float64 { runtime.KeepAlive(&x); return x }
@@ -115,43 +180,52 @@ func Wasm_trap_int_overflow() { panic("wasm: integer overflow") }
 //go:noinline
 func Wasm_trap_invalid_conv() { panic("wasm: invalid conversion to integer") }
 
+//go:noinline
+func Wasm_trap_unreachable() { panic("wasm: unreachable") }
+
+//go:noinline
+func Wasm_trap_memfill_oob() { panic("wasm: memory.fill out of bounds") }
+
+//go:noinline
+func Wasm_trap_memcopy_oob() { panic("wasm: memory.copy out of bounds") }
+
 func I32_div_s(x, y int32) int32 {
 	if y == -1 && x == math.MinInt32 {
-		panic("wasm: integer overflow")
+		Wasm_trap_int_overflow()
 	}
 	if y == 0 {
-		panic("wasm: integer divide by zero")
+		Wasm_trap_div_zero()
 	}
 	return x / y
 }
 
 func I64_div_s(x, y int64) int64 {
 	if y == -1 && x == math.MinInt64 {
-		panic("wasm: integer overflow")
+		Wasm_trap_int_overflow()
 	}
 	if y == 0 {
-		panic("wasm: integer divide by zero")
+		Wasm_trap_div_zero()
 	}
 	return x / y
 }
 
 func I32_div_u(x, y uint32) uint32 {
 	if y == 0 {
-		panic("wasm: integer divide by zero")
+		Wasm_trap_div_zero()
 	}
 	return x / y
 }
 
 func I64_div_u(x, y uint64) uint64 {
 	if y == 0 {
-		panic("wasm: integer divide by zero")
+		Wasm_trap_div_zero()
 	}
 	return x / y
 }
 
 func I32_rem_s(x, y int32) int32 {
 	if y == 0 {
-		panic("wasm: integer divide by zero")
+		Wasm_trap_div_zero()
 	}
 	if y == -1 {
 		return 0
@@ -161,7 +235,7 @@ func I32_rem_s(x, y int32) int32 {
 
 func I64_rem_s(x, y int64) int64 {
 	if y == 0 {
-		panic("wasm: integer divide by zero")
+		Wasm_trap_div_zero()
 	}
 	if y == -1 {
 		return 0
@@ -171,14 +245,14 @@ func I64_rem_s(x, y int64) int64 {
 
 func I32_rem_u(x, y uint32) uint32 {
 	if y == 0 {
-		panic("wasm: integer divide by zero")
+		Wasm_trap_div_zero()
 	}
 	return x % y
 }
 
 func I64_rem_u(x, y uint64) uint64 {
 	if y == 0 {
-		panic("wasm: integer divide by zero")
+		Wasm_trap_div_zero()
 	}
 	return x % y
 }
@@ -249,6 +323,9 @@ func MemorySize(m *Module) int32 { return int32(len(m.Memory) >> 16) }
 // capacity makes the common grow a zero-copy reslice and amortizes the
 // reallocations to O(n).
 func MemoryGrow(m *Module, n int32) int32 {
+
+	m.MemMu.Lock()
+	defer m.MemMu.Unlock()
 	prev := int32(len(m.Memory) >> 16)
 	if n == 0 {
 		return prev
@@ -288,6 +365,27 @@ func MemoryGrow(m *Module, n int32) int32 {
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	return prev
 }
+
+// accessMemory runs f with the module's current linear memory while
+// holding the same lock memoryGrow takes to mutate the memory slice
+// header or relocate its backing array. It is the ONE safe way to
+// touch linear memory from OUTSIDE the module's execution goroutine —
+// e.g. a watchdog goroutine raising CPython's eval-breaker bit while
+// an evaluation is running. For the duration of f the memory can
+// neither be resliced nor relocated, so f's writes land in the array
+// the guest observes; a grow that raced in just before blocks until f
+// returns and then copies f's writes forward with the rest of the
+// contents. Determinism notes for callers:
+//
+//   - f MUST NOT call back into the module or into memoryGrow — that
+//     would self-deadlock.
+//   - f should be short: a running guest blocks inside memory.grow
+//     until f returns (ordinary guest loads/stores do not block).
+//   - Bytes the guest reads or writes concurrently with f (that is
+//     the point of an eval-breaker-style flag) are exchanged with
+//     plain single-word accesses; keep such shared words
+//     word-aligned and word-sized.
+func AccessMemory(m *Module, f func(mem []byte)) { m.MemMu.Lock(); defer m.MemMu.Unlock(); f(m.Memory) }
 
 func I32_div_u_s(x, y int32) int32 { return int32(I32_div_u(uint32(x), uint32(y))) }
 func I32_rem_u_s(x, y int32) int32 { return int32(I32_rem_u(uint32(x), uint32(y))) }
@@ -442,13 +540,21 @@ func MemoryFill(m *Module, dst int32, val int32, n int32) {
 
 	end := uint64(uint32(dst)) + uint64(uint32(n))
 	if end > uint64(len(m.Memory)) {
-		panic("wasm: memory.fill out of bounds")
+		Wasm_trap_memfill_oob()
 	}
 
 	b := m.Memory[uint32(dst):uint32(end)]
 	v := byte(val)
-	for k := range b {
-		b[k] = v
+	if v == 0 {
+		for k := range b {
+			b[k] = 0
+		}
+		return
+	}
+
+	b[0] = v
+	for filled := 1; filled < len(b); filled *= 2 {
+		copy(b[filled:], b[:filled])
 	}
 }
 
@@ -460,7 +566,7 @@ func MemoryCopy(m *Module, dst int32, src int32, n int32) {
 	srcEnd := uint64(uint32(src)) + uint64(uint32(n))
 	dstEnd := uint64(uint32(dst)) + uint64(uint32(n))
 	if srcEnd > uint64(len(m.Memory)) || dstEnd > uint64(len(m.Memory)) {
-		panic("wasm: memory.copy out of bounds")
+		Wasm_trap_memcopy_oob()
 	}
 
 	copy(m.Memory[uint32(dst):uint32(dstEnd)], m.Memory[uint32(src):uint32(srcEnd)])
