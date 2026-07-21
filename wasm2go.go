@@ -3,6 +3,8 @@ package wasm2go
 import (
 	base "github.com/goccy/pythonwasm2go/base"
 	"fmt"
+	"sync"
+	"sync/atomic"
 	"unsafe"
 	_ "github.com/goccy/pythonwasm2go/p2"
 	_ "embed"
@@ -15,6 +17,10 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 		__memcap = 11599872
 	}
 	m.Memory = make([]byte, 11599872, __memcap)
+	m.MemMu = &sync.Mutex{}
+	m.MemSize = &atomic.Uint64{}
+	m.Threads = &base.ThreadPool{}
+	m.MemSize.Store(11599872)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 4294967296
 	m.T0 = make([]any, 5527)
@@ -43,6 +49,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_2_15(m)
 	InitElemSeg_2_16(m)
 	InitElemSeg_2_17(m)
+	m.DataEnd = 11539179
 	initData_0(m)
 	return m
 }
@@ -61,6 +68,83 @@ func NewWithWASI(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env 
 // custom implementation (sandboxed FS, captured stdout, ...).
 func New(env base.EnvImports) *base.Module {
 	return NewWithWASI(base.DefaultWASI(), env)
+}
+func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64) *base.Module {
+	m := &base.Module{Wasi_snapshot_preview1: wasi_snapshot_preview1, Env: env}
+	m.Memory = memory
+	m.MemMu = &sync.Mutex{}
+	m.MemSize = &atomic.Uint64{}
+	m.Threads = &base.ThreadPool{}
+	m.MemSize.Store(memSize)
+	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
+	m.MaxMem = uint64(len(memory))
+	m.T0 = make([]any, 5527)
+	m.G0 = int32(8388608)
+	InitElemSeg_0_0(m)
+	InitElemSeg_1_0(m)
+	InitElemSeg_1_1(m)
+	InitElemSeg_1_2(m)
+	InitElemSeg_1_3(m)
+	InitElemSeg_1_4(m)
+	InitElemSeg_2_0(m)
+	InitElemSeg_2_1(m)
+	InitElemSeg_2_2(m)
+	InitElemSeg_2_3(m)
+	InitElemSeg_2_4(m)
+	InitElemSeg_2_5(m)
+	InitElemSeg_2_6(m)
+	InitElemSeg_2_7(m)
+	InitElemSeg_2_8(m)
+	InitElemSeg_2_9(m)
+	InitElemSeg_2_10(m)
+	InitElemSeg_2_11(m)
+	InitElemSeg_2_12(m)
+	InitElemSeg_2_13(m)
+	InitElemSeg_2_14(m)
+	InitElemSeg_2_15(m)
+	InitElemSeg_2_16(m)
+	InitElemSeg_2_17(m)
+	m.DataEnd = 11539179
+	return m
+}
+func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
+	m := &base.Module{Wasi_snapshot_preview1: wasi_snapshot_preview1, Env: env}
+	m.Memory = memory
+	m.MemMu = &sync.Mutex{}
+	m.MemSize = &atomic.Uint64{}
+	m.Threads = &base.ThreadPool{}
+	m.MemSize.Store(memSize)
+	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
+	m.MaxMem = uint64(len(memory))
+	m.T0 = make([]any, 5527)
+	m.G0 = int32(8388608)
+	InitElemSeg_0_0(m)
+	InitElemSeg_1_0(m)
+	InitElemSeg_1_1(m)
+	InitElemSeg_1_2(m)
+	InitElemSeg_1_3(m)
+	InitElemSeg_1_4(m)
+	InitElemSeg_2_0(m)
+	InitElemSeg_2_1(m)
+	InitElemSeg_2_2(m)
+	InitElemSeg_2_3(m)
+	InitElemSeg_2_4(m)
+	InitElemSeg_2_5(m)
+	InitElemSeg_2_6(m)
+	InitElemSeg_2_7(m)
+	InitElemSeg_2_8(m)
+	InitElemSeg_2_9(m)
+	InitElemSeg_2_10(m)
+	InitElemSeg_2_11(m)
+	InitElemSeg_2_12(m)
+	InitElemSeg_2_13(m)
+	InitElemSeg_2_14(m)
+	InitElemSeg_2_15(m)
+	InitElemSeg_2_16(m)
+	InitElemSeg_2_17(m)
+	m.DataEnd = 11539179
+	base.RestoreGlobals(m, globals)
+	return m
 }
 func initData_0(m *base.Module) {
 	copy(m.Memory[8388608:], wasm2goData_data_bin[0:523217])
