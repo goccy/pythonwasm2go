@@ -1,4 +1,4 @@
-//go:build (!amd64 && !arm64) || purego
+//go:build !amd64 && !arm64
 
 package p0
 
@@ -934,7 +934,7 @@ func Fn2272(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname Fn2274 github.com/goccy/pythonwasm2go/p2.Fn2274
 func Fn2274(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2275 github.com/goccy/pythonwasm2go/p2.Fn2275
+//go:linkname Fn2275 github.com/goccy/pythonwasm2go/p1.Fn2275
 func Fn2275(m *base.Module, l0 int32) int32
 
 //go:linkname Fn2276 github.com/goccy/pythonwasm2go/p2.Fn2276
@@ -1020,9 +1020,6 @@ func Fn2608(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
 //go:linkname Fn2612 github.com/goccy/pythonwasm2go/p2.Fn2612
 func Fn2612(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2616 github.com/goccy/pythonwasm2go/p2.Fn2616
-func Fn2616(m *base.Module, l0 int32) int32
 
 //go:linkname Fn2619 github.com/goccy/pythonwasm2go/p1.Fn2619
 func Fn2619(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
@@ -2683,7 +2680,7 @@ func Fn4289(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname Fn4290 github.com/goccy/pythonwasm2go/p2.Fn4290
 func Fn4290(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4291 github.com/goccy/pythonwasm2go/p1.Fn4291
+//go:linkname Fn4291 github.com/goccy/pythonwasm2go/p2.Fn4291
 func Fn4291(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32) int32
 
 //go:linkname Fn4292 github.com/goccy/pythonwasm2go/p2.Fn4292
@@ -3823,7 +3820,7 @@ func Fn6633(m *base.Module, l0 int32) int32
 //go:linkname Fn6634 github.com/goccy/pythonwasm2go/p2.Fn6634
 func Fn6634(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn6635 github.com/goccy/pythonwasm2go/p1.Fn6635
+//go:linkname Fn6635 github.com/goccy/pythonwasm2go/p2.Fn6635
 func Fn6635(m *base.Module, l0 int32) int64
 
 //go:linkname Fn6638 github.com/goccy/pythonwasm2go/p2.Fn6638
