@@ -29,7 +29,7 @@ type Wasi_snapshot_preview1Imports interface {
 	Sock_getaddrinfo(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Sock_socket(m *Module, l0 int32, l1 int32) int32
 	Sock_connect(m *Module, l0 int32, l1 int32, l2 int32) int32
-	Proc_spawn(m *Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+	Proc_spawn(m *Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 	Pipe(m *Module, l0 int32) int32
 	Proc_wait(m *Module, l0 int32, l1 int32, l2 int32) int32
 	Environ_get(m *Module, l0 int32, l1 int32) int32
@@ -74,53 +74,15 @@ type Wasi_snapshot_preview1Imports interface {
 	Sock_shutdown(m *Module, l0 int32, l1 int32) int32
 }
 type EnvImports interface {
+	X__cxa_allocate_exception(m *Module, l0 int32) int32
+	X__cxa_throw(m *Module, l0 int32, l1 int32, l2 int32)
 	Getpid(m *Module) int32
 	Dlopen(m *Module, l0 int32, l1 int32) int32
 	Dlerror(m *Module) int32
 	Dlsym(m *Module, l0 int32, l1 int32) int32
-	Mpd_ieee_context(m *Module, l0 int32, l1 int32) int32
-	Mpd_qsettraps(m *Module, l0 int32, l1 int32) int32
-	Mpd_qsetstatus(m *Module, l0 int32, l1 int32) int32
-	Mpd_qsetprec(m *Module, l0 int32, l1 int32) int32
-	Mpd_qsetround(m *Module, l0 int32, l1 int32) int32
-	Mpd_qsetemin(m *Module, l0 int32, l1 int32) int32
-	Mpd_qsetemax(m *Module, l0 int32, l1 int32) int32
-	Mpd_qsetclamp(m *Module, l0 int32, l1 int32) int32
-	Mpd_maxcontext(m *Module, l0 int32)
-	Mpd_setminalloc(m *Module, l0 int32)
-	Mpd_getprec(m *Module, l0 int32) int32
-	Mpd_getemax(m *Module, l0 int32) int32
-	Mpd_getemin(m *Module, l0 int32) int32
-	Mpd_getround(m *Module, l0 int32) int32
-	Mpd_getclamp(m *Module, l0 int32) int32
-	X_PyTestInternalCapi_Init_PyTime(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Abstract(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_GetArgs(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Complex(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Set(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Structmember(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Exceptions(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Buffer(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_GC(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Object(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Config(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Import(m *Module, l0 int32) int32
-	X_PyTestCapi_Init_Frame(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Abstract(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Bytes(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Codec(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Complex(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Dict(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Float(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Import(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_List(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Long(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Object(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Set(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Tuple(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Unicode(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_File(m *Module, l0 int32) int32
-	X_PyTestLimitedCAPI_Init_Weakref(m *Module, l0 int32) int32
+}
+type WasmifyImports interface {
+	Callback_invoke(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int64
 }
 type Module struct {
 	Memory                 []byte
@@ -130,6 +92,7 @@ type Module struct {
 	G0                     int32
 	Wasi_snapshot_preview1 Wasi_snapshot_preview1Imports
 	Env                    EnvImports
+	Wasmify                WasmifyImports
 	MemMu                  *sync.Mutex
 	MemSize                *atomic.Uint64
 	DataEnd                uint32
@@ -284,6 +247,16 @@ func F64_neg(x float64) float64 {
 
 func F64_copysign(x, y float64) float64 { return math.Copysign(x, y) }
 
+func I32_trunc_sat_f32_u(x float32) int32 {
+	if x != x || x <= 0 {
+		return 0
+	}
+	if x >= 4294967296.0 {
+		return -1
+	}
+	return int32(uint32(x))
+}
+
 func I32_trunc_sat_f64_s(x float64) int32 {
 	if x != x {
 		return 0
@@ -326,9 +299,23 @@ func MemorySize(m *Module) int32 {
 	return int32(m.MemSize.Load() >> 16)
 }
 
+// wasmMemHardCap is the implementation limit on linear-memory size:
+// 65534 pages, two short of wasm32's architectural 65536. Growth past
+// it fails with -1 like any resource limit (the JS API allows an
+// engine to refuse any grow). Keeping memSize strictly below 2^32
+// minus a 128 KiB margin is what makes the coalesced SIMD bounds check
+// (simd_v128_load_rng) exact: a group whose unwrapped address range
+// reaches past memSize can then never be a group whose members all
+// individually landed in bounds via u32 wraparound.
+//
+// A function rather than a const because the helper extractor carries
+// only function declarations into the output (it must stay in sync
+// with codegen's wasmMemHardCapBytes).
+func WasmMemHardCap() uint64 { return (1 << 32) - (1 << 17) }
+
 // memoryGrow grows m.memory by n wasm pages (64 KiB each). Returns the
-// previous page count, or -1 if the new size would exceed maxMem. n may be 0,
-// which simply returns the current size.
+// previous page count, or -1 if the new size would exceed maxMem or
+// wasmMemHardCap. n may be 0, which simply returns the current size.
 //
 // len(m.memory) must always equal the exact wasm memory size (memory.size
 // and every bounds check depend on it), but the backing array is grown
@@ -353,7 +340,7 @@ func MemoryGrow(m *Module, n int32) int32 {
 	if m.MaxMem != 0 && want > m.MaxMem {
 		return -1
 	}
-	if want > 1<<32 {
+	if want > WasmMemHardCap() {
 		return -1
 	}
 	if m.MemShared {
@@ -378,8 +365,8 @@ func MemoryGrow(m *Module, n int32) int32 {
 	if m.MaxMem != 0 && newCap > m.MaxMem {
 		newCap = m.MaxMem
 	}
-	if newCap > 1<<32 {
-		newCap = 1 << 32
+	if newCap > WasmMemHardCap() {
+		newCap = WasmMemHardCap()
 	}
 	grown := make([]byte, want, newCap)
 	copy(grown, m.Memory)
@@ -420,27 +407,22 @@ func I32_rem_u_s(x, y int32) int32 { return int32(I32_rem_u(uint32(x), uint32(y)
 func I64_div_u_s(x, y int64) int64 { return int64(I64_div_u(uint64(x), uint64(y))) }
 func I64_rem_u_s(x, y int64) int64 { return int64(I64_rem_u(uint64(x), uint64(y))) }
 
-func F32_add(x, y float32) float32 { return x + y }
+// The explicit same-type conversions are NOT redundant: they are
+// rounding points. Once these helpers inline, gc is free to fuse a
+// multiply feeding an add into a single FMA — legal Go, but wasm
+// requires every operation individually rounded, and a fused result
+// diverges from every wasm runtime (bitwise, and observably in greedy
+// sampling). A float conversion forces the intermediate rounding and
+// forbids the fusion (spec: Conversions, "rounds to the precision of
+// the target type"; the same rule math.FMA documents).
+func F32_add(x, y float32) float32 { return float32(x + y) }
 
-func F32_div(x, y float32) float32 { return x / y }
-func F64_add(x, y float64) float64 { return x + y }
-func F64_sub(x, y float64) float64 { return x - y }
-func F64_mul(x, y float64) float64 { return x * y }
-func F64_div(x, y float64) float64 { return x / y }
-
-func I32_eqz(x int32) int32 {
-	if x == 0 {
-		return 1
-	}
-	return 0
-}
-
-func I64_eqz(x int64) int32 {
-	if x == 0 {
-		return 1
-	}
-	return 0
-}
+func F32_mul(x, y float32) float32 { return float32(x * y) }
+func F32_div(x, y float32) float32 { return float32(x / y) }
+func F64_add(x, y float64) float64 { return float64(x + y) }
+func F64_sub(x, y float64) float64 { return float64(x - y) }
+func F64_mul(x, y float64) float64 { return float64(x * y) }
+func F64_div(x, y float64) float64 { return float64(x / y) }
 
 func I32_clz(x int32) int32    { return int32(bits.LeadingZeros32(uint32(x))) }
 func I32_ctz(x int32) int32    { return int32(bits.TrailingZeros32(uint32(x))) }
@@ -448,6 +430,7 @@ func I32_popcnt(x int32) int32 { return int32(bits.OnesCount32(uint32(x))) }
 
 func I64_clz(x int64) int64 { return int64(bits.LeadingZeros64(uint64(x))) }
 
+func F32_ceil(x float32) float32 { return float32(math.Ceil(float64(x))) }
 func F64_ceil(x float64) float64 { return math.Ceil(x) }
 
 func F64_floor(x float64) float64 { return math.Floor(x) }
@@ -588,6 +571,9 @@ func MemoryCopy(m *Module, dst int32, src int32, n int32) {
 	}
 	copy(m.Memory[uint32(dst):uint32(dstEnd)], m.Memory[uint32(src):uint32(srcEnd)])
 }
+
+var spinAgents int32
+var spinOversubscribed uint32
 
 type ThreadPool struct {
 	nextTID atomic.Int32
@@ -730,6 +716,7 @@ func (o osFS) OpenFile(name string, flag int, perm os.FileMode) (File, error) {
 	return f, nil
 }
 func (o osFS) Mkdir(name string, perm os.FileMode) error { return os.Mkdir(o.join(name), perm) }
+func (o osFS) Chmod(name string, mode os.FileMode) error { return os.Chmod(o.join(name), mode) }
 func (o osFS) Remove(name string) error                  { return os.Remove(o.join(name)) }
 func (o osFS) Rename(a, b string) error                  { return os.Rename(o.join(a), o.join(b)) }
 func (o osFS) Stat(name string) (os.FileInfo, error)     { return os.Stat(o.join(name)) }
@@ -1143,6 +1130,13 @@ type wasiOpen struct {
 	path     string // guest path relative to the preopen root
 	fdflags  int32  // last fdflags set via Path_open or Fd_fdstat_set_flags
 	dirCache []os.DirEntry
+	// stdio marks an alias of an interpreter stream (1/2/3 = the
+	// configured stdin/stdout/stderr; 0 = not an alias). Fd_dup of a bare
+	// fd 0/1/2 creates one; closing it never touches the real stream.
+	stdio int8
+	// refs counts EXTRA table slots sharing this entry (dup/dup2):
+	// closeWasiOpen only closes the descriptor when it reaches zero.
+	refs int32
 }
 
 // WasiStubs is the default Go-native implementation of wasi_snapshot_preview1.
@@ -1180,15 +1174,22 @@ type WasiStubs struct {
 	// host-controlled-whitelist intent as fsHook, for the network surface.
 	netHook func(op string) bool
 	// dialHook, when non-nil, is consulted before an OUTBOUND connect
-	// (Sock_connect) with the resolved network ("tcp"), dotted-quad IP, and
-	// port. Returning false denies the connection (EACCES). This is the
-	// outbound-network whitelist control point.
-	dialHook func(network, ip string, port int) bool
+	// (Sock_connect) with the resolved network ("tcp"), the HOST the guest
+	// resolved to reach this address (from the preceding Sock_getaddrinfo, or ""
+	// if the guest dialed a literal IP), the dotted-quad IP, and the port.
+	// Returning false denies the connection (EACCES). Passing the host lets the
+	// policy match host+port jointly, which a port-scoped rule needs — the IP
+	// alone cannot be tied back to the rule that authorized the name.
+	dialHook func(network, host, ip string, port int) bool
 	// resolveHook, when non-nil, is consulted before a name lookup
 	// (Sock_getaddrinfo) with the requested host. Returning false denies the
 	// resolution (the guest sees a gaierror). This is the hostname-level
 	// whitelist control point (e.g. block "example.com" by name).
 	resolveHook func(host string) bool
+	// resolvedHosts maps a resolved dotted-quad IP back to the host name the
+	// guest looked it up under (populated by Sock_getaddrinfo, read by
+	// Sock_connect), so the dial hook can be given the host. Guarded by mu.
+	resolvedHosts map[string]string
 	// fsys is the filesystem backend every guest path operation is routed
 	// through. Defaults to an osFS scoped to preopenDir (the host filesystem);
 	// SetFS swaps in an alternative (e.g. an in-memory FS) so each module can
@@ -1296,10 +1297,12 @@ func (w *WasiStubs) SetNetAccessHook(hook func(op string) bool) {
 }
 
 // SetDialHook installs a host-controlled OUTBOUND-connection policy. hook is
-// called with ("tcp", dotted-quad-IP, port) before each Sock_connect;
-// returning false denies the connection (the guest sees a connect EACCES).
-// Pass nil to clear (all outbound allowed, the default once outbound is wired).
-func (w *WasiStubs) SetDialHook(hook func(network, ip string, port int) bool) {
+// called with ("tcp", host, dotted-quad-IP, port) before each Sock_connect,
+// where host is the name the guest resolved to reach the IP (from the preceding
+// Sock_getaddrinfo) or "" for a literal-IP dial; returning false denies the
+// connection (the guest sees a connect EACCES). Pass nil to clear (all outbound
+// allowed, the default once outbound is wired).
+func (w *WasiStubs) SetDialHook(hook func(network, host, ip string, port int) bool) {
 	w.mu.Lock()
 	defer w.mu.Unlock()
 	w.dialHook = hook
@@ -1379,7 +1382,7 @@ func (w *WasiStubs) readCStrArray(m *Module, ptr int32) (out []string, ok bool) 
 // Only stdio inheritance is supported today (no fd remapping / pipes), which
 // covers subprocess.run/call with default streams; capture_output via host
 // pipes is a follow-up.
-func (w *WasiStubs) Proc_spawn(m *Module, pathPtr, argvPtr, envpPtr, stdinFd, stdoutFd, stderrFd, pidOutPtr int32) int32 {
+func (w *WasiStubs) Proc_spawn(m *Module, pathPtr, argvPtr, envpPtr, stdinFd, stdoutFd, stderrFd, cwdPtr, pidOutPtr int32) int32 {
 	path, ok := w.readCStr(m, pathPtr)
 	if !ok || path == "" {
 		return -_wasiEINVAL
@@ -1389,6 +1392,11 @@ func (w *WasiStubs) Proc_spawn(m *Module, pathPtr, argvPtr, envpPtr, stdinFd, st
 		return -_wasiEFAULT
 	}
 	env, ok := w.readCStrArray(m, envpPtr)
+	if !ok {
+		return -_wasiEFAULT
+	}
+
+	cwd, ok := w.readCStr(m, cwdPtr)
 	if !ok {
 		return -_wasiEFAULT
 	}
@@ -1412,6 +1420,9 @@ func (w *WasiStubs) Proc_spawn(m *Module, pathPtr, argvPtr, envpPtr, stdinFd, st
 		cmd.Args = argv
 	} else {
 		cmd.Args = []string{path}
+	}
+	if cwd != "" {
+		cmd.Dir = cwd
 	}
 
 	cmd.Env = env
@@ -1454,26 +1465,26 @@ func (w *WasiStubs) Proc_spawn(m *Module, pathPtr, argvPtr, envpPtr, stdinFd, st
 	return _wasiESUCCESS
 }
 
-// childReaderLocked resolves a child stdin source fd. fd < 3 (including -1)
-// inherits the interpreter's stdin; otherwise it is a guest fd (a pipe read
-// end) whose backing file is used directly. Caller holds w.mu.
+// childReaderLocked resolves a child stdin source fd. A guest fd whose
+// table entry carries a real file (a pipe end, or a guest stdio fd the
+// program re-opened onto a file) is used directly; everything else —
+// including -1 and an unredirected fd 0 — inherits the interpreter's
+// stdin. Caller holds w.mu.
 func (w *WasiStubs) childReaderLocked(fd int32) io.Reader {
-	if fd < 3 {
-		return w.stdin
-	}
-	if op := w.fdTable[fd]; op != nil && op.f != nil {
-		return op.f
+	if fd >= 0 {
+		if op := w.fdTable[fd]; op != nil && op.f != nil {
+			return op.f
+		}
 	}
 	return w.stdin
 }
 
 // childWriterLocked is the stdout/stderr counterpart of childReaderLocked.
 func (w *WasiStubs) childWriterLocked(fd int32, deflt io.Writer) io.Writer {
-	if fd < 3 {
-		return deflt
-	}
-	if op := w.fdTable[fd]; op != nil && op.f != nil {
-		return op.f
+	if fd >= 0 {
+		if op := w.fdTable[fd]; op != nil && op.f != nil {
+			return op.f
+		}
 	}
 	return deflt
 }
@@ -1614,6 +1625,7 @@ func (w *WasiStubs) Sock_getaddrinfo(m *Module, nodePtr, nodeLen, outPtr int32) 
 	if ip := net.ParseIP(host); ip != nil {
 		if v4 := ip.To4(); v4 != nil {
 			out[0], out[1], out[2], out[3] = v4[0], v4[1], v4[2], v4[3]
+			w.recordResolvedHost(v4, host)
 			return _wasiESUCCESS
 		}
 		return -_wasiEAFNOSUPPORT
@@ -1627,7 +1639,20 @@ func (w *WasiStubs) Sock_getaddrinfo(m *Module, nodePtr, nodeLen, outPtr int32) 
 		return -_wasiEAFNOSUPPORT
 	}
 	out[0], out[1], out[2], out[3] = v4[0], v4[1], v4[2], v4[3]
+	w.recordResolvedHost(v4, host)
 	return _wasiESUCCESS
+}
+
+// recordResolvedHost remembers that host resolved to v4, so a later Sock_connect
+// to that IP can hand the dial hook the host name it was looked up under.
+func (w *WasiStubs) recordResolvedHost(v4 net.IP, host string) {
+	ip := fmt.Sprintf("%d.%d.%d.%d", v4[0], v4[1], v4[2], v4[3])
+	w.mu.Lock()
+	if w.resolvedHosts == nil {
+		w.resolvedHosts = make(map[string]string)
+	}
+	w.resolvedHosts[ip] = host
+	w.mu.Unlock()
 }
 
 // SetEnv overrides the environment the guest sees via environ_get /
@@ -1735,6 +1760,7 @@ const (
 	_wasiENOTDIR      int32 = 54
 	_wasiENOTSOCK     int32 = 57
 	_wasiENOTSUP      int32 = 58
+	_wasiENOSYS       int32 = 52
 	_wasiEPERM        int32 = 63
 	_wasiEPIPE        int32 = 64
 )
@@ -1901,25 +1927,39 @@ func (w *WasiStubs) Clock_time_get(m *Module, clockID int32, precision int64, ti
 	if out == nil {
 		return _wasiEFAULT
 	}
-	var nanos uint64
-	switch clockID {
-	case 0:
-		nanos = uint64(time.Now().UnixNano())
-	case 1:
-		w.mu.Lock()
-		nanos = uint64(time.Since(w.monoStart).Nanoseconds())
-		w.mu.Unlock()
-	default:
-		return _wasiEINVAL
+	nanos, errno := w.clockNanos(clockID)
+	if errno != _wasiESUCCESS {
+		return errno
 	}
 	binary.LittleEndian.PutUint64(out, nanos)
 	return _wasiESUCCESS
+}
+
+// clockNanos is the layout-independent body of clock_time_get, shared
+// by the wasm32 and wasm64 bindings.
+func (w *WasiStubs) clockNanos(clockID int32) (uint64, int32) {
+	switch clockID {
+	case 0:
+		return uint64(time.Now().UnixNano()), _wasiESUCCESS
+	case 1:
+		w.mu.Lock()
+		nanos := uint64(time.Since(w.monoStart).Nanoseconds())
+		w.mu.Unlock()
+		return nanos, _wasiESUCCESS
+	default:
+		return 0, _wasiEINVAL
+	}
 }
 
 // closeWasiOpen releases every underlying handle held by op and
 // joins any Close errors so callers can map them to a wasi errno
 // instead of silently dropping the failure.
 func closeWasiOpen(op *wasiOpen) error {
+	if op.refs > 0 {
+
+		op.refs--
+		return nil
+	}
 	var err error
 	if op.f != nil {
 		err = errors.Join(err, op.f.Close())
@@ -1954,6 +1994,13 @@ func (w *WasiStubs) Fd_fdstat_get(m *Module, fd, ptr int32) int32 {
 	if out == nil {
 		return _wasiEFAULT
 	}
+	return w.fdstatFill(fd, out)
+}
+
+// fdstatFill writes the 24-byte fdstat for fd into out — the shared
+// body of the 32- and 64-bit Fd_fdstat_get bindings (the struct holds
+// no pointers, so the layout is width-independent).
+func (w *WasiStubs) fdstatFill(fd int32, out []byte) int32 {
 	w.mu.Lock()
 	defer w.mu.Unlock()
 	var ftype byte = 4 // regular file
@@ -2166,51 +2213,85 @@ func (w *WasiStubs) Fd_read(m *Module, fd, iovs, iovsLen, nreadPtr int32) int32 
 	if src == nil {
 		return _wasiEBADF
 	}
-
-	iovBytes := uint64(uint32(iovsLen)) * 8
-	if iovBytes > 0x7fffffff {
-		return _wasiEFAULT
-	}
-	iovecs := w.memSlice(m, iovs, int32(iovBytes))
+	bufs, ok := w.iovecSlices(m, iovs, iovsLen)
 	nreadSlice := w.memSlice(m, nreadPtr, 4)
-	if iovecs == nil || nreadSlice == nil {
+	if !ok || nreadSlice == nil {
 		return _wasiEFAULT
 	}
 	_ = op
-	var total uint32
+	binary.LittleEndian.PutUint32(nreadSlice, uint32(readVec(src, bufs)))
+	return _wasiESUCCESS
+}
+
+// iovecSlices resolves a wasm32 ciovec/iovec array ({u32 ptr, u32 len}
+// entries at iovs) into the backing memory windows. Every entry is
+// validated before any I/O happens, so a bad iovec faults the whole
+// call instead of after a partial transfer.
+func (w *WasiStubs) iovecSlices(m *Module, iovs, iovsLen int32) ([][]byte, bool) {
+
+	iovBytes := uint64(uint32(iovsLen)) * 8
+	if iovBytes > 0x7fffffff {
+		return nil, false
+	}
+	iovecs := w.memSlice(m, iovs, int32(iovBytes))
+	if iovecs == nil {
+		return nil, false
+	}
+	bufs := make([][]byte, 0, iovsLen)
 	for i := int32(0); i < iovsLen; i++ {
 		bufPtr := binary.LittleEndian.Uint32(iovecs[i*8:])
 		bufLen := binary.LittleEndian.Uint32(iovecs[i*8+4:])
 		buf := w.memSlice(m, int32(bufPtr), int32(bufLen))
 		if buf == nil {
-			return _wasiEFAULT
+			return nil, false
 		}
+		bufs = append(bufs, buf)
+	}
+	return bufs, true
+}
+
+// readVec fills bufs from src in order, stopping at the first error
+// (EOF included) or short read; returns the bytes read. Shared by the
+// wasm32 and wasm64 fd_read bindings — only the iovec layout differs.
+func readVec(src io.Reader, bufs [][]byte) uint64 {
+	var total uint64
+	for _, buf := range bufs {
 		n, err := src.Read(buf)
-		total += uint32(n)
-		if err != nil {
-			if errors.Is(err, io.EOF) {
-				break
-			}
-			break
-		}
-		if n < int(bufLen) {
+		total += uint64(n)
+		if err != nil || n < len(buf) {
 			break
 		}
 	}
-	binary.LittleEndian.PutUint32(nreadSlice, total)
-	return _wasiESUCCESS
+	return total
+}
+
+// writeVec drains bufs into dst in order, stopping at the first failed
+// write; returns the bytes written. Shared like readVec.
+func writeVec(dst io.Writer, bufs [][]byte) uint64 {
+	var total uint64
+	for _, buf := range bufs {
+		n, err := dst.Write(buf)
+		total += uint64(n)
+		if err != nil {
+			break
+		}
+	}
+	return total
 }
 
 // fdSrcLocked returns the io.Reader for fd and (when applicable) the
 // wasiOpen it came from, or nil if fd is invalid. Caller must hold w.mu.
 func (w *WasiStubs) fdSrcLocked(fd int32) (io.Reader, *wasiOpen) {
-	switch fd {
-	case 0:
-		return w.stdin, nil
-	}
+
 	op := w.fdTable[fd]
 	if op == nil {
+		if fd == 0 {
+			return w.stdin, nil
+		}
 		return nil, nil
+	}
+	if op.stdio == 1 {
+		return w.stdin, op
 	}
 	if op.f != nil {
 		return op.f, op
@@ -2224,15 +2305,21 @@ func (w *WasiStubs) fdSrcLocked(fd int32) (io.Reader, *wasiOpen) {
 // fdDstLocked returns the io.Writer for fd or nil if fd is invalid.
 // Caller must hold w.mu.
 func (w *WasiStubs) fdDstLocked(fd int32) (io.Writer, *wasiOpen) {
-	switch fd {
-	case 1:
-		return w.stdout, nil
-	case 2:
-		return w.stderr, nil
-	}
 	op := w.fdTable[fd]
 	if op == nil {
+		switch fd {
+		case 1:
+			return w.stdout, nil
+		case 2:
+			return w.stderr, nil
+		}
 		return nil, nil
+	}
+	switch op.stdio {
+	case 2:
+		return w.stdout, op
+	case 3:
+		return w.stderr, op
 	}
 	if op.f != nil {
 		return op.f, op
@@ -2326,18 +2413,28 @@ func (w *WasiStubs) Fd_seek(m *Module, fd int32, offset int64, whence, newOffPtr
 	if out == nil {
 		return _wasiEFAULT
 	}
+	n, errno := w.fdSeek(fd, offset, int(whence))
+	if errno != _wasiESUCCESS {
+		return errno
+	}
+	binary.LittleEndian.PutUint64(out, uint64(n))
+	return _wasiESUCCESS
+}
+
+// fdSeek is the layout-independent body of fd_seek, shared by the
+// wasm32 and wasm64 bindings.
+func (w *WasiStubs) fdSeek(fd int32, offset int64, whence int) (int64, int32) {
 	w.mu.Lock()
 	op := w.fdTable[fd]
 	w.mu.Unlock()
 	if op == nil || op.f == nil {
-		return _wasiEBADF
+		return 0, _wasiEBADF
 	}
-	n, err := op.f.Seek(offset, int(whence))
+	n, err := op.f.Seek(offset, whence)
 	if err != nil {
-		return _wasiEINVAL
+		return 0, _wasiEINVAL
 	}
-	binary.LittleEndian.PutUint64(out, uint64(n))
-	return _wasiESUCCESS
+	return n, _wasiESUCCESS
 }
 
 func (w *WasiStubs) Fd_tell(m *Module, fd, offsetPtr int32) int32 {
@@ -2363,37 +2460,18 @@ func (w *WasiStubs) Fd_write(m *Module, fd, iovs, iovsLen, nwrittenPtr int32) in
 	w.mu.Lock()
 	dst, _ := w.fdDstLocked(fd)
 	w.mu.Unlock()
-	iovBytes := uint64(uint32(iovsLen)) * 8
-	if iovBytes > 0x7fffffff {
-		return _wasiEFAULT
-	}
-	iovecs := w.memSlice(m, iovs, int32(iovBytes))
+	bufs, ok := w.iovecSlices(m, iovs, iovsLen)
 	nwrittenSlice := w.memSlice(m, nwrittenPtr, 4)
-	if iovecs == nil || nwrittenSlice == nil {
+	if !ok || nwrittenSlice == nil {
 		return _wasiEFAULT
 	}
 	if dst == nil {
 		binary.LittleEndian.PutUint32(nwrittenSlice, 0)
 		return _wasiEBADF
 	}
-	var total uint32
-	for i := int32(0); i < iovsLen; i++ {
-		bufPtr := binary.LittleEndian.Uint32(iovecs[i*8:])
-		bufLen := binary.LittleEndian.Uint32(iovecs[i*8+4:])
-		buf := w.memSlice(m, int32(bufPtr), int32(bufLen))
-		if buf == nil {
-			return _wasiEFAULT
-		}
-		n, err := dst.Write(buf)
-		total += uint32(n)
-		if err != nil {
-			break
-		}
-	}
-	binary.LittleEndian.PutUint32(nwrittenSlice, total)
+	binary.LittleEndian.PutUint32(nwrittenSlice, uint32(writeVec(dst, bufs)))
 	return _wasiESUCCESS
 }
-
 func (w *WasiStubs) Fd_sync(m *Module, fd int32) int32 {
 	w.mu.Lock()
 	op := w.fdTable[fd]
@@ -2443,6 +2521,137 @@ func (w *WasiStubs) Fd_allocate(m *Module, fd int32, offset, length int64) int32
 
 	if err := op.f.Truncate(offset + length); err != nil {
 		return mapOSError(err)
+	}
+	return _wasiESUCCESS
+}
+
+// Path_chmod is a NON-STANDARD host import (module wasi_snapshot_preview1,
+// name "path_chmod") backing a bridge-provided chmod(): WASI preview1 has
+// no way to change file modes. The path at (pathPtr,pathLen) is
+// preopen-relative, like path_open's. Backends without chmod support
+// (MemFS keeps no modes) report ENOSYS. Returns 0 or a negative errno.
+func (w *WasiStubs) Path_chmod(m *Module, pathPtr, pathLen, mode int32) int32 {
+	pathSlice := w.memSlice(m, pathPtr, pathLen)
+	if pathSlice == nil {
+		return -_wasiEFAULT
+	}
+	w.mu.Lock()
+	fsys := w.fsys
+	w.mu.Unlock()
+	ch, ok := fsys.(interface {
+		Chmod(string, os.FileMode) error
+	})
+	if !ok {
+		return -_wasiENOSYS
+	}
+	if err := ch.Chmod(string(pathSlice), os.FileMode(uint32(mode)&0o7777)); err != nil {
+		return -mapOSError(err)
+	}
+	return _wasiESUCCESS
+}
+
+// Path_filestat_mode is a NON-STANDARD host import (module
+// wasi_snapshot_preview1, name "path_filestat_mode") backing a
+// bridge-provided stat/lstat: WASI's filestat carries no permission
+// bits, so the bridge merges the real mode in from here. The path is
+// preopen-relative; follow selects stat vs lstat semantics. Writes the
+// unix permission bits at modeOutPtr; returns 0 or a negative errno.
+func (w *WasiStubs) Path_filestat_mode(m *Module, pathPtr, pathLen, follow, modeOutPtr int32) int32 {
+	pathSlice := w.memSlice(m, pathPtr, pathLen)
+	out := w.memSlice(m, modeOutPtr, 4)
+	if pathSlice == nil || out == nil {
+		return -_wasiEFAULT
+	}
+	w.mu.Lock()
+	fsys := w.fsys
+	w.mu.Unlock()
+	var fi os.FileInfo
+	var err error
+	if follow != 0 {
+		fi, err = fsys.Stat(string(pathSlice))
+	} else {
+		fi, err = fsys.Lstat(string(pathSlice))
+	}
+	if err != nil {
+		return -mapOSError(err)
+	}
+	mode := fi.Mode()
+	bits := uint32(mode.Perm())
+	if mode&os.ModeSetuid != 0 {
+		bits |= 0o4000
+	}
+	if mode&os.ModeSetgid != 0 {
+		bits |= 0o2000
+	}
+	if mode&os.ModeSticky != 0 {
+		bits |= 0o1000
+	}
+	binary.LittleEndian.PutUint32(out, bits)
+	return _wasiESUCCESS
+}
+
+// dupSourceLocked resolves the entry a dup of fd should share: the
+// existing table entry, or a fresh alias for a bare interpreter stdio fd.
+// Caller holds w.mu.
+func (w *WasiStubs) dupSourceLocked(fd int32) *wasiOpen {
+	if op := w.fdTable[fd]; op != nil {
+		return op
+	}
+	if fd >= 0 && fd <= 2 {
+		op := &wasiOpen{stdio: int8(fd + 1)}
+		w.fdTable[fd] = op
+		return op
+	}
+	return nil
+}
+
+// Fd_dup is a NON-STANDARD host import (module wasi_snapshot_preview1,
+// name "fd_dup") backing the bridge's dup(): the new fd shares the same
+// open descriptor (offset included), and the underlying file closes only
+// when the last sharing fd does. Writes the new fd at outPtr.
+func (w *WasiStubs) Fd_dup(m *Module, fd, outPtr int32) int32 {
+	out := w.memSlice(m, outPtr, 4)
+	if out == nil {
+		return _wasiEFAULT
+	}
+	w.mu.Lock()
+	defer w.mu.Unlock()
+	op := w.dupSourceLocked(fd)
+	if op == nil {
+		return _wasiEBADF
+	}
+	nfd := w.nextFD
+	w.nextFD++
+	w.fdTable[nfd] = op
+	op.refs++
+	binary.LittleEndian.PutUint32(out, uint32(nfd))
+	return _wasiESUCCESS
+}
+
+// Fd_dup2 is a NON-STANDARD host import (module wasi_snapshot_preview1,
+// name "fd_dup2") backing the bridge's dup2(): to becomes another
+// reference to from's descriptor, closing whatever to previously held.
+func (w *WasiStubs) Fd_dup2(m *Module, from, to int32) int32 {
+	w.mu.Lock()
+	defer w.mu.Unlock()
+	src := w.dupSourceLocked(from)
+	if src == nil {
+		return _wasiEBADF
+	}
+	if from == to {
+		return _wasiESUCCESS
+	}
+	var closeErr error
+	if dst := w.fdTable[to]; dst != nil {
+		if dst == src {
+			return _wasiESUCCESS
+		}
+		closeErr = closeWasiOpen(dst)
+	}
+	w.fdTable[to] = src
+	src.refs++
+	if closeErr != nil {
+		return mapOSError(closeErr)
 	}
 	return _wasiESUCCESS
 }
@@ -2525,16 +2734,29 @@ func (d *dotDirEntry) Info() (os.FileInfo, error) {
 }
 
 func (w *WasiStubs) Fd_readdir(m *Module, fd, buf, buflen int32, cookie int64, bufusedPtr int32) int32 {
-	w.mu.Lock()
-	op := w.fdTable[fd]
-	w.mu.Unlock()
-	if op == nil || op.f == nil || !op.isDir {
-		return _wasiEBADF
-	}
 	bufSlice := w.memSlice(m, buf, buflen)
 	bufusedSlice := w.memSlice(m, bufusedPtr, 4)
 	if bufSlice == nil || bufusedSlice == nil {
 		return _wasiEFAULT
+	}
+	written, errno := w.fdReaddir(fd, bufSlice, cookie)
+	if errno != _wasiESUCCESS {
+		return errno
+	}
+	binary.LittleEndian.PutUint32(bufusedSlice, uint32(written))
+	return _wasiESUCCESS
+}
+
+// fdReaddir is the layout-independent body of fd_readdir: it packs
+// dirents into bufSlice starting at the cookie'th entry and returns the
+// byte count used. The dirent wire format has no pointer-width fields,
+// so wasm32 and wasm64 share it; only the bufused out-pointer differs.
+func (w *WasiStubs) fdReaddir(fd int32, bufSlice []byte, cookie int64) (int, int32) {
+	w.mu.Lock()
+	op := w.fdTable[fd]
+	w.mu.Unlock()
+	if op == nil || op.f == nil || !op.isDir {
+		return 0, _wasiEBADF
 	}
 
 	if cookie == 0 {
@@ -2542,7 +2764,7 @@ func (w *WasiStubs) Fd_readdir(m *Module, fd, buf, buflen int32, cookie int64, b
 	}
 	entries, err := op.readDirCached()
 	if err != nil {
-		return mapOSError(err)
+		return 0, mapOSError(err)
 	}
 	startIdx := int(cookie)
 	if startIdx < 0 {
@@ -2591,8 +2813,7 @@ func (w *WasiStubs) Fd_readdir(m *Module, fd, buf, buflen int32, cookie int64, b
 			break
 		}
 	}
-	binary.LittleEndian.PutUint32(bufusedSlice, uint32(written))
-	return _wasiESUCCESS
+	return written, _wasiESUCCESS
 }
 
 // Path_open opens a wasm-supplied path and registers it in the fd
@@ -2612,7 +2833,18 @@ func (w *WasiStubs) Path_open(m *Module, dirFd, dirflags, pathPtr, pathLen, ofla
 	if pathSlice == nil || outSlice == nil {
 		return _wasiEFAULT
 	}
-	rel := string(pathSlice)
+	fd, errno := w.pathOpen(string(pathSlice), dirflags, oflags, fsRightsBase, fdflags)
+	if errno != _wasiESUCCESS {
+		return errno
+	}
+	binary.LittleEndian.PutUint32(outSlice, uint32(fd))
+	return _wasiESUCCESS
+}
+
+// pathOpen is the layout-independent body of path_open: it resolves and
+// opens rel, registers the fd, and returns it. Callers own reading the
+// path and writing the opened fd at their ABI's pointer width.
+func (w *WasiStubs) pathOpen(rel string, dirflags, oflags int32, fsRightsBase int64, fdflags int32) (int32, int32) {
 	w.mu.Lock()
 	fsys := w.fsys
 	w.mu.Unlock()
@@ -2648,7 +2880,7 @@ func (w *WasiStubs) Path_open(m *Module, dirFd, dirflags, pathPtr, pathLen, ofla
 
 	writeAccess := flag&(os.O_WRONLY|os.O_RDWR) != 0 || flag&(os.O_CREATE|os.O_TRUNC) != 0
 	if !w.checkFS(rel, writeAccess) {
-		return _wasiEACCES
+		return -1, _wasiEACCES
 	}
 
 	requireDir := oflags&0x2 != 0
@@ -2661,31 +2893,30 @@ func (w *WasiStubs) Path_open(m *Module, dirFd, dirflags, pathPtr, pathLen, ofla
 
 	if noFollow {
 		if li, lerr := fsys.Lstat(rel); lerr == nil && (li.Mode()&os.ModeSymlink) != 0 {
-			return _wasiENOENT
+			return -1, _wasiENOENT
 		}
 	}
 	f, err := fsys.OpenFile(rel, flag, 0o644)
 	if err != nil {
-		return mapOSError(err)
+		return -1, mapOSError(err)
 	}
 	st, statErr := f.Stat()
 	if statErr != nil {
-		return mapOSError(errors.Join(statErr, f.Close()))
+		return -1, mapOSError(errors.Join(statErr, f.Close()))
 	}
 	isDir := st.IsDir()
 	if requireDir && !isDir {
 		if cerr := f.Close(); cerr != nil {
-			return mapOSError(cerr)
+			return -1, mapOSError(cerr)
 		}
-		return _wasiENOTDIR
+		return -1, _wasiENOTDIR
 	}
 	w.mu.Lock()
 	fd := w.nextFD
 	w.nextFD++
 	w.fdTable[fd] = &wasiOpen{f: f, isDir: isDir, path: rel, fdflags: fdflags}
 	w.mu.Unlock()
-	binary.LittleEndian.PutUint32(outSlice, uint32(fd))
-	return _wasiESUCCESS
+	return fd, _wasiESUCCESS
 }
 
 func (w *WasiStubs) Path_create_directory(m *Module, dirFd, pathPtr, pathLen int32) int32 {
@@ -3010,12 +3241,15 @@ func (w *WasiStubs) Poll_oneoff(m *Module, inPtr, outPtr, nsubs, neventsPtr int3
 		}
 	}
 
-	if minClockNs > 0 {
+	if minClockNs > 0 && len(fdEvents) == 0 {
 		time.Sleep(time.Duration(minClockNs))
 	}
 
 	written := int32(0)
 	for _, ev := range clockEvents {
+		if ev.etype == 0 && len(fdEvents) > 0 {
+			continue
+		}
 		writeEvent(events[written:written+32], ev.userdata, ev.etype, 0, 0)
 		written += 32
 	}
@@ -3103,9 +3337,12 @@ func (w *WasiStubs) Sock_socket(m *Module, domain, typ int32) int32 {
 // existing Sock_send / Sock_recv / Fd_close paths drive it. Returns 0 or a
 // negative errno.
 func (w *WasiStubs) Sock_connect(m *Module, fd, ipBE, port int32) int32 {
+	u := uint32(ipBE)
+	ip := fmt.Sprintf("%d.%d.%d.%d", u&0xff, (u>>8)&0xff, (u>>16)&0xff, (u>>24)&0xff)
 	w.mu.Lock()
 	op := w.fdTable[fd]
 	hook := w.dialHook
+	host := w.resolvedHosts[ip]
 	w.mu.Unlock()
 	if op == nil || !op.isSocket {
 		return -_wasiENOTSOCK
@@ -3113,10 +3350,8 @@ func (w *WasiStubs) Sock_connect(m *Module, fd, ipBE, port int32) int32 {
 	if op.conn != nil {
 		return -_wasiEISCONN
 	}
-	u := uint32(ipBE)
-	ip := fmt.Sprintf("%d.%d.%d.%d", u&0xff, (u>>8)&0xff, (u>>16)&0xff, (u>>24)&0xff)
 	p := int(uint16(port))
-	if hook != nil && !hook("tcp", ip, p) {
+	if hook != nil && !hook("tcp", host, ip, p) {
 		return -_wasiEACCES
 	}
 	conn, err := net.DialTimeout("tcp", net.JoinHostPort(ip, strconv.Itoa(p)), 30*time.Second)
@@ -3308,4 +3543,314 @@ func writeFilestat(out []byte, st os.FileInfo) {
 	binary.LittleEndian.PutUint64(out[40:], nanos)
 	binary.LittleEndian.PutUint64(out[48:], nanos)
 	binary.LittleEndian.PutUint64(out[56:], nanos)
+}
+
+// memSlice64 is memSlice for full-range 64-bit guest pointers.
+func (w *WasiStubs) memSlice64(m *Module, off int64, n int64) []byte {
+	mem := m.Memory
+	lo := uint64(off)
+	hi := lo + uint64(n)
+	if n < 0 || hi < lo || hi > uint64(len(mem)) {
+		return nil
+	}
+	return mem[lo:hi]
+}
+
+func (w *WasiStubs) Clock_time_get64(m *Module, clockID int64, precision int64, timePtr int64) int32 {
+	out := w.memSlice64(m, timePtr, 8)
+	if out == nil {
+		return _wasiEFAULT
+	}
+	nanos, errno := w.clockNanos(int32(clockID))
+	if errno != _wasiESUCCESS {
+		return errno
+	}
+	binary.LittleEndian.PutUint64(out, nanos)
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Fd_close64(m *Module, fd int64) int32 {
+	return w.Fd_close(m, int32(fd))
+}
+
+func (w *WasiStubs) Sched_yield64(m *Module) int32 {
+
+	return w.Sched_yield(m)
+}
+
+func (w *WasiStubs) Fd_fdstat_get64(m *Module, fd int64, ptr int64) int32 {
+
+	out := w.memSlice64(m, ptr, 24)
+	if out == nil {
+		return _wasiEFAULT
+	}
+	return w.fdstatFill(int32(fd), out)
+}
+
+func (w *WasiStubs) Fd_seek64(m *Module, fd int64, offset int64, whence int64, newOffPtr int64) int32 {
+	out := w.memSlice64(m, newOffPtr, 8)
+	if out == nil {
+		return _wasiEFAULT
+	}
+	n, errno := w.fdSeek(int32(fd), offset, int(whence))
+	if errno != _wasiESUCCESS {
+		return errno
+	}
+	binary.LittleEndian.PutUint64(out, uint64(n))
+	return _wasiESUCCESS
+}
+
+// iovecSlices64 is iovecSlices for the LP64 iovec layout: {u64 buf,
+// u64 len}, 16 bytes per entry.
+func (w *WasiStubs) iovecSlices64(m *Module, iovs, iovsLen int64) ([][]byte, bool) {
+	if iovsLen < 0 || iovsLen > 1<<20 {
+		return nil, false
+	}
+	iovecs := w.memSlice64(m, iovs, iovsLen*16)
+	if iovecs == nil {
+		return nil, false
+	}
+	bufs := make([][]byte, 0, iovsLen)
+	for i := int64(0); i < iovsLen; i++ {
+		bufPtr := binary.LittleEndian.Uint64(iovecs[i*16:])
+		bufLen := binary.LittleEndian.Uint64(iovecs[i*16+8:])
+		buf := w.memSlice64(m, int64(bufPtr), int64(bufLen))
+		if buf == nil {
+			return nil, false
+		}
+		bufs = append(bufs, buf)
+	}
+	return bufs, true
+}
+
+func (w *WasiStubs) Fd_write64(m *Module, fd int64, iovs int64, iovsLen int64, nwrittenPtr int64) int32 {
+	w.mu.Lock()
+	dst, _ := w.fdDstLocked(int32(fd))
+	w.mu.Unlock()
+	bufs, ok := w.iovecSlices64(m, iovs, iovsLen)
+
+	nwrittenSlice := w.memSlice64(m, nwrittenPtr, 8)
+	if !ok || nwrittenSlice == nil {
+		return _wasiEFAULT
+	}
+	if dst == nil {
+		binary.LittleEndian.PutUint64(nwrittenSlice, 0)
+		return _wasiEBADF
+	}
+	binary.LittleEndian.PutUint64(nwrittenSlice, writeVec(dst, bufs))
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Proc_exit64(m *Module, code int64) {
+	panic(&WasiExitError{Code: int32(code)})
+}
+
+// putStrVec64 packs ss as an LP64 char** table (8-byte guest pointers
+// at vec) plus NUL-terminated bodies (at buf, guest address bufBase).
+// Both slices must already be sized: len(ss)*8 and totalBytesPlusNul.
+func putStrVec64(vec, buf []byte, bufBase uint64, ss []string) int32 {
+	bufOff := uint64(0)
+	for i, s := range ss {
+		binary.LittleEndian.PutUint64(vec[i*8:], bufBase+bufOff)
+		n := copy(buf[bufOff:], s)
+		if n < len(s) {
+			return _wasiEFAULT
+		}
+		bufOff += uint64(n)
+		buf[bufOff] = 0
+		bufOff++
+	}
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Args_get64(m *Module, argv, argvBuf int64) int32 {
+	w.mu.Lock()
+	defer w.mu.Unlock()
+	argvSlice := w.memSlice64(m, argv, int64(len(w.args))*8)
+	if argvSlice == nil {
+		return _wasiEFAULT
+	}
+	total, ok := totalBytesPlusNul(w.args)
+	if !ok {
+		return _wasiEFAULT
+	}
+	argvBufSlice := w.memSlice64(m, argvBuf, int64(total))
+	if argvBufSlice == nil {
+		return _wasiEFAULT
+	}
+	return putStrVec64(argvSlice, argvBufSlice, uint64(argvBuf), w.args)
+}
+
+func (w *WasiStubs) Args_sizes_get64(m *Module, argcPtr, argvBufLenPtr int64) int32 {
+	w.mu.Lock()
+	defer w.mu.Unlock()
+	argcSlice := w.memSlice64(m, argcPtr, 8)
+	bufLenSlice := w.memSlice64(m, argvBufLenPtr, 8)
+	if argcSlice == nil || bufLenSlice == nil {
+		return _wasiEFAULT
+	}
+	total, ok := totalBytesPlusNul(w.args)
+	if !ok {
+		return _wasiEFAULT
+	}
+	binary.LittleEndian.PutUint64(argcSlice, uint64(len(w.args)))
+	binary.LittleEndian.PutUint64(bufLenSlice, uint64(total))
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Environ_get64(m *Module, envv, envBuf int64) int32 {
+	w.mu.Lock()
+	defer w.mu.Unlock()
+	envvSlice := w.memSlice64(m, envv, int64(len(w.env))*8)
+	if envvSlice == nil {
+		return _wasiEFAULT
+	}
+	total, ok := totalBytesPlusNul(w.env)
+	if !ok {
+		return _wasiEFAULT
+	}
+	envBufSlice := w.memSlice64(m, envBuf, int64(total))
+	if envBufSlice == nil {
+		return _wasiEFAULT
+	}
+	return putStrVec64(envvSlice, envBufSlice, uint64(envBuf), w.env)
+}
+
+func (w *WasiStubs) Environ_sizes_get64(m *Module, envcPtr, envBufLenPtr int64) int32 {
+	w.mu.Lock()
+	defer w.mu.Unlock()
+	envcSlice := w.memSlice64(m, envcPtr, 8)
+	bufLenSlice := w.memSlice64(m, envBufLenPtr, 8)
+	if envcSlice == nil || bufLenSlice == nil {
+		return _wasiEFAULT
+	}
+	total, ok := totalBytesPlusNul(w.env)
+	if !ok {
+		return _wasiEFAULT
+	}
+	binary.LittleEndian.PutUint64(envcSlice, uint64(len(w.env)))
+	binary.LittleEndian.PutUint64(bufLenSlice, uint64(total))
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Fd_fdstat_set_flags64(m *Module, fd, flags int64) int32 {
+	return w.Fd_fdstat_set_flags(m, int32(fd), int32(flags))
+}
+
+func (w *WasiStubs) Fd_prestat_get64(m *Module, fd, ptr int64) int32 {
+	if int32(fd) != 3 {
+		return _wasiEBADF
+	}
+
+	out := w.memSlice64(m, ptr, 16)
+	if out == nil {
+		return _wasiEFAULT
+	}
+	out[0] = 0
+	binary.LittleEndian.PutUint64(out[8:], 1)
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Fd_prestat_dir_name64(m *Module, fd, buf, buflen int64) int32 {
+	if int32(fd) != 3 {
+		return _wasiEBADF
+	}
+	if buflen < 1 {
+		return _wasiESUCCESS
+	}
+	out := w.memSlice64(m, buf, buflen)
+	if out == nil {
+		return _wasiEFAULT
+	}
+	out[0] = '/'
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Fd_read64(m *Module, fd, iovs, iovsLen, nreadPtr int64) int32 {
+	w.mu.Lock()
+	src, _ := w.fdSrcLocked(int32(fd))
+	w.mu.Unlock()
+	if src == nil {
+		return _wasiEBADF
+	}
+	bufs, ok := w.iovecSlices64(m, iovs, iovsLen)
+
+	nreadSlice := w.memSlice64(m, nreadPtr, 8)
+	if !ok || nreadSlice == nil {
+		return _wasiEFAULT
+	}
+	binary.LittleEndian.PutUint64(nreadSlice, readVec(src, bufs))
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Fd_readdir64(m *Module, fd, buf, buflen, cookie, bufusedPtr int64) int32 {
+
+	bufSlice := w.memSlice64(m, buf, buflen)
+	bufusedSlice := w.memSlice64(m, bufusedPtr, 8)
+	if bufSlice == nil || bufusedSlice == nil {
+		return _wasiEFAULT
+	}
+	written, errno := w.fdReaddir(int32(fd), bufSlice, cookie)
+	if errno != _wasiESUCCESS {
+		return errno
+	}
+	binary.LittleEndian.PutUint64(bufusedSlice, uint64(written))
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Path_open64(m *Module, dirFd, dirflags, pathPtr, pathLen, oflags, fsRightsBase, fsRightsInherit, fdflags, openedFdPtr int64) int32 {
+	if int32(dirFd) != 3 {
+		return _wasiEBADF
+	}
+	pathSlice := w.memSlice64(m, pathPtr, pathLen)
+
+	outSlice := w.memSlice64(m, openedFdPtr, 4)
+	if pathSlice == nil || outSlice == nil {
+		return _wasiEFAULT
+	}
+	fd, errno := w.pathOpen(string(pathSlice), int32(dirflags), int32(oflags), fsRightsBase, int32(fdflags))
+	if errno != _wasiESUCCESS {
+		return errno
+	}
+	binary.LittleEndian.PutUint32(outSlice, uint32(fd))
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Path_filestat_get64(m *Module, dirFd, flags, pathPtr, pathLen, outPtr int64) int32 {
+	if int32(dirFd) != 3 {
+		return _wasiEBADF
+	}
+	pathSlice := w.memSlice64(m, pathPtr, pathLen)
+
+	out := w.memSlice64(m, outPtr, 64)
+	if pathSlice == nil || out == nil {
+		return _wasiEFAULT
+	}
+	w.mu.Lock()
+	fsys := w.fsys
+	w.mu.Unlock()
+	rel := string(pathSlice)
+	var st os.FileInfo
+	var err error
+	if flags&0x1 != 0 {
+		st, err = fsys.Stat(rel)
+	} else {
+		st, err = fsys.Lstat(rel)
+	}
+	if err != nil {
+		return mapOSError(err)
+	}
+	writeFilestat(out, st)
+	return _wasiESUCCESS
+}
+
+func (w *WasiStubs) Random_get64(m *Module, buf, bufLen int64) int32 {
+	slice := w.memSlice64(m, buf, bufLen)
+	if slice == nil {
+		return _wasiEFAULT
+	}
+	if _, err := rand.Read(slice); err != nil {
+		return _wasiEIO
+	}
+	return _wasiESUCCESS
 }

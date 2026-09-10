@@ -1,4 +1,4 @@
-//go:build !amd64 && !arm64
+//go:build !arm64 && (!amd64 || !amd64.v2)
 
 package p0
 
@@ -7,1754 +7,1202 @@ import (
 	_ "unsafe"
 )
 
-//go:linkname Fn97 github.com/goccy/pythonwasm2go/p2.Fn97
-func Fn97(m *base.Module, l0 int32) int32
+//go:linkname Fn58 github.com/goccy/pythonwasm2go/p2.Fn58
+func Fn58(m *base.Module, l0 int32) int64
 
-//go:linkname Fn99 github.com/goccy/pythonwasm2go/p2.Fn99
-func Fn99(m *base.Module, l0 int32)
+//go:linkname Fn63 github.com/goccy/pythonwasm2go/p2.Fn63
+func Fn63(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn101 github.com/goccy/pythonwasm2go/p2.Fn101
-func Fn101(m *base.Module, l0 int32) int64
+//go:linkname Fn65 github.com/goccy/pythonwasm2go/p2.Fn65
+func Fn65(m *base.Module, l0 int32, l1 int64)
 
-//go:linkname Fn102 github.com/goccy/pythonwasm2go/p2.Fn102
-func Fn102(m *base.Module, l0 int32)
+//go:linkname Fn71 github.com/goccy/pythonwasm2go/p2.Fn71
+func Fn71(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn104 github.com/goccy/pythonwasm2go/p2.Fn104
-func Fn104(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn110 github.com/goccy/pythonwasm2go/p2.Fn110
+func Fn110(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn105 github.com/goccy/pythonwasm2go/p2.Fn105
-func Fn105(m *base.Module, l0 int32, l1 int64)
+//go:linkname Fn116 github.com/goccy/pythonwasm2go/p2.Fn116
+func Fn116(m *base.Module, l0 int32)
 
-//go:linkname Fn108 github.com/goccy/pythonwasm2go/p2.Fn108
-func Fn108(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn117 github.com/goccy/pythonwasm2go/p2.Fn117
+func Fn117(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn109 github.com/goccy/pythonwasm2go/p2.Fn109
-func Fn109(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn129 github.com/goccy/pythonwasm2go/p1.Fn129
+func Fn129(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn126 github.com/goccy/pythonwasm2go/p2.Fn126
-func Fn126(m *base.Module, l0 int32)
+//go:linkname Fn152 github.com/goccy/pythonwasm2go/p2.Fn152
+func Fn152(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn133 github.com/goccy/pythonwasm2go/p2.Fn133
-func Fn133(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn157 github.com/goccy/pythonwasm2go/p1.Fn157
+func Fn157(m *base.Module, l0 int32) int32
 
-//go:linkname Fn135 github.com/goccy/pythonwasm2go/p2.Fn135
-func Fn135(m *base.Module, l0 int32) int32
+//go:linkname Fn162 github.com/goccy/pythonwasm2go/p2.Fn162
+func Fn162(m *base.Module, l0 int32) int32
 
-//go:linkname Fn137 github.com/goccy/pythonwasm2go/p2.Fn137
-func Fn137(m *base.Module, l0 int32) int32
+//go:linkname Fn166 github.com/goccy/pythonwasm2go/p2.Fn166
+func Fn166(m *base.Module, l0 int32) int32
 
-//go:linkname Fn141 github.com/goccy/pythonwasm2go/p2.Fn141
-func Fn141(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn167 github.com/goccy/pythonwasm2go/p2.Fn167
+func Fn167(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn145 github.com/goccy/pythonwasm2go/p2.Fn145
-func Fn145(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn182 github.com/goccy/pythonwasm2go/p2.Fn182
+func Fn182(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn146 github.com/goccy/pythonwasm2go/p2.Fn146
-func Fn146(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn197 github.com/goccy/pythonwasm2go/p2.Fn197
+func Fn197(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn154 github.com/goccy/pythonwasm2go/p2.Fn154
-func Fn154(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn198 github.com/goccy/pythonwasm2go/p2.Fn198
+func Fn198(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn160 github.com/goccy/pythonwasm2go/p2.Fn160
-func Fn160(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn200 github.com/goccy/pythonwasm2go/p2.Fn200
+func Fn200(m *base.Module, l0 int32)
 
-//go:linkname Fn165 github.com/goccy/pythonwasm2go/p2.Fn165
-func Fn165(m *base.Module, l0 int32)
+//go:linkname Fn202 github.com/goccy/pythonwasm2go/p2.Fn202
+func Fn202(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn169 github.com/goccy/pythonwasm2go/p2.Fn169
-func Fn169(m *base.Module, l0 int32) int32
+//go:linkname Fn203 github.com/goccy/pythonwasm2go/p2.Fn203
+func Fn203(m *base.Module, l0 int32) int32
 
-//go:linkname Fn185 github.com/goccy/pythonwasm2go/p2.Fn185
-func Fn185(m *base.Module, l0 float64, l1 float64) int32
+//go:linkname Fn211 github.com/goccy/pythonwasm2go/p2.Fn211
+func Fn211(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn186 github.com/goccy/pythonwasm2go/p2.Fn186
-func Fn186(m *base.Module, l0 int32) float64
+//go:linkname Fn213 github.com/goccy/pythonwasm2go/p2.Fn213
+func Fn213(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn187 github.com/goccy/pythonwasm2go/p2.Fn187
-func Fn187(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn214 github.com/goccy/pythonwasm2go/p1.Fn214
+func Fn214(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn189 github.com/goccy/pythonwasm2go/p2.Fn189
-func Fn189(m *base.Module, l0 int32) float64
+//go:linkname Fn215 github.com/goccy/pythonwasm2go/p2.Fn215
+func Fn215(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn222 github.com/goccy/pythonwasm2go/p2.Fn222
+func Fn222(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn224 github.com/goccy/pythonwasm2go/p2.Fn224
+func Fn224(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn230 github.com/goccy/pythonwasm2go/p1.Fn230
+func Fn230(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn233 github.com/goccy/pythonwasm2go/p2.Fn233
+func Fn233(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn248 github.com/goccy/pythonwasm2go/p2.Fn248
+func Fn248(m *base.Module, l0 int32) int32
 
 //go:linkname Fn249 github.com/goccy/pythonwasm2go/p2.Fn249
-func Fn249(m *base.Module, l0 int32, l1 int32)
+func Fn249(m *base.Module, l0 int32) int32
 
-//go:linkname Fn254 github.com/goccy/pythonwasm2go/p2.Fn254
-func Fn254(m *base.Module, l0 int32)
+//go:linkname Fn250 github.com/goccy/pythonwasm2go/p2.Fn250
+func Fn250(m *base.Module, l0 int32) int32
 
-//go:linkname Fn255 github.com/goccy/pythonwasm2go/p2.Fn255
-func Fn255(m *base.Module, l0 int32)
+//go:linkname Fn254 github.com/goccy/pythonwasm2go/p1.Fn254
+func Fn254(m *base.Module, l0 int32) int32
 
 //go:linkname Fn257 github.com/goccy/pythonwasm2go/p2.Fn257
 func Fn257(m *base.Module, l0 int32) int32
 
-//go:linkname Fn260 github.com/goccy/pythonwasm2go/p2.Fn260
-func Fn260(m *base.Module, l0 int32) int32
-
-//go:linkname Fn261 github.com/goccy/pythonwasm2go/p2.Fn261
-func Fn261(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn262 github.com/goccy/pythonwasm2go/p2.Fn262
-func Fn262(m *base.Module, l0 int32) int32
-
-//go:linkname Fn263 github.com/goccy/pythonwasm2go/p2.Fn263
-func Fn263(m *base.Module, l0 int32) int32
-
-//go:linkname Fn264 github.com/goccy/pythonwasm2go/p2.Fn264
-func Fn264(m *base.Module, l0 int32) int32
-
-//go:linkname Fn265 github.com/goccy/pythonwasm2go/p2.Fn265
-func Fn265(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn267 github.com/goccy/pythonwasm2go/p1.Fn267
-func Fn267(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn268 github.com/goccy/pythonwasm2go/p2.Fn268
-func Fn268(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn270 github.com/goccy/pythonwasm2go/p2.Fn270
-func Fn270(m *base.Module, l0 int32) int32
-
-//go:linkname Fn274 github.com/goccy/pythonwasm2go/p1.Fn274
-func Fn274(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn275 github.com/goccy/pythonwasm2go/p2.Fn275
-func Fn275(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn278 github.com/goccy/pythonwasm2go/p1.Fn278
-func Fn278(m *base.Module, l0 int32) int32
-
-//go:linkname Fn286 github.com/goccy/pythonwasm2go/p1.Fn286
-func Fn286(m *base.Module, l0 int32, l1 int32)
-
 //go:linkname Fn293 github.com/goccy/pythonwasm2go/p2.Fn293
 func Fn293(m *base.Module, l0 int32) int32
 
-//go:linkname Fn328 github.com/goccy/pythonwasm2go/p2.Fn328
-func Fn328(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn338 github.com/goccy/pythonwasm2go/p2.Fn338
+func Fn338(m *base.Module, l0 int32) int32
 
-//go:linkname Fn388 github.com/goccy/pythonwasm2go/p2.Fn388
-func Fn388(m *base.Module, l0 int32) int32
+//go:linkname Fn437 github.com/goccy/pythonwasm2go/p2.Fn437
+func Fn437(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn416 github.com/goccy/pythonwasm2go/p1.Fn416
-func Fn416(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn442 github.com/goccy/pythonwasm2go/p2.Fn442
+func Fn442(m *base.Module, l0 int32)
 
-//go:linkname Fn420 github.com/goccy/pythonwasm2go/p2.Fn420
-func Fn420(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn443 github.com/goccy/pythonwasm2go/p2.Fn443
+func Fn443(m *base.Module, l0 int32)
 
-//go:linkname Fn421 github.com/goccy/pythonwasm2go/p2.Fn421
-func Fn421(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn445 github.com/goccy/pythonwasm2go/p2.Fn445
+func Fn445(m *base.Module, l0 int32) int32
 
 //go:linkname Fn449 github.com/goccy/pythonwasm2go/p2.Fn449
 func Fn449(m *base.Module, l0 int32) int32
 
+//go:linkname Fn450 github.com/goccy/pythonwasm2go/p2.Fn450
+func Fn450(m *base.Module, l0 int32) int32
+
+//go:linkname Fn454 github.com/goccy/pythonwasm2go/p1.Fn454
+func Fn454(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
 //go:linkname Fn457 github.com/goccy/pythonwasm2go/p2.Fn457
-func Fn457(m *base.Module, l0 int32, l1 int32) int32
+func Fn457(m *base.Module, l0 int32) int32
 
-//go:linkname Fn459 github.com/goccy/pythonwasm2go/p2.Fn459
-func Fn459(m *base.Module, l0 int32) int32
+//go:linkname Fn458 github.com/goccy/pythonwasm2go/p2.Fn458
+func Fn458(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn460 github.com/goccy/pythonwasm2go/p2.Fn460
-func Fn460(m *base.Module, l0 int32)
+//go:linkname Fn466 github.com/goccy/pythonwasm2go/p1.Fn466
+func Fn466(m *base.Module, l0 int32) int32
 
-//go:linkname Fn462 github.com/goccy/pythonwasm2go/p1.Fn462
-func Fn462(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn535 github.com/goccy/pythonwasm2go/p2.Fn535
+func Fn535(m *base.Module, l0 int32) int32
 
-//go:linkname Fn469 github.com/goccy/pythonwasm2go/p1.Fn469
-func Fn469(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn537 github.com/goccy/pythonwasm2go/p2.Fn537
+func Fn537(m *base.Module, l0 int32) int32
 
-//go:linkname Fn470 github.com/goccy/pythonwasm2go/p2.Fn470
-func Fn470(m *base.Module, l0 int32) int32
+//go:linkname Fn539 github.com/goccy/pythonwasm2go/p2.Fn539
+func Fn539(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn471 github.com/goccy/pythonwasm2go/p2.Fn471
-func Fn471(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn541 github.com/goccy/pythonwasm2go/p2.Fn541
+func Fn541(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn475 github.com/goccy/pythonwasm2go/p2.Fn475
-func Fn475(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn476 github.com/goccy/pythonwasm2go/p2.Fn476
-func Fn476(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn477 github.com/goccy/pythonwasm2go/p2.Fn477
-func Fn477(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn478 github.com/goccy/pythonwasm2go/p2.Fn478
-func Fn478(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn479 github.com/goccy/pythonwasm2go/p2.Fn479
-func Fn479(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn481 github.com/goccy/pythonwasm2go/p2.Fn481
-func Fn481(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn482 github.com/goccy/pythonwasm2go/p2.Fn482
-func Fn482(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn485 github.com/goccy/pythonwasm2go/p2.Fn485
-func Fn485(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn486 github.com/goccy/pythonwasm2go/p2.Fn486
-func Fn486(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn487 github.com/goccy/pythonwasm2go/p2.Fn487
-func Fn487(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn488 github.com/goccy/pythonwasm2go/p2.Fn488
-func Fn488(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn491 github.com/goccy/pythonwasm2go/p2.Fn491
-func Fn491(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn507 github.com/goccy/pythonwasm2go/p2.Fn507
-func Fn507(m *base.Module, l0 int32) int32
-
-//go:linkname Fn509 github.com/goccy/pythonwasm2go/p2.Fn509
-func Fn509(m *base.Module, l0 int32) int32
-
-//go:linkname Fn511 github.com/goccy/pythonwasm2go/p2.Fn511
-func Fn511(m *base.Module, l0 int32) int32
-
-//go:linkname Fn513 github.com/goccy/pythonwasm2go/p1.Fn513
-func Fn513(m *base.Module, l0 int32) int32
-
-//go:linkname Fn516 github.com/goccy/pythonwasm2go/p2.Fn516
-func Fn516(m *base.Module, l0 int32) int32
-
-//go:linkname Fn527 github.com/goccy/pythonwasm2go/p2.Fn527
-func Fn527(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn528 github.com/goccy/pythonwasm2go/p2.Fn528
-func Fn528(m *base.Module, l0 int32) int32
-
-//go:linkname Fn529 github.com/goccy/pythonwasm2go/p2.Fn529
-func Fn529(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn530 github.com/goccy/pythonwasm2go/p2.Fn530
-func Fn530(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn533 github.com/goccy/pythonwasm2go/p2.Fn533
-func Fn533(m *base.Module, l0 int32) int32
-
-//go:linkname Fn544 github.com/goccy/pythonwasm2go/p2.Fn544
-func Fn544(m *base.Module, l0 int32) int32
-
-//go:linkname Fn546 github.com/goccy/pythonwasm2go/p2.Fn546
-func Fn546(m *base.Module, l0 int32) int32
-
-//go:linkname Fn549 github.com/goccy/pythonwasm2go/p2.Fn549
-func Fn549(m *base.Module, l0 int32) int32
-
-//go:linkname Fn550 github.com/goccy/pythonwasm2go/p2.Fn550
-func Fn550(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn551 github.com/goccy/pythonwasm2go/p2.Fn551
-func Fn551(m *base.Module, l0 int32) int32
-
-//go:linkname Fn552 github.com/goccy/pythonwasm2go/p2.Fn552
-func Fn552(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn553 github.com/goccy/pythonwasm2go/p2.Fn553
-func Fn553(m *base.Module, l0 int32) int32
+//go:linkname Fn545 github.com/goccy/pythonwasm2go/p2.Fn545
+func Fn545(m *base.Module, l0 int32, l1 int32)
 
 //go:linkname Fn554 github.com/goccy/pythonwasm2go/p2.Fn554
-func Fn554(m *base.Module, l0 int32) int32
+func Fn554(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn558 github.com/goccy/pythonwasm2go/p2.Fn558
-func Fn558(m *base.Module, l0 int32)
+//go:linkname Fn565 github.com/goccy/pythonwasm2go/p2.Fn565
+func Fn565(m *base.Module, l0 int32)
 
-//go:linkname Fn582 github.com/goccy/pythonwasm2go/p2.Fn582
-func Fn582(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn571 github.com/goccy/pythonwasm2go/p2.Fn571
+func Fn571(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn653 github.com/goccy/pythonwasm2go/p2.Fn653
-func Fn653(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn572 github.com/goccy/pythonwasm2go/p2.Fn572
+func Fn572(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn655 github.com/goccy/pythonwasm2go/p2.Fn655
-func Fn655(m *base.Module, l0 int32) int32
+//go:linkname Fn573 github.com/goccy/pythonwasm2go/p2.Fn573
+func Fn573(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn656 github.com/goccy/pythonwasm2go/p2.Fn656
-func Fn656(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn583 github.com/goccy/pythonwasm2go/p2.Fn583
+func Fn583(m *base.Module, l0 int32)
 
-//go:linkname Fn686 github.com/goccy/pythonwasm2go/p2.Fn686
-func Fn686(m *base.Module, l0 int32) int32
+//go:linkname Fn589 github.com/goccy/pythonwasm2go/p2.Fn589
+func Fn589(m *base.Module, l0 int32) int32
 
-//go:linkname Fn689 github.com/goccy/pythonwasm2go/p2.Fn689
-func Fn689(m *base.Module, l0 int32) int32
+//go:linkname Fn723 github.com/goccy/pythonwasm2go/p2.Fn723
+func Fn723(m *base.Module, l0 int32) int32
 
-//go:linkname Fn692 github.com/goccy/pythonwasm2go/p2.Fn692
-func Fn692(m *base.Module, l0 int32)
+//go:linkname Fn727 github.com/goccy/pythonwasm2go/p2.Fn727
+func Fn727(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn697 github.com/goccy/pythonwasm2go/p2.Fn697
-func Fn697(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn729 github.com/goccy/pythonwasm2go/p2.Fn729
+func Fn729(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn698 github.com/goccy/pythonwasm2go/p2.Fn698
-func Fn698(m *base.Module, l0 int32) int32
+//go:linkname Fn877 github.com/goccy/pythonwasm2go/p2.Fn877
+func Fn877(m *base.Module, l0 int32) int32
 
-//go:linkname Fn699 github.com/goccy/pythonwasm2go/p1.Fn699
-func Fn699(m *base.Module, l0 int32) int32
+//go:linkname Fn878 github.com/goccy/pythonwasm2go/p1.Fn878
+func Fn878(m *base.Module, l0 int32) int32
 
-//go:linkname Fn714 github.com/goccy/pythonwasm2go/p2.Fn714
-func Fn714(m *base.Module, l0 int32) int32
+//go:linkname Fn892 github.com/goccy/pythonwasm2go/p2.Fn892
+func Fn892(m *base.Module, l0 int32) int32
 
-//go:linkname Fn757 github.com/goccy/pythonwasm2go/p2.Fn757
-func Fn757(m *base.Module, l0 int32, l1 int32, l2 float64) int32
+//go:linkname Fn948 github.com/goccy/pythonwasm2go/p1.Fn948
+func Fn948(m *base.Module) int32
 
-//go:linkname Fn760 github.com/goccy/pythonwasm2go/p1.Fn760
-func Fn760(m *base.Module, l0 int32) int32
+//go:linkname Fn951 github.com/goccy/pythonwasm2go/p2.Fn951
+func Fn951(m *base.Module, l0 int32)
 
-//go:linkname Fn773 github.com/goccy/pythonwasm2go/p1.Fn773
-func Fn773(m *base.Module, l0 float64, l1 int32, l2 int32) int32
+//go:linkname Fn966 github.com/goccy/pythonwasm2go/p1.Fn966
+func Fn966(m *base.Module, l0 float64, l1 int32, l2 int32) int32
 
-//go:linkname Fn776 github.com/goccy/pythonwasm2go/p1.Fn776
-func Fn776(m *base.Module, l0 int32, l1 int32) float64
+//go:linkname Fn969 github.com/goccy/pythonwasm2go/p1.Fn969
+func Fn969(m *base.Module, l0 int32, l1 int32) float64
 
-//go:linkname Fn824 github.com/goccy/pythonwasm2go/p2.Fn824
-func Fn824(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1001 github.com/goccy/pythonwasm2go/p2.Fn1001
+func Fn1001(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn825 github.com/goccy/pythonwasm2go/p2.Fn825
-func Fn825(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1011 github.com/goccy/pythonwasm2go/p1.Fn1011
+func Fn1011(m *base.Module, l0 int32) int32
 
-//go:linkname Fn826 github.com/goccy/pythonwasm2go/p2.Fn826
-func Fn826(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1013 github.com/goccy/pythonwasm2go/p1.Fn1013
+func Fn1013(m *base.Module, l0 int32) int32
 
-//go:linkname Fn845 github.com/goccy/pythonwasm2go/p2.Fn845
-func Fn845(m *base.Module, l0 int32)
+//go:linkname Fn1016 github.com/goccy/pythonwasm2go/p2.Fn1016
+func Fn1016(m *base.Module, l0 int32) int32
 
-//go:linkname Fn846 github.com/goccy/pythonwasm2go/p2.Fn846
-func Fn846(m *base.Module, l0 int32) int32
+//go:linkname Fn1020 github.com/goccy/pythonwasm2go/p2.Fn1020
+func Fn1020(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn854 github.com/goccy/pythonwasm2go/p2.Fn854
-func Fn854(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1021 github.com/goccy/pythonwasm2go/p2.Fn1021
+func Fn1021(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn855 github.com/goccy/pythonwasm2go/p2.Fn855
-func Fn855(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1023 github.com/goccy/pythonwasm2go/p2.Fn1023
+func Fn1023(m *base.Module, l0 int32) int32
 
-//go:linkname Fn857 github.com/goccy/pythonwasm2go/p2.Fn857
-func Fn857(m *base.Module, l0 int32)
+//go:linkname Fn1024 github.com/goccy/pythonwasm2go/p2.Fn1024
+func Fn1024(m *base.Module, l0 int32) int32
 
-//go:linkname Fn858 github.com/goccy/pythonwasm2go/p2.Fn858
-func Fn858(m *base.Module, l0 int32) int32
+//go:linkname Fn1025 github.com/goccy/pythonwasm2go/p2.Fn1025
+func Fn1025(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn860 github.com/goccy/pythonwasm2go/p1.Fn860
-func Fn860(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1035 github.com/goccy/pythonwasm2go/p2.Fn1035
+func Fn1035(m *base.Module, l0 int32) int32
 
-//go:linkname Fn875 github.com/goccy/pythonwasm2go/p2.Fn875
-func Fn875(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn1041 github.com/goccy/pythonwasm2go/p1.Fn1041
+func Fn1041(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn876 github.com/goccy/pythonwasm2go/p1.Fn876
-func Fn876(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn1052 github.com/goccy/pythonwasm2go/p2.Fn1052
+func Fn1052(m *base.Module, l0 int32)
 
-//go:linkname Fn877 github.com/goccy/pythonwasm2go/p1.Fn877
-func Fn877(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn1076 github.com/goccy/pythonwasm2go/p2.Fn1076
+func Fn1076(m *base.Module, l0 int32)
 
-//go:linkname Fn878 github.com/goccy/pythonwasm2go/p2.Fn878
-func Fn878(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1088 github.com/goccy/pythonwasm2go/p2.Fn1088
+func Fn1088(m *base.Module, l0 int32) int32
 
-//go:linkname Fn910 github.com/goccy/pythonwasm2go/p2.Fn910
-func Fn910(m *base.Module, l0 int32)
+//go:linkname Fn1099 github.com/goccy/pythonwasm2go/p2.Fn1099
+func Fn1099(m *base.Module, l0 int32)
 
-//go:linkname Fn911 github.com/goccy/pythonwasm2go/p2.Fn911
-func Fn911(m *base.Module, l0 int32) int32
+//go:linkname Fn1128 github.com/goccy/pythonwasm2go/p2.Fn1128
+func Fn1128(m *base.Module, l0 int32) int32
 
-//go:linkname Fn921 github.com/goccy/pythonwasm2go/p2.Fn921
-func Fn921(m *base.Module, l0 int32) int32
+//go:linkname Fn1129 github.com/goccy/pythonwasm2go/p1.Fn1129
+func Fn1129(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn922 github.com/goccy/pythonwasm2go/p2.Fn922
-func Fn922(m *base.Module, l0 int32) int32
+//go:linkname Fn1199 github.com/goccy/pythonwasm2go/p2.Fn1199
+func Fn1199(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn926 github.com/goccy/pythonwasm2go/p2.Fn926
-func Fn926(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1200 github.com/goccy/pythonwasm2go/p2.Fn1200
+func Fn1200(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn927 github.com/goccy/pythonwasm2go/p2.Fn927
-func Fn927(m *base.Module, l0 int32) int64
+//go:linkname Fn1202 github.com/goccy/pythonwasm2go/p2.Fn1202
+func Fn1202(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn928 github.com/goccy/pythonwasm2go/p1.Fn928
-func Fn928(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn1220 github.com/goccy/pythonwasm2go/p2.Fn1220
+func Fn1220(m *base.Module, l0 int32)
 
-//go:linkname Fn929 github.com/goccy/pythonwasm2go/p2.Fn929
-func Fn929(m *base.Module, l0 int32) int32
+//go:linkname Fn1229 github.com/goccy/pythonwasm2go/p2.Fn1229
+func Fn1229(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn930 github.com/goccy/pythonwasm2go/p2.Fn930
-func Fn930(m *base.Module, l0 int32) int32
+//go:linkname Fn1232 github.com/goccy/pythonwasm2go/p2.Fn1232
+func Fn1232(m *base.Module, l0 int32)
 
-//go:linkname Fn931 github.com/goccy/pythonwasm2go/p2.Fn931
-func Fn931(m *base.Module, l0 int32)
+//go:linkname Fn1250 github.com/goccy/pythonwasm2go/p2.Fn1250
+func Fn1250(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn934 github.com/goccy/pythonwasm2go/p2.Fn934
-func Fn934(m *base.Module, l0 int32) int32
+//go:linkname Fn1251 github.com/goccy/pythonwasm2go/p1.Fn1251
+func Fn1251(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn943 github.com/goccy/pythonwasm2go/p2.Fn943
-func Fn943(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1252 github.com/goccy/pythonwasm2go/p1.Fn1252
+func Fn1252(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn944 github.com/goccy/pythonwasm2go/p2.Fn944
-func Fn944(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1285 github.com/goccy/pythonwasm2go/p2.Fn1285
+func Fn1285(m *base.Module, l0 int32)
 
-//go:linkname Fn947 github.com/goccy/pythonwasm2go/p1.Fn947
-func Fn947(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname Fn1296 github.com/goccy/pythonwasm2go/p2.Fn1296
+func Fn1296(m *base.Module, l0 int32) int32
 
-//go:linkname Fn948 github.com/goccy/pythonwasm2go/p2.Fn948
-func Fn948(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn1302 github.com/goccy/pythonwasm2go/p2.Fn1302
+func Fn1302(m *base.Module, l0 int32) int64
 
-//go:linkname Fn950 github.com/goccy/pythonwasm2go/p2.Fn950
-func Fn950(m *base.Module, l0 int32)
+//go:linkname Fn1303 github.com/goccy/pythonwasm2go/p1.Fn1303
+func Fn1303(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn954 github.com/goccy/pythonwasm2go/p1.Fn954
-func Fn954(m *base.Module, l0 int32, l1 int32) float64
+//go:linkname Fn1304 github.com/goccy/pythonwasm2go/p2.Fn1304
+func Fn1304(m *base.Module, l0 int32) int32
 
-//go:linkname Fn960 github.com/goccy/pythonwasm2go/p2.Fn960
-func Fn960(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1305 github.com/goccy/pythonwasm2go/p2.Fn1305
+func Fn1305(m *base.Module, l0 int32) int32
 
-//go:linkname Fn963 github.com/goccy/pythonwasm2go/p2.Fn963
-func Fn963(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1306 github.com/goccy/pythonwasm2go/p2.Fn1306
+func Fn1306(m *base.Module, l0 int32)
 
-//go:linkname Fn964 github.com/goccy/pythonwasm2go/p2.Fn964
-func Fn964(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1316 github.com/goccy/pythonwasm2go/p2.Fn1316
+func Fn1316(m *base.Module, l0 int32, l1 int32) int64
 
-//go:linkname Fn972 github.com/goccy/pythonwasm2go/p2.Fn972
-func Fn972(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1323 github.com/goccy/pythonwasm2go/p1.Fn1323
+func Fn1323(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn973 github.com/goccy/pythonwasm2go/p1.Fn973
-func Fn973(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1324 github.com/goccy/pythonwasm2go/p2.Fn1324
+func Fn1324(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn988 github.com/goccy/pythonwasm2go/p2.Fn988
-func Fn988(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1326 github.com/goccy/pythonwasm2go/p2.Fn1326
+func Fn1326(m *base.Module, l0 int32)
 
-//go:linkname Fn989 github.com/goccy/pythonwasm2go/p2.Fn989
-func Fn989(m *base.Module, l0 int32)
+//go:linkname Fn1327 github.com/goccy/pythonwasm2go/p2.Fn1327
+func Fn1327(m *base.Module, l0 int64) int32
 
-//go:linkname Fn990 github.com/goccy/pythonwasm2go/p2.Fn990
-func Fn990(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1330 github.com/goccy/pythonwasm2go/p1.Fn1330
+func Fn1330(m *base.Module, l0 int32, l1 int32) float64
 
-//go:linkname Fn991 github.com/goccy/pythonwasm2go/p2.Fn991
-func Fn991(m *base.Module, l0 int32) int32
+//go:linkname Fn1331 github.com/goccy/pythonwasm2go/p2.Fn1331
+func Fn1331(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn1000 github.com/goccy/pythonwasm2go/p1.Fn1000
-func Fn1000(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn1332 github.com/goccy/pythonwasm2go/p2.Fn1332
+func Fn1332(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn1059 github.com/goccy/pythonwasm2go/p2.Fn1059
-func Fn1059(m *base.Module, l0 int32) int32
+//go:linkname Fn1336 github.com/goccy/pythonwasm2go/p2.Fn1336
+func Fn1336(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1115 github.com/goccy/pythonwasm2go/p2.Fn1115
-func Fn1115(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1337 github.com/goccy/pythonwasm2go/p2.Fn1337
+func Fn1337(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1118 github.com/goccy/pythonwasm2go/p2.Fn1118
-func Fn1118(m *base.Module, l0 int32) int32
+//go:linkname Fn1338 github.com/goccy/pythonwasm2go/p1.Fn1338
+func Fn1338(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1119 github.com/goccy/pythonwasm2go/p2.Fn1119
-func Fn1119(m *base.Module, l0 int32)
+//go:linkname Fn1341 github.com/goccy/pythonwasm2go/p1.Fn1341
+func Fn1341(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1120 github.com/goccy/pythonwasm2go/p2.Fn1120
-func Fn1120(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1343 github.com/goccy/pythonwasm2go/p2.Fn1343
+func Fn1343(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1121 github.com/goccy/pythonwasm2go/p2.Fn1121
-func Fn1121(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1351 github.com/goccy/pythonwasm2go/p2.Fn1351
+func Fn1351(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1123 github.com/goccy/pythonwasm2go/p2.Fn1123
-func Fn1123(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1352 github.com/goccy/pythonwasm2go/p1.Fn1352
+func Fn1352(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn1130 github.com/goccy/pythonwasm2go/p2.Fn1130
-func Fn1130(m *base.Module, l0 int32)
+//go:linkname Fn1377 github.com/goccy/pythonwasm2go/p1.Fn1377
+func Fn1377(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn1132 github.com/goccy/pythonwasm2go/p2.Fn1132
-func Fn1132(m *base.Module, l0 int32) int32
+//go:linkname Fn1407 github.com/goccy/pythonwasm2go/p2.Fn1407
+func Fn1407(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1133 github.com/goccy/pythonwasm2go/p2.Fn1133
-func Fn1133(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn1410 github.com/goccy/pythonwasm2go/p2.Fn1410
+func Fn1410(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1134 github.com/goccy/pythonwasm2go/p1.Fn1134
-func Fn1134(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn1411 github.com/goccy/pythonwasm2go/p2.Fn1411
+func Fn1411(m *base.Module, l0 int32)
 
-//go:linkname Fn1142 github.com/goccy/pythonwasm2go/p2.Fn1142
-func Fn1142(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1412 github.com/goccy/pythonwasm2go/p2.Fn1412
+func Fn1412(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1149 github.com/goccy/pythonwasm2go/p2.Fn1149
-func Fn1149(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1413 github.com/goccy/pythonwasm2go/p2.Fn1413
+func Fn1413(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn1155 github.com/goccy/pythonwasm2go/p2.Fn1155
-func Fn1155(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn1414 github.com/goccy/pythonwasm2go/p2.Fn1414
+func Fn1414(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn1156 github.com/goccy/pythonwasm2go/p2.Fn1156
-func Fn1156(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1415 github.com/goccy/pythonwasm2go/p2.Fn1415
+func Fn1415(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1162 github.com/goccy/pythonwasm2go/p1.Fn1162
-func Fn1162(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn1416 github.com/goccy/pythonwasm2go/p2.Fn1416
+func Fn1416(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1169 github.com/goccy/pythonwasm2go/p2.Fn1169
-func Fn1169(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1423 github.com/goccy/pythonwasm2go/p2.Fn1423
+func Fn1423(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn1173 github.com/goccy/pythonwasm2go/p2.Fn1173
-func Fn1173(m *base.Module, l0 int32) int32
+//go:linkname Fn1424 github.com/goccy/pythonwasm2go/p1.Fn1424
+func Fn1424(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn1184 github.com/goccy/pythonwasm2go/p2.Fn1184
-func Fn1184(m *base.Module, l0 int32) int32
+//go:linkname Fn1432 github.com/goccy/pythonwasm2go/p2.Fn1432
+func Fn1432(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1188 github.com/goccy/pythonwasm2go/p2.Fn1188
-func Fn1188(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1189 github.com/goccy/pythonwasm2go/p2.Fn1189
-func Fn1189(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1204 github.com/goccy/pythonwasm2go/p2.Fn1204
-func Fn1204(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1224 github.com/goccy/pythonwasm2go/p2.Fn1224
-func Fn1224(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1225 github.com/goccy/pythonwasm2go/p2.Fn1225
-func Fn1225(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn1235 github.com/goccy/pythonwasm2go/p2.Fn1235
-func Fn1235(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn1240 github.com/goccy/pythonwasm2go/p2.Fn1240
-func Fn1240(m *base.Module, l0 int32)
-
-//go:linkname Fn1241 github.com/goccy/pythonwasm2go/p2.Fn1241
-func Fn1241(m *base.Module, l0 int32)
-
-//go:linkname Fn1242 github.com/goccy/pythonwasm2go/p2.Fn1242
-func Fn1242(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1243 github.com/goccy/pythonwasm2go/p2.Fn1243
-func Fn1243(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1247 github.com/goccy/pythonwasm2go/p2.Fn1247
-func Fn1247(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn1248 github.com/goccy/pythonwasm2go/p2.Fn1248
-func Fn1248(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn1288 github.com/goccy/pythonwasm2go/p2.Fn1288
-func Fn1288(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn1289 github.com/goccy/pythonwasm2go/p1.Fn1289
-func Fn1289(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn1290 github.com/goccy/pythonwasm2go/p2.Fn1290
-func Fn1290(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn1291 github.com/goccy/pythonwasm2go/p2.Fn1291
-func Fn1291(m *base.Module, l0 int32)
-
-//go:linkname Fn1293 github.com/goccy/pythonwasm2go/p2.Fn1293
-func Fn1293(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1383 github.com/goccy/pythonwasm2go/p2.Fn1383
-func Fn1383(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1390 github.com/goccy/pythonwasm2go/p2.Fn1390
-func Fn1390(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1391 github.com/goccy/pythonwasm2go/p1.Fn1391
-func Fn1391(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1393 github.com/goccy/pythonwasm2go/p2.Fn1393
-func Fn1393(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1397 github.com/goccy/pythonwasm2go/p2.Fn1397
-func Fn1397(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1399 github.com/goccy/pythonwasm2go/p2.Fn1399
-func Fn1399(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1400 github.com/goccy/pythonwasm2go/p2.Fn1400
-func Fn1400(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1404 github.com/goccy/pythonwasm2go/p2.Fn1404
-func Fn1404(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1428 github.com/goccy/pythonwasm2go/p2.Fn1428
-func Fn1428(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1441 github.com/goccy/pythonwasm2go/p2.Fn1441
-func Fn1441(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn1442 github.com/goccy/pythonwasm2go/p1.Fn1442
-func Fn1442(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1444 github.com/goccy/pythonwasm2go/p1.Fn1444
-func Fn1444(m *base.Module, l0 int32) int32
-
-//go:linkname Fn1449 github.com/goccy/pythonwasm2go/p1.Fn1449
-func Fn1449(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32, l14 int32, l15 int32, l16 int32, l17 int32) int32
+//go:linkname Fn1445 github.com/goccy/pythonwasm2go/p2.Fn1445
+func Fn1445(m *base.Module, l0 int32, l1 int32, l2 int32)
 
 //go:linkname Fn1452 github.com/goccy/pythonwasm2go/p2.Fn1452
-func Fn1452(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1453 github.com/goccy/pythonwasm2go/p2.Fn1453
-func Fn1453(m *base.Module, l0 int32, l1 int32)
+func Fn1452(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
 //go:linkname Fn1454 github.com/goccy/pythonwasm2go/p2.Fn1454
-func Fn1454(m *base.Module, l0 int32) int32
+func Fn1454(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn1456 github.com/goccy/pythonwasm2go/p2.Fn1456
-func Fn1456(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1455 github.com/goccy/pythonwasm2go/p2.Fn1455
+func Fn1455(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1468 github.com/goccy/pythonwasm2go/p2.Fn1468
-func Fn1468(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1463 github.com/goccy/pythonwasm2go/p2.Fn1463
+func Fn1463(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1471 github.com/goccy/pythonwasm2go/p1.Fn1471
-func Fn1471(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1464 github.com/goccy/pythonwasm2go/p1.Fn1464
+func Fn1464(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1472 github.com/goccy/pythonwasm2go/p1.Fn1472
-func Fn1472(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname Fn1476 github.com/goccy/pythonwasm2go/p2.Fn1476
+func Fn1476(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1475 github.com/goccy/pythonwasm2go/p2.Fn1475
-func Fn1475(m *base.Module, l0 int32) int32
+//go:linkname Fn1480 github.com/goccy/pythonwasm2go/p2.Fn1480
+func Fn1480(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1483 github.com/goccy/pythonwasm2go/p2.Fn1483
-func Fn1483(m *base.Module, l0 int32)
+//go:linkname Fn1481 github.com/goccy/pythonwasm2go/p2.Fn1481
+func Fn1481(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1497 github.com/goccy/pythonwasm2go/p2.Fn1497
-func Fn1497(m *base.Module, l0 int32) int32
+//go:linkname Fn1516 github.com/goccy/pythonwasm2go/p2.Fn1516
+func Fn1516(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1498 github.com/goccy/pythonwasm2go/p2.Fn1498
-func Fn1498(m *base.Module, l0 int32) int32
+//go:linkname Fn1517 github.com/goccy/pythonwasm2go/p2.Fn1517
+func Fn1517(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1499 github.com/goccy/pythonwasm2go/p2.Fn1499
-func Fn1499(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1533 github.com/goccy/pythonwasm2go/p2.Fn1533
+func Fn1533(m *base.Module, l0 int32)
 
-//go:linkname Fn1511 github.com/goccy/pythonwasm2go/p2.Fn1511
-func Fn1511(m *base.Module, l0 int32) int32
+//go:linkname Fn1541 github.com/goccy/pythonwasm2go/p2.Fn1541
+func Fn1541(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1512 github.com/goccy/pythonwasm2go/p1.Fn1512
-func Fn1512(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1580 github.com/goccy/pythonwasm2go/p2.Fn1580
+func Fn1580(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1563 github.com/goccy/pythonwasm2go/p2.Fn1563
-func Fn1563(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn1581 github.com/goccy/pythonwasm2go/p2.Fn1581
+func Fn1581(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1566 github.com/goccy/pythonwasm2go/p2.Fn1566
-func Fn1566(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1582 github.com/goccy/pythonwasm2go/p2.Fn1582
+func Fn1582(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1567 github.com/goccy/pythonwasm2go/p2.Fn1567
-func Fn1567(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1583 github.com/goccy/pythonwasm2go/p2.Fn1583
+func Fn1583(m *base.Module, l0 int32)
 
-//go:linkname Fn1585 github.com/goccy/pythonwasm2go/p2.Fn1585
-func Fn1585(m *base.Module, l0 int32) int32
+//go:linkname Fn1586 github.com/goccy/pythonwasm2go/p2.Fn1586
+func Fn1586(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1646 github.com/goccy/pythonwasm2go/p2.Fn1646
-func Fn1646(m *base.Module, l0 int32) int32
+//go:linkname Fn1589 github.com/goccy/pythonwasm2go/p2.Fn1589
+func Fn1589(m *base.Module, l0 int32)
 
-//go:linkname Fn1657 github.com/goccy/pythonwasm2go/p2.Fn1657
-func Fn1657(m *base.Module, l0 int32) int32
+//go:linkname Fn1592 github.com/goccy/pythonwasm2go/p2.Fn1592
+func Fn1592(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn1675 github.com/goccy/pythonwasm2go/p2.Fn1675
+func Fn1675(m *base.Module, l0 int32) int32
+
+//go:linkname Fn1676 github.com/goccy/pythonwasm2go/p2.Fn1676
+func Fn1676(m *base.Module, l0 int32) int32
+
+//go:linkname Fn1681 github.com/goccy/pythonwasm2go/p2.Fn1681
+func Fn1681(m *base.Module, l0 int32) int32
+
+//go:linkname Fn1683 github.com/goccy/pythonwasm2go/p1.Fn1683
+func Fn1683(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn1684 github.com/goccy/pythonwasm2go/p2.Fn1684
+func Fn1684(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn1685 github.com/goccy/pythonwasm2go/p2.Fn1685
 func Fn1685(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1745 github.com/goccy/pythonwasm2go/p2.Fn1745
-func Fn1745(m *base.Module, l0 int32) int32
+//go:linkname Fn1686 github.com/goccy/pythonwasm2go/p2.Fn1686
+func Fn1686(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1766 github.com/goccy/pythonwasm2go/p2.Fn1766
-func Fn1766(m *base.Module, l0 int32) int32
+//go:linkname Fn1688 github.com/goccy/pythonwasm2go/p2.Fn1688
+func Fn1688(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn1769 github.com/goccy/pythonwasm2go/p2.Fn1769
-func Fn1769(m *base.Module, l0 int32) int32
+//go:linkname Fn1689 github.com/goccy/pythonwasm2go/p2.Fn1689
+func Fn1689(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1771 github.com/goccy/pythonwasm2go/p2.Fn1771
-func Fn1771(m *base.Module, l0 int32) int32
+//go:linkname Fn1690 github.com/goccy/pythonwasm2go/p2.Fn1690
+func Fn1690(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1773 github.com/goccy/pythonwasm2go/p1.Fn1773
-func Fn1773(m *base.Module, l0 int32)
+//go:linkname Fn1691 github.com/goccy/pythonwasm2go/p2.Fn1691
+func Fn1691(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1775 github.com/goccy/pythonwasm2go/p2.Fn1775
-func Fn1775(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1694 github.com/goccy/pythonwasm2go/p2.Fn1694
+func Fn1694(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1776 github.com/goccy/pythonwasm2go/p2.Fn1776
-func Fn1776(m *base.Module, l0 int32)
+//go:linkname Fn1696 github.com/goccy/pythonwasm2go/p2.Fn1696
+func Fn1696(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1786 github.com/goccy/pythonwasm2go/p1.Fn1786
-func Fn1786(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1790 github.com/goccy/pythonwasm2go/p2.Fn1790
+func Fn1790(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn1789 github.com/goccy/pythonwasm2go/p2.Fn1789
-func Fn1789(m *base.Module, l0 int32) int32
+//go:linkname Fn1794 github.com/goccy/pythonwasm2go/p2.Fn1794
+func Fn1794(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1795 github.com/goccy/pythonwasm2go/p2.Fn1795
-func Fn1795(m *base.Module, l0 int32) int32
+//go:linkname Fn1796 github.com/goccy/pythonwasm2go/p2.Fn1796
+func Fn1796(m *base.Module, l0 int32) int32
+
+//go:linkname Fn1799 github.com/goccy/pythonwasm2go/p1.Fn1799
+func Fn1799(m *base.Module, l0 int32)
 
 //go:linkname Fn1801 github.com/goccy/pythonwasm2go/p2.Fn1801
-func Fn1801(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn1801(m *base.Module, l0 int32)
 
-//go:linkname Fn1804 github.com/goccy/pythonwasm2go/p2.Fn1804
-func Fn1804(m *base.Module, l0 int32) int32
+//go:linkname Fn1802 github.com/goccy/pythonwasm2go/p2.Fn1802
+func Fn1802(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1805 github.com/goccy/pythonwasm2go/p2.Fn1805
-func Fn1805(m *base.Module, l0 int32)
-
-//go:linkname Fn1807 github.com/goccy/pythonwasm2go/p2.Fn1807
-func Fn1807(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1803 github.com/goccy/pythonwasm2go/p2.Fn1803
+func Fn1803(m *base.Module, l0 int32)
 
 //go:linkname Fn1815 github.com/goccy/pythonwasm2go/p2.Fn1815
-func Fn1815(m *base.Module, l0 int32) int32
+func Fn1815(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn1823 github.com/goccy/pythonwasm2go/p2.Fn1823
-func Fn1823(m *base.Module, l0 int32)
+//go:linkname Fn1822 github.com/goccy/pythonwasm2go/p2.Fn1822
+func Fn1822(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1826 github.com/goccy/pythonwasm2go/p2.Fn1826
-func Fn1826(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn1830 github.com/goccy/pythonwasm2go/p2.Fn1830
+func Fn1830(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn1828 github.com/goccy/pythonwasm2go/p2.Fn1828
-func Fn1828(m *base.Module, l0 int32) int32
+//go:linkname Fn1844 github.com/goccy/pythonwasm2go/p2.Fn1844
+func Fn1844(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1834 github.com/goccy/pythonwasm2go/p1.Fn1834
-func Fn1834(m *base.Module) int32
+//go:linkname Fn1846 github.com/goccy/pythonwasm2go/p2.Fn1846
+func Fn1846(m *base.Module, l0 int32)
 
-//go:linkname Fn1836 github.com/goccy/pythonwasm2go/p2.Fn1836
-func Fn1836(m *base.Module, l0 int32) int32
+//go:linkname Fn1852 github.com/goccy/pythonwasm2go/p2.Fn1852
+func Fn1852(m *base.Module, l0 int32)
 
-//go:linkname Fn1838 github.com/goccy/pythonwasm2go/p1.Fn1838
-func Fn1838(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1861 github.com/goccy/pythonwasm2go/p2.Fn1861
+func Fn1861(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1855 github.com/goccy/pythonwasm2go/p2.Fn1855
-func Fn1855(m *base.Module) int32
+//go:linkname Fn1862 github.com/goccy/pythonwasm2go/p2.Fn1862
+func Fn1862(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1860 github.com/goccy/pythonwasm2go/p1.Fn1860
-func Fn1860(m *base.Module, l0 int32) int32
+//go:linkname Fn1868 github.com/goccy/pythonwasm2go/p1.Fn1868
+func Fn1868(m *base.Module) int32
 
-//go:linkname Fn1867 github.com/goccy/pythonwasm2go/p2.Fn1867
-func Fn1867(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn1870 github.com/goccy/pythonwasm2go/p2.Fn1870
+func Fn1870(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1871 github.com/goccy/pythonwasm2go/p2.Fn1871
-func Fn1871(m *base.Module) int64
+//go:linkname Fn1872 github.com/goccy/pythonwasm2go/p1.Fn1872
+func Fn1872(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1877 github.com/goccy/pythonwasm2go/p2.Fn1877
-func Fn1877(m *base.Module, l0 int32)
+//go:linkname Fn1880 github.com/goccy/pythonwasm2go/p1.Fn1880
+func Fn1880(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn1879 github.com/goccy/pythonwasm2go/p2.Fn1879
-func Fn1879(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1882 github.com/goccy/pythonwasm2go/p2.Fn1882
+func Fn1882(m *base.Module, l0 int32)
 
-//go:linkname Fn1887 github.com/goccy/pythonwasm2go/p2.Fn1887
-func Fn1887(m *base.Module, l0 int32)
+//go:linkname Fn1883 github.com/goccy/pythonwasm2go/p2.Fn1883
+func Fn1883(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1890 github.com/goccy/pythonwasm2go/p2.Fn1890
-func Fn1890(m *base.Module)
+//go:linkname Fn1885 github.com/goccy/pythonwasm2go/p2.Fn1885
+func Fn1885(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn1893 github.com/goccy/pythonwasm2go/p2.Fn1893
-func Fn1893(m *base.Module)
+//go:linkname Fn1886 github.com/goccy/pythonwasm2go/p2.Fn1886
+func Fn1886(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1897 github.com/goccy/pythonwasm2go/p2.Fn1897
-func Fn1897(m *base.Module, l0 int32)
+//go:linkname Fn1891 github.com/goccy/pythonwasm2go/p1.Fn1891
+func Fn1891(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1899 github.com/goccy/pythonwasm2go/p2.Fn1899
-func Fn1899(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn1894 github.com/goccy/pythonwasm2go/p1.Fn1894
+func Fn1894(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1901 github.com/goccy/pythonwasm2go/p2.Fn1901
-func Fn1901(m *base.Module, l0 int32)
+//go:linkname Fn1896 github.com/goccy/pythonwasm2go/p2.Fn1896
+func Fn1896(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1904 github.com/goccy/pythonwasm2go/p1.Fn1904
-func Fn1904(m *base.Module) int32
+//go:linkname Fn1898 github.com/goccy/pythonwasm2go/p2.Fn1898
+func Fn1898(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn1916 github.com/goccy/pythonwasm2go/p2.Fn1916
-func Fn1916(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn1907 github.com/goccy/pythonwasm2go/p1.Fn1907
+func Fn1907(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn1923 github.com/goccy/pythonwasm2go/p2.Fn1923
-func Fn1923(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1913 github.com/goccy/pythonwasm2go/p2.Fn1913
+func Fn1913(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1954 github.com/goccy/pythonwasm2go/p2.Fn1954
-func Fn1954(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn1914 github.com/goccy/pythonwasm2go/p2.Fn1914
+func Fn1914(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 
-//go:linkname Fn1956 github.com/goccy/pythonwasm2go/p1.Fn1956
-func Fn1956(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32, l4 int32)
+//go:linkname Fn1920 github.com/goccy/pythonwasm2go/p2.Fn1920
+func Fn1920(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn1957 github.com/goccy/pythonwasm2go/p2.Fn1957
-func Fn1957(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn1925 github.com/goccy/pythonwasm2go/p1.Fn1925
+func Fn1925(m *base.Module)
 
-//go:linkname Fn1958 github.com/goccy/pythonwasm2go/p2.Fn1958
-func Fn1958(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32)
+//go:linkname Fn1928 github.com/goccy/pythonwasm2go/p2.Fn1928
+func Fn1928(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1959 github.com/goccy/pythonwasm2go/p2.Fn1959
-func Fn1959(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn1929 github.com/goccy/pythonwasm2go/p2.Fn1929
+func Fn1929(m *base.Module, l0 int32)
 
-//go:linkname Fn1960 github.com/goccy/pythonwasm2go/p1.Fn1960
-func Fn1960(m *base.Module, l0 int64, l1 int64, l2 int32, l3 int32)
+//go:linkname Fn1950 github.com/goccy/pythonwasm2go/p2.Fn1950
+func Fn1950(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn1970 github.com/goccy/pythonwasm2go/p2.Fn1970
-func Fn1970(m *base.Module, l0 int32) int32
+//go:linkname Fn1990 github.com/goccy/pythonwasm2go/p1.Fn1990
+func Fn1990(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32, l4 int32)
 
-//go:linkname Fn1975 github.com/goccy/pythonwasm2go/p2.Fn1975
-func Fn1975(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2012 github.com/goccy/pythonwasm2go/p1.Fn2012
+func Fn2012(m *base.Module, l0 int32)
 
-//go:linkname Fn1978 github.com/goccy/pythonwasm2go/p1.Fn1978
-func Fn1978(m *base.Module, l0 int32)
+//go:linkname Fn2015 github.com/goccy/pythonwasm2go/p2.Fn2015
+func Fn2015(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1979 github.com/goccy/pythonwasm2go/p2.Fn1979
-func Fn1979(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2016 github.com/goccy/pythonwasm2go/p2.Fn2016
+func Fn2016(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn1981 github.com/goccy/pythonwasm2go/p2.Fn1981
-func Fn1981(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2017 github.com/goccy/pythonwasm2go/p2.Fn2017
+func Fn2017(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1982 github.com/goccy/pythonwasm2go/p2.Fn1982
-func Fn1982(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2018 github.com/goccy/pythonwasm2go/p2.Fn2018
+func Fn2018(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1983 github.com/goccy/pythonwasm2go/p2.Fn1983
-func Fn1983(m *base.Module, l0 int32) int32
+//go:linkname Fn2019 github.com/goccy/pythonwasm2go/p2.Fn2019
+func Fn2019(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1984 github.com/goccy/pythonwasm2go/p2.Fn1984
-func Fn1984(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2020 github.com/goccy/pythonwasm2go/p2.Fn2020
+func Fn2020(m *base.Module, l0 int32)
 
-//go:linkname Fn1986 github.com/goccy/pythonwasm2go/p2.Fn1986
-func Fn1986(m *base.Module, l0 int32)
+//go:linkname Fn2021 github.com/goccy/pythonwasm2go/p2.Fn2021
+func Fn2021(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1987 github.com/goccy/pythonwasm2go/p2.Fn1987
-func Fn1987(m *base.Module, l0 int32) int32
+//go:linkname Fn2022 github.com/goccy/pythonwasm2go/p2.Fn2022
+func Fn2022(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1988 github.com/goccy/pythonwasm2go/p2.Fn1988
-func Fn1988(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2023 github.com/goccy/pythonwasm2go/p2.Fn2023
+func Fn2023(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1989 github.com/goccy/pythonwasm2go/p2.Fn1989
-func Fn1989(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2024 github.com/goccy/pythonwasm2go/p2.Fn2024
+func Fn2024(m *base.Module, l0 int32)
 
-//go:linkname Fn1990 github.com/goccy/pythonwasm2go/p2.Fn1990
-func Fn1990(m *base.Module, l0 int32)
+//go:linkname Fn2025 github.com/goccy/pythonwasm2go/p2.Fn2025
+func Fn2025(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1991 github.com/goccy/pythonwasm2go/p2.Fn1991
-func Fn1991(m *base.Module, l0 int32) int32
+//go:linkname Fn2026 github.com/goccy/pythonwasm2go/p2.Fn2026
+func Fn2026(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1992 github.com/goccy/pythonwasm2go/p2.Fn1992
-func Fn1992(m *base.Module, l0 int32) int32
+//go:linkname Fn2027 github.com/goccy/pythonwasm2go/p2.Fn2027
+func Fn2027(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1993 github.com/goccy/pythonwasm2go/p2.Fn1993
-func Fn1993(m *base.Module, l0 int32) int32
+//go:linkname Fn2028 github.com/goccy/pythonwasm2go/p2.Fn2028
+func Fn2028(m *base.Module, l0 int32)
 
-//go:linkname Fn1994 github.com/goccy/pythonwasm2go/p2.Fn1994
-func Fn1994(m *base.Module, l0 int32)
+//go:linkname Fn2029 github.com/goccy/pythonwasm2go/p2.Fn2029
+func Fn2029(m *base.Module, l0 int32) int32
 
-//go:linkname Fn1995 github.com/goccy/pythonwasm2go/p2.Fn1995
-func Fn1995(m *base.Module, l0 int32) int32
+//go:linkname Fn2031 github.com/goccy/pythonwasm2go/p2.Fn2031
+func Fn2031(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn1996 github.com/goccy/pythonwasm2go/p2.Fn1996
-func Fn1996(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2032 github.com/goccy/pythonwasm2go/p2.Fn2032
+func Fn2032(m *base.Module, l0 int32)
 
-//go:linkname Fn1997 github.com/goccy/pythonwasm2go/p2.Fn1997
-func Fn1997(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn1998 github.com/goccy/pythonwasm2go/p2.Fn1998
-func Fn1998(m *base.Module, l0 int32)
-
-//go:linkname Fn2065 github.com/goccy/pythonwasm2go/p2.Fn2065
-func Fn2065(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2068 github.com/goccy/pythonwasm2go/p2.Fn2068
-func Fn2068(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2071 github.com/goccy/pythonwasm2go/p2.Fn2071
-func Fn2071(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2078 github.com/goccy/pythonwasm2go/p2.Fn2078
-func Fn2078(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn2096 github.com/goccy/pythonwasm2go/p2.Fn2096
-func Fn2096(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2097 github.com/goccy/pythonwasm2go/p2.Fn2097
-func Fn2097(m *base.Module, l0 int32) int32
+//go:linkname Fn2057 github.com/goccy/pythonwasm2go/p2.Fn2057
+func Fn2057(m *base.Module, l0 int64, l1 int64, l2 int32)
 
 //go:linkname Fn2102 github.com/goccy/pythonwasm2go/p2.Fn2102
 func Fn2102(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2110 github.com/goccy/pythonwasm2go/p2.Fn2110
-func Fn2110(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2106 github.com/goccy/pythonwasm2go/p2.Fn2106
+func Fn2106(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2111 github.com/goccy/pythonwasm2go/p2.Fn2111
-func Fn2111(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2112 github.com/goccy/pythonwasm2go/p2.Fn2112
+func Fn2112(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2115 github.com/goccy/pythonwasm2go/p2.Fn2115
-func Fn2115(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn2121 github.com/goccy/pythonwasm2go/p2.Fn2121
+func Fn2121(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2156 github.com/goccy/pythonwasm2go/p2.Fn2156
-func Fn2156(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2137 github.com/goccy/pythonwasm2go/p2.Fn2137
+func Fn2137(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2158 github.com/goccy/pythonwasm2go/p2.Fn2158
-func Fn2158(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2145 github.com/goccy/pythonwasm2go/p2.Fn2145
+func Fn2145(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2173 github.com/goccy/pythonwasm2go/p2.Fn2173
-func Fn2173(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn2150 github.com/goccy/pythonwasm2go/p2.Fn2150
+func Fn2150(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
-//go:linkname Fn2174 github.com/goccy/pythonwasm2go/p2.Fn2174
-func Fn2174(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2192 github.com/goccy/pythonwasm2go/p1.Fn2192
+func Fn2192(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2175 github.com/goccy/pythonwasm2go/p1.Fn2175
-func Fn2175(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn2195 github.com/goccy/pythonwasm2go/p2.Fn2195
+func Fn2195(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn2189 github.com/goccy/pythonwasm2go/p2.Fn2189
-func Fn2189(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2196 github.com/goccy/pythonwasm2go/p2.Fn2196
+func Fn2196(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn2198 github.com/goccy/pythonwasm2go/p2.Fn2198
-func Fn2198(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2211 github.com/goccy/pythonwasm2go/p1.Fn2211
+func Fn2211(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn2202 github.com/goccy/pythonwasm2go/p2.Fn2202
-func Fn2202(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2212 github.com/goccy/pythonwasm2go/p2.Fn2212
+func Fn2212(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2204 github.com/goccy/pythonwasm2go/p2.Fn2204
-func Fn2204(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2213 github.com/goccy/pythonwasm2go/p2.Fn2213
+func Fn2213(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2227 github.com/goccy/pythonwasm2go/p2.Fn2227
-func Fn2227(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2214 github.com/goccy/pythonwasm2go/p1.Fn2214
+func Fn2214(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn2228 github.com/goccy/pythonwasm2go/p2.Fn2228
-func Fn2228(m *base.Module, l0 int32) int32
+//go:linkname Fn2234 github.com/goccy/pythonwasm2go/p2.Fn2234
+func Fn2234(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2230 github.com/goccy/pythonwasm2go/p2.Fn2230
-func Fn2230(m *base.Module, l0 int32) int32
+//go:linkname Fn2241 github.com/goccy/pythonwasm2go/p2.Fn2241
+func Fn2241(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2231 github.com/goccy/pythonwasm2go/p2.Fn2231
-func Fn2231(m *base.Module, l0 int32) int32
+//go:linkname Fn2251 github.com/goccy/pythonwasm2go/p1.Fn2251
+func Fn2251(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2233 github.com/goccy/pythonwasm2go/p2.Fn2233
-func Fn2233(m *base.Module, l0 int32) int32
+//go:linkname Fn2262 github.com/goccy/pythonwasm2go/p2.Fn2262
+func Fn2262(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2235 github.com/goccy/pythonwasm2go/p2.Fn2235
-func Fn2235(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2263 github.com/goccy/pythonwasm2go/p2.Fn2263
+func Fn2263(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2240 github.com/goccy/pythonwasm2go/p2.Fn2240
-func Fn2240(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2264 github.com/goccy/pythonwasm2go/p2.Fn2264
+func Fn2264(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2242 github.com/goccy/pythonwasm2go/p2.Fn2242
-func Fn2242(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2266 github.com/goccy/pythonwasm2go/p2.Fn2266
+func Fn2266(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2244 github.com/goccy/pythonwasm2go/p2.Fn2244
-func Fn2244(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2267 github.com/goccy/pythonwasm2go/p2.Fn2267
+func Fn2267(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2247 github.com/goccy/pythonwasm2go/p2.Fn2247
-func Fn2247(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2254 github.com/goccy/pythonwasm2go/p2.Fn2254
-func Fn2254(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn2255 github.com/goccy/pythonwasm2go/p2.Fn2255
-func Fn2255(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2256 github.com/goccy/pythonwasm2go/p2.Fn2256
-func Fn2256(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn2271 github.com/goccy/pythonwasm2go/p2.Fn2271
-func Fn2271(m *base.Module, l0 int32) int32
+//go:linkname Fn2269 github.com/goccy/pythonwasm2go/p2.Fn2269
+func Fn2269(m *base.Module, l0 int32) int32
 
 //go:linkname Fn2272 github.com/goccy/pythonwasm2go/p2.Fn2272
 func Fn2272(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2274 github.com/goccy/pythonwasm2go/p2.Fn2274
-func Fn2274(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2273 github.com/goccy/pythonwasm2go/p2.Fn2273
+func Fn2273(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2275 github.com/goccy/pythonwasm2go/p1.Fn2275
-func Fn2275(m *base.Module, l0 int32) int32
+//go:linkname Fn2278 github.com/goccy/pythonwasm2go/p2.Fn2278
+func Fn2278(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2276 github.com/goccy/pythonwasm2go/p2.Fn2276
-func Fn2276(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn2277 github.com/goccy/pythonwasm2go/p2.Fn2277
-func Fn2277(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2279 github.com/goccy/pythonwasm2go/p2.Fn2279
+func Fn2279(m *base.Module) int32
 
 //go:linkname Fn2280 github.com/goccy/pythonwasm2go/p2.Fn2280
-func Fn2280(m *base.Module, l0 int32) int32
+func Fn2280(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn2281 github.com/goccy/pythonwasm2go/p2.Fn2281
-func Fn2281(m *base.Module, l0 int32) int32
+//go:linkname Fn2283 github.com/goccy/pythonwasm2go/p2.Fn2283
+func Fn2283(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2285 github.com/goccy/pythonwasm2go/p2.Fn2285
-func Fn2285(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2286 github.com/goccy/pythonwasm2go/p2.Fn2286
-func Fn2286(m *base.Module, l0 int32) int32
+//go:linkname Fn2290 github.com/goccy/pythonwasm2go/p2.Fn2290
+func Fn2290(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn2291 github.com/goccy/pythonwasm2go/p2.Fn2291
-func Fn2291(m *base.Module, l0 int32) int32
+func Fn2291(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn2292 github.com/goccy/pythonwasm2go/p2.Fn2292
-func Fn2292(m *base.Module, l0 int32, l1 int32) int32
+func Fn2292(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2297 github.com/goccy/pythonwasm2go/p2.Fn2297
-func Fn2297(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2293 github.com/goccy/pythonwasm2go/p2.Fn2293
+func Fn2293(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2303 github.com/goccy/pythonwasm2go/p2.Fn2303
-func Fn2303(m *base.Module, l0 int32)
+//go:linkname Fn2307 github.com/goccy/pythonwasm2go/p2.Fn2307
+func Fn2307(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2304 github.com/goccy/pythonwasm2go/p2.Fn2304
-func Fn2304(m *base.Module, l0 int32)
+//go:linkname Fn2317 github.com/goccy/pythonwasm2go/p2.Fn2317
+func Fn2317(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2319 github.com/goccy/pythonwasm2go/p2.Fn2319
-func Fn2319(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2326 github.com/goccy/pythonwasm2go/p2.Fn2326
+func Fn2326(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2320 github.com/goccy/pythonwasm2go/p2.Fn2320
-func Fn2320(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2328 github.com/goccy/pythonwasm2go/p2.Fn2328
+func Fn2328(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2321 github.com/goccy/pythonwasm2go/p1.Fn2321
-func Fn2321(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2327 github.com/goccy/pythonwasm2go/p2.Fn2327
-func Fn2327(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2333 github.com/goccy/pythonwasm2go/p2.Fn2333
+func Fn2333(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn2340 github.com/goccy/pythonwasm2go/p2.Fn2340
-func Fn2340(m *base.Module, l0 int32, l1 int32) int32
+func Fn2340(m *base.Module, l0 int32)
 
-//go:linkname Fn2342 github.com/goccy/pythonwasm2go/p1.Fn2342
-func Fn2342(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn2346 github.com/goccy/pythonwasm2go/p2.Fn2346
+func Fn2346(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2343 github.com/goccy/pythonwasm2go/p2.Fn2343
-func Fn2343(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2357 github.com/goccy/pythonwasm2go/p1.Fn2357
+func Fn2357(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2350 github.com/goccy/pythonwasm2go/p2.Fn2350
-func Fn2350(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn2365 github.com/goccy/pythonwasm2go/p1.Fn2365
+func Fn2365(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2386 github.com/goccy/pythonwasm2go/p2.Fn2386
-func Fn2386(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2378 github.com/goccy/pythonwasm2go/p2.Fn2378
+func Fn2378(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn2408 github.com/goccy/pythonwasm2go/p2.Fn2408
-func Fn2408(m *base.Module) int32
+//go:linkname Fn2379 github.com/goccy/pythonwasm2go/p2.Fn2379
+func Fn2379(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2601 github.com/goccy/pythonwasm2go/p2.Fn2601
-func Fn2601(m *base.Module, l0 int32) int32
+//go:linkname Fn2387 github.com/goccy/pythonwasm2go/p1.Fn2387
+func Fn2387(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2602 github.com/goccy/pythonwasm2go/p2.Fn2602
-func Fn2602(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2388 github.com/goccy/pythonwasm2go/p1.Fn2388
+func Fn2388(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn2604 github.com/goccy/pythonwasm2go/p2.Fn2604
-func Fn2604(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn2606 github.com/goccy/pythonwasm2go/p2.Fn2606
-func Fn2606(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2607 github.com/goccy/pythonwasm2go/p2.Fn2607
-func Fn2607(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2608 github.com/goccy/pythonwasm2go/p2.Fn2608
-func Fn2608(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn2612 github.com/goccy/pythonwasm2go/p2.Fn2612
-func Fn2612(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2619 github.com/goccy/pythonwasm2go/p1.Fn2619
-func Fn2619(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn2620 github.com/goccy/pythonwasm2go/p2.Fn2620
-func Fn2620(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2623 github.com/goccy/pythonwasm2go/p2.Fn2623
-func Fn2623(m *base.Module, l0 int32)
-
-//go:linkname Fn2631 github.com/goccy/pythonwasm2go/p2.Fn2631
-func Fn2631(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2636 github.com/goccy/pythonwasm2go/p2.Fn2636
-func Fn2636(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2637 github.com/goccy/pythonwasm2go/p2.Fn2637
+func Fn2637(m *base.Module, l0 int32) int32
 
 //go:linkname Fn2638 github.com/goccy/pythonwasm2go/p2.Fn2638
 func Fn2638(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2656 github.com/goccy/pythonwasm2go/p2.Fn2656
-func Fn2656(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn2640 github.com/goccy/pythonwasm2go/p2.Fn2640
+func Fn2640(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 
-//go:linkname Fn2660 github.com/goccy/pythonwasm2go/p1.Fn2660
-func Fn2660(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2641 github.com/goccy/pythonwasm2go/p1.Fn2641
+func Fn2641(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn2663 github.com/goccy/pythonwasm2go/p2.Fn2663
-func Fn2663(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2642 github.com/goccy/pythonwasm2go/p1.Fn2642
+func Fn2642(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2669 github.com/goccy/pythonwasm2go/p2.Fn2669
-func Fn2669(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2643 github.com/goccy/pythonwasm2go/p2.Fn2643
+func Fn2643(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2670 github.com/goccy/pythonwasm2go/p2.Fn2670
-func Fn2670(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn2644 github.com/goccy/pythonwasm2go/p2.Fn2644
+func Fn2644(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+
+//go:linkname Fn2648 github.com/goccy/pythonwasm2go/p2.Fn2648
+func Fn2648(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2656 github.com/goccy/pythonwasm2go/p1.Fn2656
+func Fn2656(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+
+//go:linkname Fn2657 github.com/goccy/pythonwasm2go/p2.Fn2657
+func Fn2657(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2660 github.com/goccy/pythonwasm2go/p2.Fn2660
+func Fn2660(m *base.Module, l0 int32)
+
+//go:linkname Fn2668 github.com/goccy/pythonwasm2go/p2.Fn2668
+func Fn2668(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn2673 github.com/goccy/pythonwasm2go/p2.Fn2673
 func Fn2673(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2677 github.com/goccy/pythonwasm2go/p2.Fn2677
-func Fn2677(m *base.Module, l0 int32) int32
+//go:linkname Fn2675 github.com/goccy/pythonwasm2go/p2.Fn2675
+func Fn2675(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2686 github.com/goccy/pythonwasm2go/p1.Fn2686
-func Fn2686(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn2693 github.com/goccy/pythonwasm2go/p2.Fn2693
+func Fn2693(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn2689 github.com/goccy/pythonwasm2go/p1.Fn2689
-func Fn2689(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn2696 github.com/goccy/pythonwasm2go/p2.Fn2696
+func Fn2696(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2695 github.com/goccy/pythonwasm2go/p2.Fn2695
-func Fn2695(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2700 github.com/goccy/pythonwasm2go/p2.Fn2700
+func Fn2700(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2697 github.com/goccy/pythonwasm2go/p2.Fn2697
-func Fn2697(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2706 github.com/goccy/pythonwasm2go/p2.Fn2706
+func Fn2706(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2699 github.com/goccy/pythonwasm2go/p2.Fn2699
-func Fn2699(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn2715 github.com/goccy/pythonwasm2go/p2.Fn2715
+func Fn2715(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2708 github.com/goccy/pythonwasm2go/p2.Fn2708
-func Fn2708(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2714 github.com/goccy/pythonwasm2go/p1.Fn2714
-func Fn2714(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn2718 github.com/goccy/pythonwasm2go/p2.Fn2718
-func Fn2718(m *base.Module) int32
-
-//go:linkname Fn2720 github.com/goccy/pythonwasm2go/p1.Fn2720
-func Fn2720(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn2724 github.com/goccy/pythonwasm2go/p2.Fn2724
-func Fn2724(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2732 github.com/goccy/pythonwasm2go/p2.Fn2732
-func Fn2732(m *base.Module, l0 int32) int32
+//go:linkname Fn2733 github.com/goccy/pythonwasm2go/p2.Fn2733
+func Fn2733(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn2735 github.com/goccy/pythonwasm2go/p2.Fn2735
-func Fn2735(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+func Fn2735(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn2737 github.com/goccy/pythonwasm2go/p2.Fn2737
 func Fn2737(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
 //go:linkname Fn2738 github.com/goccy/pythonwasm2go/p2.Fn2738
-func Fn2738(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+func Fn2738(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn2739 github.com/goccy/pythonwasm2go/p2.Fn2739
-func Fn2739(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+func Fn2739(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2742 github.com/goccy/pythonwasm2go/p2.Fn2742
-func Fn2742(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn2743 github.com/goccy/pythonwasm2go/p2.Fn2743
-func Fn2743(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn2744 github.com/goccy/pythonwasm2go/p1.Fn2744
-func Fn2744(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn2745 github.com/goccy/pythonwasm2go/p1.Fn2745
-func Fn2745(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn2746 github.com/goccy/pythonwasm2go/p1.Fn2746
-func Fn2746(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn2747 github.com/goccy/pythonwasm2go/p1.Fn2747
-func Fn2747(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn2748 github.com/goccy/pythonwasm2go/p2.Fn2748
-func Fn2748(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn2749 github.com/goccy/pythonwasm2go/p2.Fn2749
-func Fn2749(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn2751 github.com/goccy/pythonwasm2go/p1.Fn2751
-func Fn2751(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn2752 github.com/goccy/pythonwasm2go/p2.Fn2752
-func Fn2752(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2741 github.com/goccy/pythonwasm2go/p2.Fn2741
+func Fn2741(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn2753 github.com/goccy/pythonwasm2go/p1.Fn2753
-func Fn2753(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn2754 github.com/goccy/pythonwasm2go/p2.Fn2754
-func Fn2754(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+func Fn2753(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
 //go:linkname Fn2755 github.com/goccy/pythonwasm2go/p1.Fn2755
-func Fn2755(m *base.Module, l0 int32, l1 int32) int32
+func Fn2755(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn2756 github.com/goccy/pythonwasm2go/p2.Fn2756
-func Fn2756(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2762 github.com/goccy/pythonwasm2go/p1.Fn2762
+func Fn2762(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn2758 github.com/goccy/pythonwasm2go/p1.Fn2758
-func Fn2758(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2779 github.com/goccy/pythonwasm2go/p2.Fn2779
+func Fn2779(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2759 github.com/goccy/pythonwasm2go/p2.Fn2759
-func Fn2759(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2760 github.com/goccy/pythonwasm2go/p1.Fn2760
-func Fn2760(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2761 github.com/goccy/pythonwasm2go/p2.Fn2761
-func Fn2761(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2764 github.com/goccy/pythonwasm2go/p2.Fn2764
-func Fn2764(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2765 github.com/goccy/pythonwasm2go/p1.Fn2765
-func Fn2765(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn2767 github.com/goccy/pythonwasm2go/p2.Fn2767
-func Fn2767(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2768 github.com/goccy/pythonwasm2go/p2.Fn2768
-func Fn2768(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2769 github.com/goccy/pythonwasm2go/p2.Fn2769
-func Fn2769(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn2772 github.com/goccy/pythonwasm2go/p2.Fn2772
-func Fn2772(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn2774 github.com/goccy/pythonwasm2go/p2.Fn2774
-func Fn2774(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn2777 github.com/goccy/pythonwasm2go/p2.Fn2777
-func Fn2777(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2778 github.com/goccy/pythonwasm2go/p2.Fn2778
-func Fn2778(m *base.Module, l0 int32)
-
-//go:linkname Fn2781 github.com/goccy/pythonwasm2go/p2.Fn2781
-func Fn2781(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2782 github.com/goccy/pythonwasm2go/p2.Fn2782
-func Fn2782(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2780 github.com/goccy/pythonwasm2go/p2.Fn2780
+func Fn2780(m *base.Module, l0 int32) int32
 
 //go:linkname Fn2783 github.com/goccy/pythonwasm2go/p2.Fn2783
-func Fn2783(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn2784 github.com/goccy/pythonwasm2go/p2.Fn2784
-func Fn2784(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn2786 github.com/goccy/pythonwasm2go/p2.Fn2786
-func Fn2786(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn2783(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 
 //go:linkname Fn2789 github.com/goccy/pythonwasm2go/p2.Fn2789
-func Fn2789(m *base.Module, l0 int32) int32
-
-//go:linkname Fn2790 github.com/goccy/pythonwasm2go/p1.Fn2790
-func Fn2790(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn2791 github.com/goccy/pythonwasm2go/p2.Fn2791
-func Fn2791(m *base.Module, l0 int32) int32
+func Fn2789(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
 //go:linkname Fn2792 github.com/goccy/pythonwasm2go/p2.Fn2792
-func Fn2792(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn2792(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn2793 github.com/goccy/pythonwasm2go/p2.Fn2793
+func Fn2793(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn2794 github.com/goccy/pythonwasm2go/p1.Fn2794
+func Fn2794(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn2795 github.com/goccy/pythonwasm2go/p1.Fn2795
+func Fn2795(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+
+//go:linkname Fn2796 github.com/goccy/pythonwasm2go/p1.Fn2796
+func Fn2796(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+
+//go:linkname Fn2797 github.com/goccy/pythonwasm2go/p1.Fn2797
+func Fn2797(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+
+//go:linkname Fn2798 github.com/goccy/pythonwasm2go/p2.Fn2798
+func Fn2798(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn2799 github.com/goccy/pythonwasm2go/p2.Fn2799
+func Fn2799(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn2801 github.com/goccy/pythonwasm2go/p2.Fn2801
+func Fn2801(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn2803 github.com/goccy/pythonwasm2go/p1.Fn2803
+func Fn2803(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn2804 github.com/goccy/pythonwasm2go/p2.Fn2804
-func Fn2804(m *base.Module, l0 int32)
+func Fn2804(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
-//go:linkname Fn2805 github.com/goccy/pythonwasm2go/p2.Fn2805
-func Fn2805(m *base.Module, l0 int32) int32
+//go:linkname Fn2805 github.com/goccy/pythonwasm2go/p1.Fn2805
+func Fn2805(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn2806 github.com/goccy/pythonwasm2go/p2.Fn2806
-func Fn2806(m *base.Module, l0 int32)
+func Fn2806(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn2808 github.com/goccy/pythonwasm2go/p1.Fn2808
+func Fn2808(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn2809 github.com/goccy/pythonwasm2go/p2.Fn2809
+func Fn2809(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn2811 github.com/goccy/pythonwasm2go/p1.Fn2811
+func Fn2811(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn2812 github.com/goccy/pythonwasm2go/p2.Fn2812
-func Fn2812(m *base.Module, l0 int32) int32
+func Fn2812(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2813 github.com/goccy/pythonwasm2go/p2.Fn2813
-func Fn2813(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2815 github.com/goccy/pythonwasm2go/p2.Fn2815
+func Fn2815(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn2886 github.com/goccy/pythonwasm2go/p2.Fn2886
-func Fn2886(m *base.Module, l0 int32) int32
+//go:linkname Fn2816 github.com/goccy/pythonwasm2go/p1.Fn2816
+func Fn2816(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn2911 github.com/goccy/pythonwasm2go/p2.Fn2911
-func Fn2911(m *base.Module, l0 int32) int32
+//go:linkname Fn2818 github.com/goccy/pythonwasm2go/p2.Fn2818
+func Fn2818(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2920 github.com/goccy/pythonwasm2go/p2.Fn2920
-func Fn2920(m *base.Module, l0 int32) int32
+//go:linkname Fn2823 github.com/goccy/pythonwasm2go/p2.Fn2823
+func Fn2823(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn2924 github.com/goccy/pythonwasm2go/p2.Fn2924
-func Fn2924(m *base.Module, l0 int32) int32
+//go:linkname Fn2824 github.com/goccy/pythonwasm2go/p1.Fn2824
+func Fn2824(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn2931 github.com/goccy/pythonwasm2go/p2.Fn2931
-func Fn2931(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2826 github.com/goccy/pythonwasm2go/p2.Fn2826
+func Fn2826(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn2954 github.com/goccy/pythonwasm2go/p2.Fn2954
-func Fn2954(m *base.Module, l0 int32) int32
+//go:linkname Fn2831 github.com/goccy/pythonwasm2go/p2.Fn2831
+func Fn2831(m *base.Module, l0 int32) int32
 
-//go:linkname Fn2955 github.com/goccy/pythonwasm2go/p2.Fn2955
-func Fn2955(m *base.Module, l0 int32)
+//go:linkname Fn2832 github.com/goccy/pythonwasm2go/p2.Fn2832
+func Fn2832(m *base.Module, l0 int32)
 
-//go:linkname Fn2979 github.com/goccy/pythonwasm2go/p2.Fn2979
-func Fn2979(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn2833 github.com/goccy/pythonwasm2go/p2.Fn2833
+func Fn2833(m *base.Module, l0 int32, l1 int32)
+
+//go:linkname Fn2835 github.com/goccy/pythonwasm2go/p2.Fn2835
+func Fn2835(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn2836 github.com/goccy/pythonwasm2go/p2.Fn2836
+func Fn2836(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn2839 github.com/goccy/pythonwasm2go/p2.Fn2839
+func Fn2839(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn2841 github.com/goccy/pythonwasm2go/p2.Fn2841
+func Fn2841(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn2843 github.com/goccy/pythonwasm2go/p2.Fn2843
+func Fn2843(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2844 github.com/goccy/pythonwasm2go/p1.Fn2844
+func Fn2844(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn2859 github.com/goccy/pythonwasm2go/p2.Fn2859
+func Fn2859(m *base.Module, l0 int32)
+
+//go:linkname Fn2860 github.com/goccy/pythonwasm2go/p2.Fn2860
+func Fn2860(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2868 github.com/goccy/pythonwasm2go/p2.Fn2868
+func Fn2868(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn2941 github.com/goccy/pythonwasm2go/p2.Fn2941
+func Fn2941(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2966 github.com/goccy/pythonwasm2go/p2.Fn2966
+func Fn2966(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2967 github.com/goccy/pythonwasm2go/p2.Fn2967
+func Fn2967(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2968 github.com/goccy/pythonwasm2go/p2.Fn2968
+func Fn2968(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2971 github.com/goccy/pythonwasm2go/p2.Fn2971
+func Fn2971(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2973 github.com/goccy/pythonwasm2go/p2.Fn2973
+func Fn2973(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2974 github.com/goccy/pythonwasm2go/p2.Fn2974
+func Fn2974(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2978 github.com/goccy/pythonwasm2go/p2.Fn2978
+func Fn2978(m *base.Module, l0 int32) int32
+
+//go:linkname Fn2985 github.com/goccy/pythonwasm2go/p2.Fn2985
+func Fn2985(m *base.Module, l0 int32) int32
 
 //go:linkname Fn2986 github.com/goccy/pythonwasm2go/p2.Fn2986
-func Fn2986(m *base.Module, l0 int32) int32
+func Fn2986(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn2987 github.com/goccy/pythonwasm2go/p2.Fn2987
-func Fn2987(m *base.Module, l0 int32, l1 int32)
+func Fn2987(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3030 github.com/goccy/pythonwasm2go/p2.Fn3030
-func Fn3030(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2988 github.com/goccy/pythonwasm2go/p2.Fn2988
+func Fn2988(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3047 github.com/goccy/pythonwasm2go/p2.Fn3047
-func Fn3047(m *base.Module, l0 int32) int32
+//go:linkname Fn2989 github.com/goccy/pythonwasm2go/p1.Fn2989
+func Fn2989(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3057 github.com/goccy/pythonwasm2go/p2.Fn3057
-func Fn3057(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn2990 github.com/goccy/pythonwasm2go/p2.Fn2990
+func Fn2990(m *base.Module, l0 int32)
 
-//go:linkname Fn3058 github.com/goccy/pythonwasm2go/p2.Fn3058
-func Fn3058(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn2991 github.com/goccy/pythonwasm2go/p1.Fn2991
+func Fn2991(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3059 github.com/goccy/pythonwasm2go/p2.Fn3059
-func Fn3059(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3010 github.com/goccy/pythonwasm2go/p2.Fn3010
+func Fn3010(m *base.Module, l0 int32)
 
-//go:linkname Fn3060 github.com/goccy/pythonwasm2go/p2.Fn3060
-func Fn3060(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3011 github.com/goccy/pythonwasm2go/p2.Fn3011
+func Fn3011(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn3061 github.com/goccy/pythonwasm2go/p2.Fn3061
-func Fn3061(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3062 github.com/goccy/pythonwasm2go/p2.Fn3062
-func Fn3062(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32) int32
-
-//go:linkname Fn3063 github.com/goccy/pythonwasm2go/p2.Fn3063
-func Fn3063(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32) int32
-
-//go:linkname Fn3064 github.com/goccy/pythonwasm2go/p2.Fn3064
-func Fn3064(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32) int32
-
-//go:linkname Fn3065 github.com/goccy/pythonwasm2go/p2.Fn3065
-func Fn3065(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3066 github.com/goccy/pythonwasm2go/p2.Fn3066
-func Fn3066(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3067 github.com/goccy/pythonwasm2go/p2.Fn3067
-func Fn3067(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3068 github.com/goccy/pythonwasm2go/p2.Fn3068
-func Fn3068(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3069 github.com/goccy/pythonwasm2go/p2.Fn3069
-func Fn3069(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3070 github.com/goccy/pythonwasm2go/p2.Fn3070
-func Fn3070(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
-
-//go:linkname Fn3071 github.com/goccy/pythonwasm2go/p2.Fn3071
-func Fn3071(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
-
-//go:linkname Fn3072 github.com/goccy/pythonwasm2go/p2.Fn3072
-func Fn3072(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
-
-//go:linkname Fn3073 github.com/goccy/pythonwasm2go/p2.Fn3073
-func Fn3073(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3074 github.com/goccy/pythonwasm2go/p2.Fn3074
-func Fn3074(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3075 github.com/goccy/pythonwasm2go/p2.Fn3075
-func Fn3075(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3076 github.com/goccy/pythonwasm2go/p2.Fn3076
-func Fn3076(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3077 github.com/goccy/pythonwasm2go/p2.Fn3077
-func Fn3077(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3078 github.com/goccy/pythonwasm2go/p2.Fn3078
-func Fn3078(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3079 github.com/goccy/pythonwasm2go/p2.Fn3079
-func Fn3079(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
-
-//go:linkname Fn3080 github.com/goccy/pythonwasm2go/p2.Fn3080
-func Fn3080(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
-
-//go:linkname Fn3081 github.com/goccy/pythonwasm2go/p2.Fn3081
-func Fn3081(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3082 github.com/goccy/pythonwasm2go/p2.Fn3082
-func Fn3082(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3083 github.com/goccy/pythonwasm2go/p2.Fn3083
-func Fn3083(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3084 github.com/goccy/pythonwasm2go/p2.Fn3084
-func Fn3084(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3085 github.com/goccy/pythonwasm2go/p2.Fn3085
-func Fn3085(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3086 github.com/goccy/pythonwasm2go/p2.Fn3086
-func Fn3086(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3087 github.com/goccy/pythonwasm2go/p2.Fn3087
-func Fn3087(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3088 github.com/goccy/pythonwasm2go/p2.Fn3088
-func Fn3088(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3089 github.com/goccy/pythonwasm2go/p2.Fn3089
-func Fn3089(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3090 github.com/goccy/pythonwasm2go/p2.Fn3090
-func Fn3090(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3091 github.com/goccy/pythonwasm2go/p2.Fn3091
-func Fn3091(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3092 github.com/goccy/pythonwasm2go/p2.Fn3092
-func Fn3092(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3093 github.com/goccy/pythonwasm2go/p2.Fn3093
-func Fn3093(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3094 github.com/goccy/pythonwasm2go/p2.Fn3094
-func Fn3094(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3095 github.com/goccy/pythonwasm2go/p2.Fn3095
-func Fn3095(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3096 github.com/goccy/pythonwasm2go/p2.Fn3096
-func Fn3096(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3097 github.com/goccy/pythonwasm2go/p2.Fn3097
-func Fn3097(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3098 github.com/goccy/pythonwasm2go/p2.Fn3098
-func Fn3098(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3099 github.com/goccy/pythonwasm2go/p2.Fn3099
-func Fn3099(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3100 github.com/goccy/pythonwasm2go/p2.Fn3100
-func Fn3100(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3101 github.com/goccy/pythonwasm2go/p2.Fn3101
-func Fn3101(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3102 github.com/goccy/pythonwasm2go/p2.Fn3102
-func Fn3102(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3103 github.com/goccy/pythonwasm2go/p2.Fn3103
-func Fn3103(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3104 github.com/goccy/pythonwasm2go/p2.Fn3104
-func Fn3104(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3105 github.com/goccy/pythonwasm2go/p2.Fn3105
-func Fn3105(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3106 github.com/goccy/pythonwasm2go/p2.Fn3106
-func Fn3106(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3107 github.com/goccy/pythonwasm2go/p2.Fn3107
-func Fn3107(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3108 github.com/goccy/pythonwasm2go/p2.Fn3108
-func Fn3108(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
-
-//go:linkname Fn3109 github.com/goccy/pythonwasm2go/p2.Fn3109
-func Fn3109(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3110 github.com/goccy/pythonwasm2go/p2.Fn3110
-func Fn3110(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3111 github.com/goccy/pythonwasm2go/p2.Fn3111
-func Fn3111(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3112 github.com/goccy/pythonwasm2go/p2.Fn3112
-func Fn3112(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
+//go:linkname Fn3043 github.com/goccy/pythonwasm2go/p2.Fn3043
+func Fn3043(m *base.Module, l0 int32, l1 int32)
 
 //go:linkname Fn3113 github.com/goccy/pythonwasm2go/p2.Fn3113
-func Fn3113(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
+func Fn3113(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3114 github.com/goccy/pythonwasm2go/p2.Fn3114
-func Fn3114(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname Fn3143 github.com/goccy/pythonwasm2go/p2.Fn3143
+func Fn3143(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn3115 github.com/goccy/pythonwasm2go/p2.Fn3115
-func Fn3115(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname Fn3144 github.com/goccy/pythonwasm2go/p2.Fn3144
+func Fn3144(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn3116 github.com/goccy/pythonwasm2go/p2.Fn3116
-func Fn3116(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3117 github.com/goccy/pythonwasm2go/p2.Fn3117
-func Fn3117(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3118 github.com/goccy/pythonwasm2go/p2.Fn3118
-func Fn3118(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3119 github.com/goccy/pythonwasm2go/p2.Fn3119
-func Fn3119(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3120 github.com/goccy/pythonwasm2go/p2.Fn3120
-func Fn3120(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3121 github.com/goccy/pythonwasm2go/p2.Fn3121
-func Fn3121(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3122 github.com/goccy/pythonwasm2go/p2.Fn3122
-func Fn3122(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3123 github.com/goccy/pythonwasm2go/p2.Fn3123
-func Fn3123(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3124 github.com/goccy/pythonwasm2go/p2.Fn3124
-func Fn3124(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3126 github.com/goccy/pythonwasm2go/p2.Fn3126
-func Fn3126(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3127 github.com/goccy/pythonwasm2go/p2.Fn3127
-func Fn3127(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3128 github.com/goccy/pythonwasm2go/p2.Fn3128
-func Fn3128(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3129 github.com/goccy/pythonwasm2go/p2.Fn3129
-func Fn3129(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3130 github.com/goccy/pythonwasm2go/p2.Fn3130
-func Fn3130(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3131 github.com/goccy/pythonwasm2go/p2.Fn3131
-func Fn3131(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
-
-//go:linkname Fn3132 github.com/goccy/pythonwasm2go/p2.Fn3132
-func Fn3132(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3133 github.com/goccy/pythonwasm2go/p2.Fn3133
-func Fn3133(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3134 github.com/goccy/pythonwasm2go/p2.Fn3134
-func Fn3134(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn3135 github.com/goccy/pythonwasm2go/p2.Fn3135
-func Fn3135(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3136 github.com/goccy/pythonwasm2go/p2.Fn3136
-func Fn3136(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3139 github.com/goccy/pythonwasm2go/p2.Fn3139
-func Fn3139(m *base.Module) int32
-
-//go:linkname Fn3141 github.com/goccy/pythonwasm2go/p2.Fn3141
-func Fn3141(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3145 github.com/goccy/pythonwasm2go/p2.Fn3145
+func Fn3145(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
 //go:linkname Fn3147 github.com/goccy/pythonwasm2go/p2.Fn3147
-func Fn3147(m *base.Module, l0 int32, l1 int32) int32
+func Fn3147(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
 //go:linkname Fn3148 github.com/goccy/pythonwasm2go/p2.Fn3148
-func Fn3148(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn3148(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 
-//go:linkname Fn3152 github.com/goccy/pythonwasm2go/p1.Fn3152
-func Fn3152(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn3149 github.com/goccy/pythonwasm2go/p2.Fn3149
+func Fn3149(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn3153 github.com/goccy/pythonwasm2go/p2.Fn3153
-func Fn3153(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3150 github.com/goccy/pythonwasm2go/p2.Fn3150
+func Fn3150(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn3165 github.com/goccy/pythonwasm2go/p1.Fn3165
-func Fn3165(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3151 github.com/goccy/pythonwasm2go/p2.Fn3151
+func Fn3151(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
+
+//go:linkname Fn3152 github.com/goccy/pythonwasm2go/p2.Fn3152
+func Fn3152(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+
+//go:linkname Fn3157 github.com/goccy/pythonwasm2go/p2.Fn3157
+func Fn3157(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+
+//go:linkname Fn3159 github.com/goccy/pythonwasm2go/p2.Fn3159
+func Fn3159(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+
+//go:linkname Fn3160 github.com/goccy/pythonwasm2go/p2.Fn3160
+func Fn3160(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+
+//go:linkname Fn3163 github.com/goccy/pythonwasm2go/p2.Fn3163
+func Fn3163(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
+
+//go:linkname Fn3165 github.com/goccy/pythonwasm2go/p2.Fn3165
+func Fn3165(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+
+//go:linkname Fn3167 github.com/goccy/pythonwasm2go/p2.Fn3167
+func Fn3167(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+
+//go:linkname Fn3168 github.com/goccy/pythonwasm2go/p2.Fn3168
+func Fn3168(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
+
+//go:linkname Fn3169 github.com/goccy/pythonwasm2go/p2.Fn3169
+func Fn3169(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
+
+//go:linkname Fn3170 github.com/goccy/pythonwasm2go/p2.Fn3170
+func Fn3170(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+
+//go:linkname Fn3171 github.com/goccy/pythonwasm2go/p2.Fn3171
+func Fn3171(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
 //go:linkname Fn3172 github.com/goccy/pythonwasm2go/p2.Fn3172
-func Fn3172(m *base.Module, l0 int32, l1 int32) int32
+func Fn3172(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn3175 github.com/goccy/pythonwasm2go/p2.Fn3175
-func Fn3175(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3173 github.com/goccy/pythonwasm2go/p2.Fn3173
+func Fn3173(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn3179 github.com/goccy/pythonwasm2go/p1.Fn3179
-func Fn3179(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3177 github.com/goccy/pythonwasm2go/p2.Fn3177
+func Fn3177(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 
-//go:linkname Fn3180 github.com/goccy/pythonwasm2go/p1.Fn3180
-func Fn3180(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3178 github.com/goccy/pythonwasm2go/p2.Fn3178
+func Fn3178(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 
-//go:linkname Fn3183 github.com/goccy/pythonwasm2go/p1.Fn3183
-func Fn3183(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3179 github.com/goccy/pythonwasm2go/p2.Fn3179
+func Fn3179(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+
+//go:linkname Fn3181 github.com/goccy/pythonwasm2go/p2.Fn3181
+func Fn3181(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn3185 github.com/goccy/pythonwasm2go/p2.Fn3185
-func Fn3185(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3186 github.com/goccy/pythonwasm2go/p2.Fn3186
-func Fn3186(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3194 github.com/goccy/pythonwasm2go/p1.Fn3194
-func Fn3194(m *base.Module, l0 int32) int32
+func Fn3185(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
 //go:linkname Fn3197 github.com/goccy/pythonwasm2go/p2.Fn3197
-func Fn3197(m *base.Module, l0 int32, l1 int32) int32
+func Fn3197(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn3198 github.com/goccy/pythonwasm2go/p2.Fn3198
-func Fn3198(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3233 github.com/goccy/pythonwasm2go/p1.Fn3233
+func Fn3233(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn3199 github.com/goccy/pythonwasm2go/p1.Fn3199
-func Fn3199(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3235 github.com/goccy/pythonwasm2go/p1.Fn3235
+func Fn3235(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn3200 github.com/goccy/pythonwasm2go/p2.Fn3200
-func Fn3200(m *base.Module, l0 int32) int32
+//go:linkname Fn3239 github.com/goccy/pythonwasm2go/p1.Fn3239
+func Fn3239(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn3202 github.com/goccy/pythonwasm2go/p1.Fn3202
-func Fn3202(m *base.Module, l0 int32) int32
+//go:linkname Fn3243 github.com/goccy/pythonwasm2go/p2.Fn3243
+func Fn3243(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn3203 github.com/goccy/pythonwasm2go/p2.Fn3203
-func Fn3203(m *base.Module, l0 int32) int32
+//go:linkname Fn3254 github.com/goccy/pythonwasm2go/p2.Fn3254
+func Fn3254(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn3273 github.com/goccy/pythonwasm2go/p2.Fn3273
-func Fn3273(m *base.Module, l0 int32)
+//go:linkname Fn3255 github.com/goccy/pythonwasm2go/p1.Fn3255
+func Fn3255(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3276 github.com/goccy/pythonwasm2go/p2.Fn3276
-func Fn3276(m *base.Module, l0 int32) int32
+//go:linkname Fn3256 github.com/goccy/pythonwasm2go/p2.Fn3256
+func Fn3256(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3277 github.com/goccy/pythonwasm2go/p1.Fn3277
-func Fn3277(m *base.Module, l0 int32)
+//go:linkname Fn3258 github.com/goccy/pythonwasm2go/p1.Fn3258
+func Fn3258(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3280 github.com/goccy/pythonwasm2go/p2.Fn3280
-func Fn3280(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn3259 github.com/goccy/pythonwasm2go/p2.Fn3259
+func Fn3259(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3281 github.com/goccy/pythonwasm2go/p1.Fn3281
-func Fn3281(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3329 github.com/goccy/pythonwasm2go/p2.Fn3329
+func Fn3329(m *base.Module, l0 int32)
 
-//go:linkname Fn3285 github.com/goccy/pythonwasm2go/p2.Fn3285
-func Fn3285(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3332 github.com/goccy/pythonwasm2go/p2.Fn3332
+func Fn3332(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3286 github.com/goccy/pythonwasm2go/p2.Fn3286
-func Fn3286(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn3333 github.com/goccy/pythonwasm2go/p1.Fn3333
+func Fn3333(m *base.Module, l0 int32)
 
-//go:linkname Fn3287 github.com/goccy/pythonwasm2go/p2.Fn3287
-func Fn3287(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn3337 github.com/goccy/pythonwasm2go/p2.Fn3337
+func Fn3337(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn3288 github.com/goccy/pythonwasm2go/p2.Fn3288
-func Fn3288(m *base.Module, l0 int32) int32
+//go:linkname Fn3345 github.com/goccy/pythonwasm2go/p2.Fn3345
+func Fn3345(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn3289 github.com/goccy/pythonwasm2go/p2.Fn3289
-func Fn3289(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3348 github.com/goccy/pythonwasm2go/p2.Fn3348
+func Fn3348(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn3290 github.com/goccy/pythonwasm2go/p2.Fn3290
-func Fn3290(m *base.Module, l0 int32) int32
+//go:linkname Fn3352 github.com/goccy/pythonwasm2go/p1.Fn3352
+func Fn3352(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn3291 github.com/goccy/pythonwasm2go/p2.Fn3291
-func Fn3291(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn3353 github.com/goccy/pythonwasm2go/p2.Fn3353
+func Fn3353(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
-//go:linkname Fn3292 github.com/goccy/pythonwasm2go/p2.Fn3292
-func Fn3292(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn3356 github.com/goccy/pythonwasm2go/p2.Fn3356
+func Fn3356(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn3293 github.com/goccy/pythonwasm2go/p2.Fn3293
-func Fn3293(m *base.Module, l0 int32) int32
+//go:linkname Fn3358 github.com/goccy/pythonwasm2go/p2.Fn3358
+func Fn3358(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn3294 github.com/goccy/pythonwasm2go/p2.Fn3294
-func Fn3294(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3359 github.com/goccy/pythonwasm2go/p2.Fn3359
+func Fn3359(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 
-//go:linkname Fn3295 github.com/goccy/pythonwasm2go/p2.Fn3295
-func Fn3295(m *base.Module, l0 int32) int32
+//go:linkname Fn3360 github.com/goccy/pythonwasm2go/p1.Fn3360
+func Fn3360(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 
-//go:linkname Fn3296 github.com/goccy/pythonwasm2go/p1.Fn3296
-func Fn3296(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn3369 github.com/goccy/pythonwasm2go/p2.Fn3369
+func Fn3369(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3297 github.com/goccy/pythonwasm2go/p2.Fn3297
-func Fn3297(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn3371 github.com/goccy/pythonwasm2go/p2.Fn3371
+func Fn3371(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3298 github.com/goccy/pythonwasm2go/p2.Fn3298
-func Fn3298(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn3383 github.com/goccy/pythonwasm2go/p2.Fn3383
+func Fn3383(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3299 github.com/goccy/pythonwasm2go/p2.Fn3299
-func Fn3299(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3386 github.com/goccy/pythonwasm2go/p2.Fn3386
+func Fn3386(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn3300 github.com/goccy/pythonwasm2go/p2.Fn3300
-func Fn3300(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3301 github.com/goccy/pythonwasm2go/p2.Fn3301
-func Fn3301(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3302 github.com/goccy/pythonwasm2go/p2.Fn3302
-func Fn3302(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn3303 github.com/goccy/pythonwasm2go/p2.Fn3303
-func Fn3303(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
-
-//go:linkname Fn3304 github.com/goccy/pythonwasm2go/p1.Fn3304
-func Fn3304(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
-
-//go:linkname Fn3305 github.com/goccy/pythonwasm2go/p2.Fn3305
-func Fn3305(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3307 github.com/goccy/pythonwasm2go/p2.Fn3307
-func Fn3307(m *base.Module, l0 int32)
-
-//go:linkname Fn3308 github.com/goccy/pythonwasm2go/p2.Fn3308
-func Fn3308(m *base.Module, l0 int32)
-
-//go:linkname Fn3316 github.com/goccy/pythonwasm2go/p2.Fn3316
-func Fn3316(m *base.Module) int32
-
-//go:linkname Fn3319 github.com/goccy/pythonwasm2go/p2.Fn3319
-func Fn3319(m *base.Module) int32
-
-//go:linkname Fn3327 github.com/goccy/pythonwasm2go/p2.Fn3327
-func Fn3327(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3364 github.com/goccy/pythonwasm2go/p2.Fn3364
-func Fn3364(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3372 github.com/goccy/pythonwasm2go/p2.Fn3372
-func Fn3372(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3373 github.com/goccy/pythonwasm2go/p2.Fn3373
-func Fn3373(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3375 github.com/goccy/pythonwasm2go/p2.Fn3375
-func Fn3375(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3376 github.com/goccy/pythonwasm2go/p2.Fn3376
-func Fn3376(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3379 github.com/goccy/pythonwasm2go/p1.Fn3379
-func Fn3379(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3380 github.com/goccy/pythonwasm2go/p1.Fn3380
-func Fn3380(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3383 github.com/goccy/pythonwasm2go/p1.Fn3383
-func Fn3383(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3385 github.com/goccy/pythonwasm2go/p1.Fn3385
-func Fn3385(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3386 github.com/goccy/pythonwasm2go/p1.Fn3386
-func Fn3386(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3391 github.com/goccy/pythonwasm2go/p2.Fn3391
-func Fn3391(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3392 github.com/goccy/pythonwasm2go/p2.Fn3392
-func Fn3392(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3393 github.com/goccy/pythonwasm2go/p1.Fn3393
-func Fn3393(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3394 github.com/goccy/pythonwasm2go/p1.Fn3394
-func Fn3394(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3395 github.com/goccy/pythonwasm2go/p1.Fn3395
-func Fn3395(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3396 github.com/goccy/pythonwasm2go/p1.Fn3396
-func Fn3396(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3397 github.com/goccy/pythonwasm2go/p1.Fn3397
-func Fn3397(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3399 github.com/goccy/pythonwasm2go/p2.Fn3399
-func Fn3399(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3401 github.com/goccy/pythonwasm2go/p2.Fn3401
-func Fn3401(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3402 github.com/goccy/pythonwasm2go/p2.Fn3402
-func Fn3402(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3404 github.com/goccy/pythonwasm2go/p2.Fn3404
-func Fn3404(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3406 github.com/goccy/pythonwasm2go/p2.Fn3406
-func Fn3406(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3407 github.com/goccy/pythonwasm2go/p1.Fn3407
-func Fn3407(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3410 github.com/goccy/pythonwasm2go/p2.Fn3410
-func Fn3410(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3413 github.com/goccy/pythonwasm2go/p1.Fn3413
-func Fn3413(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3414 github.com/goccy/pythonwasm2go/p1.Fn3414
-func Fn3414(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3418 github.com/goccy/pythonwasm2go/p2.Fn3418
-func Fn3418(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3419 github.com/goccy/pythonwasm2go/p1.Fn3419
-func Fn3419(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3421 github.com/goccy/pythonwasm2go/p2.Fn3421
-func Fn3421(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3422 github.com/goccy/pythonwasm2go/p2.Fn3422
-func Fn3422(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3423 github.com/goccy/pythonwasm2go/p2.Fn3423
-func Fn3423(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3425 github.com/goccy/pythonwasm2go/p2.Fn3425
-func Fn3425(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3426 github.com/goccy/pythonwasm2go/p2.Fn3426
-func Fn3426(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3424 github.com/goccy/pythonwasm2go/p2.Fn3424
+func Fn3424(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn3432 github.com/goccy/pythonwasm2go/p2.Fn3432
 func Fn3432(m *base.Module, l0 int32, l1 int32) int32
@@ -1762,2450 +1210,1835 @@ func Fn3432(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname Fn3433 github.com/goccy/pythonwasm2go/p2.Fn3433
 func Fn3433(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3434 github.com/goccy/pythonwasm2go/p2.Fn3434
-func Fn3434(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
 //go:linkname Fn3435 github.com/goccy/pythonwasm2go/p2.Fn3435
-func Fn3435(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+func Fn3435(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3436 github.com/goccy/pythonwasm2go/p1.Fn3436
-func Fn3436(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3439 github.com/goccy/pythonwasm2go/p2.Fn3439
-func Fn3439(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3436 github.com/goccy/pythonwasm2go/p2.Fn3436
+func Fn3436(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn3441 github.com/goccy/pythonwasm2go/p2.Fn3441
-func Fn3441(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3443 github.com/goccy/pythonwasm2go/p2.Fn3443
-func Fn3443(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3444 github.com/goccy/pythonwasm2go/p2.Fn3444
-func Fn3444(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn3441(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn3445 github.com/goccy/pythonwasm2go/p1.Fn3445
-func Fn3445(m *base.Module, l0 int32, l1 int32) int32
+func Fn3445(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn3448 github.com/goccy/pythonwasm2go/p2.Fn3448
-func Fn3448(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3450 github.com/goccy/pythonwasm2go/p2.Fn3450
-func Fn3450(m *base.Module, l0 int32) int32
+//go:linkname Fn3446 github.com/goccy/pythonwasm2go/p1.Fn3446
+func Fn3446(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn3451 github.com/goccy/pythonwasm2go/p2.Fn3451
 func Fn3451(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn3452 github.com/goccy/pythonwasm2go/p2.Fn3452
-func Fn3452(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn3459 github.com/goccy/pythonwasm2go/p2.Fn3459
+func Fn3459(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn3463 github.com/goccy/pythonwasm2go/p2.Fn3463
-func Fn3463(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3462 github.com/goccy/pythonwasm2go/p2.Fn3462
+func Fn3462(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3465 github.com/goccy/pythonwasm2go/p2.Fn3465
-func Fn3465(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3466 github.com/goccy/pythonwasm2go/p2.Fn3466
+func Fn3466(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3467 github.com/goccy/pythonwasm2go/p2.Fn3467
-func Fn3467(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3467 github.com/goccy/pythonwasm2go/p1.Fn3467
+func Fn3467(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn3468 github.com/goccy/pythonwasm2go/p2.Fn3468
-func Fn3468(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3474 github.com/goccy/pythonwasm2go/p1.Fn3474
+func Fn3474(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3470 github.com/goccy/pythonwasm2go/p1.Fn3470
-func Fn3470(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3475 github.com/goccy/pythonwasm2go/p2.Fn3475
+func Fn3475(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3471 github.com/goccy/pythonwasm2go/p2.Fn3471
-func Fn3471(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3473 github.com/goccy/pythonwasm2go/p2.Fn3473
-func Fn3473(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3477 github.com/goccy/pythonwasm2go/p2.Fn3477
-func Fn3477(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3479 github.com/goccy/pythonwasm2go/p1.Fn3479
+func Fn3479(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn3481 github.com/goccy/pythonwasm2go/p2.Fn3481
-func Fn3481(m *base.Module, l0 int32)
+func Fn3481(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn3482 github.com/goccy/pythonwasm2go/p2.Fn3482
-func Fn3482(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+func Fn3482(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn3483 github.com/goccy/pythonwasm2go/p2.Fn3483
-func Fn3483(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn3483(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3484 github.com/goccy/pythonwasm2go/p2.Fn3484
-func Fn3484(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn3486 github.com/goccy/pythonwasm2go/p2.Fn3486
-func Fn3486(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3488 github.com/goccy/pythonwasm2go/p2.Fn3488
-func Fn3488(m *base.Module, l0 int32)
-
-//go:linkname Fn3489 github.com/goccy/pythonwasm2go/p2.Fn3489
-func Fn3489(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3490 github.com/goccy/pythonwasm2go/p2.Fn3490
-func Fn3490(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3491 github.com/goccy/pythonwasm2go/p2.Fn3491
-func Fn3491(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3492 github.com/goccy/pythonwasm2go/p2.Fn3492
-func Fn3492(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3493 github.com/goccy/pythonwasm2go/p2.Fn3493
-func Fn3493(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3494 github.com/goccy/pythonwasm2go/p2.Fn3494
-func Fn3494(m *base.Module, l0 int32) int32
+//go:linkname Fn3485 github.com/goccy/pythonwasm2go/p2.Fn3485
+func Fn3485(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn3495 github.com/goccy/pythonwasm2go/p2.Fn3495
-func Fn3495(m *base.Module, l0 int32) int32
+func Fn3495(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn3496 github.com/goccy/pythonwasm2go/p2.Fn3496
+//go:linkname Fn3496 github.com/goccy/pythonwasm2go/p1.Fn3496
 func Fn3496(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3497 github.com/goccy/pythonwasm2go/p2.Fn3497
-func Fn3497(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3500 github.com/goccy/pythonwasm2go/p2.Fn3500
+func Fn3500(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3498 github.com/goccy/pythonwasm2go/p1.Fn3498
-func Fn3498(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3503 github.com/goccy/pythonwasm2go/p2.Fn3503
+func Fn3503(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn3505 github.com/goccy/pythonwasm2go/p1.Fn3505
-func Fn3505(m *base.Module, l0 int32) int32
+func Fn3505(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3536 github.com/goccy/pythonwasm2go/p1.Fn3536
-func Fn3536(m *base.Module, l0 int32)
+//go:linkname Fn3513 github.com/goccy/pythonwasm2go/p1.Fn3513
+func Fn3513(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn3518 github.com/goccy/pythonwasm2go/p1.Fn3518
+func Fn3518(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn3527 github.com/goccy/pythonwasm2go/p2.Fn3527
+func Fn3527(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn3530 github.com/goccy/pythonwasm2go/p1.Fn3530
+func Fn3530(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn3536 github.com/goccy/pythonwasm2go/p2.Fn3536
+func Fn3536(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn3537 github.com/goccy/pythonwasm2go/p2.Fn3537
+func Fn3537(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn3538 github.com/goccy/pythonwasm2go/p1.Fn3538
+func Fn3538(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn3540 github.com/goccy/pythonwasm2go/p1.Fn3540
+func Fn3540(m *base.Module, l0 int32)
+
+//go:linkname Fn3542 github.com/goccy/pythonwasm2go/p2.Fn3542
+func Fn3542(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
 //go:linkname Fn3543 github.com/goccy/pythonwasm2go/p2.Fn3543
-func Fn3543(m *base.Module, l0 int32)
+func Fn3543(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn3544 github.com/goccy/pythonwasm2go/p2.Fn3544
-func Fn3544(m *base.Module, l0 int32)
+func Fn3544(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn3556 github.com/goccy/pythonwasm2go/p2.Fn3556
-func Fn3556(m *base.Module, l0 int32)
+//go:linkname Fn3545 github.com/goccy/pythonwasm2go/p2.Fn3545
+func Fn3545(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3557 github.com/goccy/pythonwasm2go/p2.Fn3557
-func Fn3557(m *base.Module, l0 int32)
+//go:linkname Fn3547 github.com/goccy/pythonwasm2go/p2.Fn3547
+func Fn3547(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn3549 github.com/goccy/pythonwasm2go/p2.Fn3549
+func Fn3549(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn3550 github.com/goccy/pythonwasm2go/p2.Fn3550
+func Fn3550(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn3551 github.com/goccy/pythonwasm2go/p2.Fn3551
+func Fn3551(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3552 github.com/goccy/pythonwasm2go/p2.Fn3552
+func Fn3552(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3555 github.com/goccy/pythonwasm2go/p2.Fn3555
+func Fn3555(m *base.Module, l0 int32) int32
 
 //go:linkname Fn3558 github.com/goccy/pythonwasm2go/p2.Fn3558
-func Fn3558(m *base.Module, l0 int32)
+func Fn3558(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3559 github.com/goccy/pythonwasm2go/p2.Fn3559
-func Fn3559(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn3560 github.com/goccy/pythonwasm2go/p2.Fn3560
-func Fn3560(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3564 github.com/goccy/pythonwasm2go/p2.Fn3564
+//go:linkname Fn3564 github.com/goccy/pythonwasm2go/p1.Fn3564
 func Fn3564(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3575 github.com/goccy/pythonwasm2go/p2.Fn3575
-func Fn3575(m *base.Module, l0 int32) int32
+//go:linkname Fn3577 github.com/goccy/pythonwasm2go/p2.Fn3577
+func Fn3577(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3576 github.com/goccy/pythonwasm2go/p1.Fn3576
-func Fn3576(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3593 github.com/goccy/pythonwasm2go/p2.Fn3593
-func Fn3593(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn3598 github.com/goccy/pythonwasm2go/p2.Fn3598
-func Fn3598(m *base.Module, l0 int32)
-
-//go:linkname Fn3599 github.com/goccy/pythonwasm2go/p2.Fn3599
-func Fn3599(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3602 github.com/goccy/pythonwasm2go/p2.Fn3602
-func Fn3602(m *base.Module, l0 int32)
-
-//go:linkname Fn3604 github.com/goccy/pythonwasm2go/p2.Fn3604
-func Fn3604(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3608 github.com/goccy/pythonwasm2go/p2.Fn3608
-func Fn3608(m *base.Module, l0 int32)
-
-//go:linkname Fn3611 github.com/goccy/pythonwasm2go/p2.Fn3611
-func Fn3611(m *base.Module) int32
+//go:linkname Fn3580 github.com/goccy/pythonwasm2go/p1.Fn3580
+func Fn3580(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn3616 github.com/goccy/pythonwasm2go/p2.Fn3616
-func Fn3616(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn3618 github.com/goccy/pythonwasm2go/p2.Fn3618
-func Fn3618(m *base.Module) int32
-
-//go:linkname Fn3619 github.com/goccy/pythonwasm2go/p2.Fn3619
-func Fn3619(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3620 github.com/goccy/pythonwasm2go/p2.Fn3620
-func Fn3620(m *base.Module)
-
-//go:linkname Fn3622 github.com/goccy/pythonwasm2go/p2.Fn3622
-func Fn3622(m *base.Module, l0 int32)
-
-//go:linkname Fn3625 github.com/goccy/pythonwasm2go/p2.Fn3625
-func Fn3625(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3628 github.com/goccy/pythonwasm2go/p2.Fn3628
-func Fn3628(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3632 github.com/goccy/pythonwasm2go/p2.Fn3632
-func Fn3632(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn3634 github.com/goccy/pythonwasm2go/p2.Fn3634
-func Fn3634(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3637 github.com/goccy/pythonwasm2go/p1.Fn3637
-func Fn3637(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3642 github.com/goccy/pythonwasm2go/p2.Fn3642
-func Fn3642(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn3646 github.com/goccy/pythonwasm2go/p2.Fn3646
-func Fn3646(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3650 github.com/goccy/pythonwasm2go/p2.Fn3650
-func Fn3650(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3652 github.com/goccy/pythonwasm2go/p2.Fn3652
-func Fn3652(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3653 github.com/goccy/pythonwasm2go/p1.Fn3653
-func Fn3653(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3654 github.com/goccy/pythonwasm2go/p2.Fn3654
-func Fn3654(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3655 github.com/goccy/pythonwasm2go/p2.Fn3655
-func Fn3655(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3656 github.com/goccy/pythonwasm2go/p2.Fn3656
-func Fn3656(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3657 github.com/goccy/pythonwasm2go/p2.Fn3657
-func Fn3657(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3658 github.com/goccy/pythonwasm2go/p1.Fn3658
-func Fn3658(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3659 github.com/goccy/pythonwasm2go/p1.Fn3659
-func Fn3659(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3660 github.com/goccy/pythonwasm2go/p2.Fn3660
-func Fn3660(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3661 github.com/goccy/pythonwasm2go/p2.Fn3661
-func Fn3661(m *base.Module, l0 int32, l1 int32) int32
+func Fn3616(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn3662 github.com/goccy/pythonwasm2go/p2.Fn3662
-func Fn3662(m *base.Module, l0 int32, l1 int32) int32
+func Fn3662(m *base.Module, l0 int32)
 
-//go:linkname Fn3663 github.com/goccy/pythonwasm2go/p1.Fn3663
-func Fn3663(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3663 github.com/goccy/pythonwasm2go/p2.Fn3663
+func Fn3663(m *base.Module, l0 int32)
 
 //go:linkname Fn3664 github.com/goccy/pythonwasm2go/p2.Fn3664
-func Fn3664(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn3664(m *base.Module, l0 int32)
 
-//go:linkname Fn3665 github.com/goccy/pythonwasm2go/p2.Fn3665
-func Fn3665(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3666 github.com/goccy/pythonwasm2go/p2.Fn3666
-func Fn3666(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn3667 github.com/goccy/pythonwasm2go/p2.Fn3667
-func Fn3667(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3668 github.com/goccy/pythonwasm2go/p2.Fn3668
-func Fn3668(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3669 github.com/goccy/pythonwasm2go/p1.Fn3669
-func Fn3669(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3670 github.com/goccy/pythonwasm2go/p2.Fn3670
-func Fn3670(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3671 github.com/goccy/pythonwasm2go/p1.Fn3671
-func Fn3671(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3672 github.com/goccy/pythonwasm2go/p2.Fn3672
-func Fn3672(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3673 github.com/goccy/pythonwasm2go/p2.Fn3673
-func Fn3673(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3674 github.com/goccy/pythonwasm2go/p2.Fn3674
-func Fn3674(m *base.Module, l0 int32, l1 int64, l2 int32)
-
-//go:linkname Fn3675 github.com/goccy/pythonwasm2go/p1.Fn3675
-func Fn3675(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn3676 github.com/goccy/pythonwasm2go/p2.Fn3676
-func Fn3676(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3677 github.com/goccy/pythonwasm2go/p2.Fn3677
-func Fn3677(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3682 github.com/goccy/pythonwasm2go/p1.Fn3682
-func Fn3682(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3684 github.com/goccy/pythonwasm2go/p2.Fn3684
-func Fn3684(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3685 github.com/goccy/pythonwasm2go/p1.Fn3685
-func Fn3685(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3686 github.com/goccy/pythonwasm2go/p2.Fn3686
-func Fn3686(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3690 github.com/goccy/pythonwasm2go/p2.Fn3690
-func Fn3690(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3691 github.com/goccy/pythonwasm2go/p2.Fn3691
-func Fn3691(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3692 github.com/goccy/pythonwasm2go/p2.Fn3692
-func Fn3692(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn3697 github.com/goccy/pythonwasm2go/p2.Fn3697
-func Fn3697(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3701 github.com/goccy/pythonwasm2go/p2.Fn3701
-func Fn3701(m *base.Module, l0 int32) int32
+//go:linkname Fn3699 github.com/goccy/pythonwasm2go/p2.Fn3699
+func Fn3699(m *base.Module, l0 int32, l1 int32)
 
 //go:linkname Fn3704 github.com/goccy/pythonwasm2go/p2.Fn3704
-func Fn3704(m *base.Module, l0 int32, l1 int32)
+func Fn3704(m *base.Module, l0 int32)
 
-//go:linkname Fn3705 github.com/goccy/pythonwasm2go/p2.Fn3705
-func Fn3705(m *base.Module, l0 int32) int32
+//go:linkname Fn3708 github.com/goccy/pythonwasm2go/p2.Fn3708
+func Fn3708(m *base.Module, l0 int32)
 
-//go:linkname Fn3709 github.com/goccy/pythonwasm2go/p1.Fn3709
-func Fn3709(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn3710 github.com/goccy/pythonwasm2go/p2.Fn3710
+func Fn3710(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3711 github.com/goccy/pythonwasm2go/p2.Fn3711
-func Fn3711(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn3713 github.com/goccy/pythonwasm2go/p2.Fn3713
+func Fn3713(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn3715 github.com/goccy/pythonwasm2go/p2.Fn3715
-func Fn3715(m *base.Module, l0 int32)
+//go:linkname Fn3717 github.com/goccy/pythonwasm2go/p2.Fn3717
+func Fn3717(m *base.Module) int32
 
-//go:linkname Fn3718 github.com/goccy/pythonwasm2go/p2.Fn3718
-func Fn3718(m *base.Module, l0 int32)
+//go:linkname Fn3724 github.com/goccy/pythonwasm2go/p2.Fn3724
+func Fn3724(m *base.Module) int32
 
-//go:linkname Fn3721 github.com/goccy/pythonwasm2go/p2.Fn3721
-func Fn3721(m *base.Module, l0 int32) int32
+//go:linkname Fn3725 github.com/goccy/pythonwasm2go/p2.Fn3725
+func Fn3725(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn3726 github.com/goccy/pythonwasm2go/p2.Fn3726
+func Fn3726(m *base.Module)
 
 //go:linkname Fn3730 github.com/goccy/pythonwasm2go/p2.Fn3730
-func Fn3730(m *base.Module, l0 int32, l1 int32) int32
+func Fn3730(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn3735 github.com/goccy/pythonwasm2go/p2.Fn3735
-func Fn3735(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3731 github.com/goccy/pythonwasm2go/p2.Fn3731
+func Fn3731(m *base.Module, l0 int32)
 
-//go:linkname Fn3736 github.com/goccy/pythonwasm2go/p1.Fn3736
-func Fn3736(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3737 github.com/goccy/pythonwasm2go/p2.Fn3737
+func Fn3737(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3744 github.com/goccy/pythonwasm2go/p1.Fn3744
-func Fn3744(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
+//go:linkname Fn3742 github.com/goccy/pythonwasm2go/p2.Fn3742
+func Fn3742(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn3746 github.com/goccy/pythonwasm2go/p1.Fn3746
-func Fn3746(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3747 github.com/goccy/pythonwasm2go/p2.Fn3747
-func Fn3747(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn3751 github.com/goccy/pythonwasm2go/p1.Fn3751
+func Fn3751(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 
 //go:linkname Fn3753 github.com/goccy/pythonwasm2go/p2.Fn3753
-func Fn3753(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+func Fn3753(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn3754 github.com/goccy/pythonwasm2go/p2.Fn3754
+func Fn3754(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+
+//go:linkname Fn3756 github.com/goccy/pythonwasm2go/p2.Fn3756
+func Fn3756(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
 //go:linkname Fn3758 github.com/goccy/pythonwasm2go/p2.Fn3758
-func Fn3758(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+func Fn3758(m *base.Module, l0 int32)
 
-//go:linkname Fn3773 github.com/goccy/pythonwasm2go/p1.Fn3773
-func Fn3773(m *base.Module, l0 int32) int32
+//go:linkname Fn3761 github.com/goccy/pythonwasm2go/p2.Fn3761
+func Fn3761(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3764 github.com/goccy/pythonwasm2go/p1.Fn3764
+func Fn3764(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3767 github.com/goccy/pythonwasm2go/p2.Fn3767
+func Fn3767(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3770 github.com/goccy/pythonwasm2go/p1.Fn3770
+func Fn3770(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3771 github.com/goccy/pythonwasm2go/p2.Fn3771
+func Fn3771(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn3772 github.com/goccy/pythonwasm2go/p2.Fn3772
+func Fn3772(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn3774 github.com/goccy/pythonwasm2go/p1.Fn3774
+func Fn3774(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn3776 github.com/goccy/pythonwasm2go/p2.Fn3776
+func Fn3776(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn3777 github.com/goccy/pythonwasm2go/p2.Fn3777
+func Fn3777(m *base.Module, l0 int32, l1 int32)
 
 //go:linkname Fn3778 github.com/goccy/pythonwasm2go/p2.Fn3778
-func Fn3778(m *base.Module, l0 int32) int32
+func Fn3778(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
 //go:linkname Fn3779 github.com/goccy/pythonwasm2go/p2.Fn3779
-func Fn3779(m *base.Module, l0 int32) int32
+func Fn3779(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3781 github.com/goccy/pythonwasm2go/p2.Fn3781
-func Fn3781(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3782 github.com/goccy/pythonwasm2go/p2.Fn3782
+//go:linkname Fn3782 github.com/goccy/pythonwasm2go/p1.Fn3782
 func Fn3782(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3786 github.com/goccy/pythonwasm2go/p2.Fn3786
-func Fn3786(m *base.Module, l0 int32) int32
+//go:linkname Fn3784 github.com/goccy/pythonwasm2go/p2.Fn3784
+func Fn3784(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3825 github.com/goccy/pythonwasm2go/p2.Fn3825
-func Fn3825(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3785 github.com/goccy/pythonwasm2go/p2.Fn3785
+func Fn3785(m *base.Module, l0 int32, l1 int64, l2 int32)
 
-//go:linkname Fn3826 github.com/goccy/pythonwasm2go/p2.Fn3826
-func Fn3826(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3787 github.com/goccy/pythonwasm2go/p2.Fn3787
+func Fn3787(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3828 github.com/goccy/pythonwasm2go/p2.Fn3828
-func Fn3828(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn3788 github.com/goccy/pythonwasm2go/p2.Fn3788
+func Fn3788(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3791 github.com/goccy/pythonwasm2go/p2.Fn3791
+func Fn3791(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3792 github.com/goccy/pythonwasm2go/p1.Fn3792
+func Fn3792(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3794 github.com/goccy/pythonwasm2go/p1.Fn3794
+func Fn3794(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+
+//go:linkname Fn3797 github.com/goccy/pythonwasm2go/p2.Fn3797
+func Fn3797(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn3800 github.com/goccy/pythonwasm2go/p2.Fn3800
+func Fn3800(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn3802 github.com/goccy/pythonwasm2go/p2.Fn3802
+func Fn3802(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn3806 github.com/goccy/pythonwasm2go/p1.Fn3806
+func Fn3806(m *base.Module, l0 int32)
+
+//go:linkname Fn3808 github.com/goccy/pythonwasm2go/p2.Fn3808
+func Fn3808(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3812 github.com/goccy/pythonwasm2go/p2.Fn3812
+func Fn3812(m *base.Module, l0 int32) int32
+
+//go:linkname Fn3821 github.com/goccy/pythonwasm2go/p1.Fn3821
+func Fn3821(m *base.Module, l0 int32, l1 int32)
+
+//go:linkname Fn3823 github.com/goccy/pythonwasm2go/p2.Fn3823
+func Fn3823(m *base.Module, l0 int32, l1 int32)
 
 //go:linkname Fn3830 github.com/goccy/pythonwasm2go/p2.Fn3830
-func Fn3830(m *base.Module, l0 int32) int32
+func Fn3830(m *base.Module, l0 int32)
 
 //go:linkname Fn3833 github.com/goccy/pythonwasm2go/p2.Fn3833
-func Fn3833(m *base.Module, l0 int32)
-
-//go:linkname Fn3834 github.com/goccy/pythonwasm2go/p2.Fn3834
-func Fn3834(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3841 github.com/goccy/pythonwasm2go/p2.Fn3841
-func Fn3841(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3842 github.com/goccy/pythonwasm2go/p2.Fn3842
-func Fn3842(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3843 github.com/goccy/pythonwasm2go/p2.Fn3843
-func Fn3843(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn3833(m *base.Module, l0 int32) int32
 
 //go:linkname Fn3845 github.com/goccy/pythonwasm2go/p2.Fn3845
-func Fn3845(m *base.Module, l0 int32) int32
+func Fn3845(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3848 github.com/goccy/pythonwasm2go/p2.Fn3848
-func Fn3848(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn3851 github.com/goccy/pythonwasm2go/p1.Fn3851
+func Fn3851(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3851 github.com/goccy/pythonwasm2go/p2.Fn3851
-func Fn3851(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn3859 github.com/goccy/pythonwasm2go/p1.Fn3859
+func Fn3859(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
 
-//go:linkname Fn3861 github.com/goccy/pythonwasm2go/p1.Fn3861
-func Fn3861(m *base.Module, l0 int32) int32
+//go:linkname Fn3863 github.com/goccy/pythonwasm2go/p2.Fn3863
+func Fn3863(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn3869 github.com/goccy/pythonwasm2go/p1.Fn3869
-func Fn3869(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn3893 github.com/goccy/pythonwasm2go/p2.Fn3893
+func Fn3893(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3870 github.com/goccy/pythonwasm2go/p1.Fn3870
-func Fn3870(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3871 github.com/goccy/pythonwasm2go/p2.Fn3871
-func Fn3871(m *base.Module, l0 int32)
-
-//go:linkname Fn3877 github.com/goccy/pythonwasm2go/p2.Fn3877
-func Fn3877(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3878 github.com/goccy/pythonwasm2go/p1.Fn3878
-func Fn3878(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3900 github.com/goccy/pythonwasm2go/p2.Fn3900
-func Fn3900(m *base.Module, l0 int32)
-
-//go:linkname Fn3903 github.com/goccy/pythonwasm2go/p2.Fn3903
-func Fn3903(m *base.Module)
-
-//go:linkname Fn3904 github.com/goccy/pythonwasm2go/p2.Fn3904
-func Fn3904(m *base.Module) int32
-
-//go:linkname Fn3905 github.com/goccy/pythonwasm2go/p2.Fn3905
-func Fn3905(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3906 github.com/goccy/pythonwasm2go/p2.Fn3906
-func Fn3906(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn3907 github.com/goccy/pythonwasm2go/p2.Fn3907
-func Fn3907(m *base.Module, l0 int32)
-
-//go:linkname Fn3908 github.com/goccy/pythonwasm2go/p2.Fn3908
-func Fn3908(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3910 github.com/goccy/pythonwasm2go/p2.Fn3910
-func Fn3910(m *base.Module, l0 int32)
-
-//go:linkname Fn3912 github.com/goccy/pythonwasm2go/p2.Fn3912
-func Fn3912(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3914 github.com/goccy/pythonwasm2go/p2.Fn3914
-func Fn3914(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3915 github.com/goccy/pythonwasm2go/p2.Fn3915
-func Fn3915(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3917 github.com/goccy/pythonwasm2go/p1.Fn3917
-func Fn3917(m *base.Module, l0 int32)
-
-//go:linkname Fn3918 github.com/goccy/pythonwasm2go/p2.Fn3918
-func Fn3918(m *base.Module, l0 int32)
-
-//go:linkname Fn3919 github.com/goccy/pythonwasm2go/p1.Fn3919
-func Fn3919(m *base.Module, l0 int32)
-
-//go:linkname Fn3920 github.com/goccy/pythonwasm2go/p2.Fn3920
-func Fn3920(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn3921 github.com/goccy/pythonwasm2go/p2.Fn3921
-func Fn3921(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn3922 github.com/goccy/pythonwasm2go/p2.Fn3922
-func Fn3922(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3923 github.com/goccy/pythonwasm2go/p1.Fn3923
-func Fn3923(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3925 github.com/goccy/pythonwasm2go/p2.Fn3925
-func Fn3925(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3926 github.com/goccy/pythonwasm2go/p2.Fn3926
-func Fn3926(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn3927 github.com/goccy/pythonwasm2go/p2.Fn3927
-func Fn3927(m *base.Module, l0 int32)
-
-//go:linkname Fn3928 github.com/goccy/pythonwasm2go/p2.Fn3928
-func Fn3928(m *base.Module, l0 int32)
-
-//go:linkname Fn3930 github.com/goccy/pythonwasm2go/p2.Fn3930
-func Fn3930(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3931 github.com/goccy/pythonwasm2go/p2.Fn3931
-func Fn3931(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3932 github.com/goccy/pythonwasm2go/p1.Fn3932
-func Fn3932(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3933 github.com/goccy/pythonwasm2go/p2.Fn3933
-func Fn3933(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn3934 github.com/goccy/pythonwasm2go/p2.Fn3934
-func Fn3934(m *base.Module)
-
-//go:linkname Fn3935 github.com/goccy/pythonwasm2go/p2.Fn3935
-func Fn3935(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn3936 github.com/goccy/pythonwasm2go/p2.Fn3936
-func Fn3936(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn3937 github.com/goccy/pythonwasm2go/p2.Fn3937
-func Fn3937(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn3938 github.com/goccy/pythonwasm2go/p2.Fn3938
-func Fn3938(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn3897 github.com/goccy/pythonwasm2go/p2.Fn3897
+func Fn3897(m *base.Module, l0 int32) int32
 
 //go:linkname Fn3939 github.com/goccy/pythonwasm2go/p2.Fn3939
-func Fn3939(m *base.Module, l0 int32, l1 int32) int32
+func Fn3939(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn3940 github.com/goccy/pythonwasm2go/p2.Fn3940
-func Fn3940(m *base.Module, l0 int32, l1 int32, l2 int32)
+func Fn3940(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3941 github.com/goccy/pythonwasm2go/p2.Fn3941
-func Fn3941(m *base.Module, l0 int32)
-
-//go:linkname Fn3944 github.com/goccy/pythonwasm2go/p2.Fn3944
-func Fn3944(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3942 github.com/goccy/pythonwasm2go/p2.Fn3942
+func Fn3942(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
 //go:linkname Fn3945 github.com/goccy/pythonwasm2go/p2.Fn3945
-func Fn3945(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn3946 github.com/goccy/pythonwasm2go/p1.Fn3946
-func Fn3946(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+func Fn3945(m *base.Module, l0 int32)
 
 //go:linkname Fn3947 github.com/goccy/pythonwasm2go/p2.Fn3947
-func Fn3947(m *base.Module, l0 int32) int32
+func Fn3947(m *base.Module, l0 int32)
 
 //go:linkname Fn3948 github.com/goccy/pythonwasm2go/p2.Fn3948
-func Fn3948(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3949 github.com/goccy/pythonwasm2go/p2.Fn3949
-func Fn3949(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn3950 github.com/goccy/pythonwasm2go/p2.Fn3950
-func Fn3950(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn3951 github.com/goccy/pythonwasm2go/p2.Fn3951
-func Fn3951(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3952 github.com/goccy/pythonwasm2go/p2.Fn3952
-func Fn3952(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn3953 github.com/goccy/pythonwasm2go/p2.Fn3953
-func Fn3953(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn3954 github.com/goccy/pythonwasm2go/p2.Fn3954
-func Fn3954(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn3955 github.com/goccy/pythonwasm2go/p2.Fn3955
-func Fn3955(m *base.Module, l0 int32, l1 int32) int32
+func Fn3948(m *base.Module, l0 int32) int32
 
 //go:linkname Fn3956 github.com/goccy/pythonwasm2go/p2.Fn3956
-func Fn3956(m *base.Module, l0 int32, l1 int32, l2 int32)
+func Fn3956(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3957 github.com/goccy/pythonwasm2go/p2.Fn3957
-func Fn3957(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn3961 github.com/goccy/pythonwasm2go/p2.Fn3961
+func Fn3961(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn3958 github.com/goccy/pythonwasm2go/p2.Fn3958
-func Fn3958(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn3963 github.com/goccy/pythonwasm2go/p2.Fn3963
+func Fn3963(m *base.Module, l0 int32, l1 int32)
+
+//go:linkname Fn3967 github.com/goccy/pythonwasm2go/p1.Fn3967
+func Fn3967(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
 //go:linkname Fn3968 github.com/goccy/pythonwasm2go/p2.Fn3968
-func Fn3968(m *base.Module, l0 int32) int32
+func Fn3968(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn3970 github.com/goccy/pythonwasm2go/p2.Fn3970
-func Fn3970(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn3980 github.com/goccy/pythonwasm2go/p1.Fn3980
+func Fn3980(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3971 github.com/goccy/pythonwasm2go/p2.Fn3971
-func Fn3971(m *base.Module, l0 int32) int32
+//go:linkname Fn3991 github.com/goccy/pythonwasm2go/p1.Fn3991
+func Fn3991(m *base.Module, l0 int32) int32
 
-//go:linkname Fn3995 github.com/goccy/pythonwasm2go/p2.Fn3995
-func Fn3995(m *base.Module, l0 int32) int32
-
-//go:linkname Fn3996 github.com/goccy/pythonwasm2go/p2.Fn3996
-func Fn3996(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn3997 github.com/goccy/pythonwasm2go/p2.Fn3997
-func Fn3997(m *base.Module, l0 int32) int32
+//go:linkname Fn3992 github.com/goccy/pythonwasm2go/p2.Fn3992
+func Fn3992(m *base.Module, l0 int32)
 
 //go:linkname Fn3998 github.com/goccy/pythonwasm2go/p2.Fn3998
-func Fn3998(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn3998(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4002 github.com/goccy/pythonwasm2go/p2.Fn4002
-func Fn4002(m *base.Module) int32
+//go:linkname Fn3999 github.com/goccy/pythonwasm2go/p1.Fn3999
+func Fn3999(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn4070 github.com/goccy/pythonwasm2go/p2.Fn4070
-func Fn4070(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn4021 github.com/goccy/pythonwasm2go/p2.Fn4021
+func Fn4021(m *base.Module, l0 int32)
 
-//go:linkname Fn4072 github.com/goccy/pythonwasm2go/p2.Fn4072
-func Fn4072(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4024 github.com/goccy/pythonwasm2go/p2.Fn4024
+func Fn4024(m *base.Module)
+
+//go:linkname Fn4031 github.com/goccy/pythonwasm2go/p2.Fn4031
+func Fn4031(m *base.Module, l0 int32)
+
+//go:linkname Fn4032 github.com/goccy/pythonwasm2go/p2.Fn4032
+func Fn4032(m *base.Module, l0 int32, l1 int32)
+
+//go:linkname Fn4033 github.com/goccy/pythonwasm2go/p2.Fn4033
+func Fn4033(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4034 github.com/goccy/pythonwasm2go/p2.Fn4034
+func Fn4034(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn4035 github.com/goccy/pythonwasm2go/p2.Fn4035
+func Fn4035(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn4038 github.com/goccy/pythonwasm2go/p1.Fn4038
+func Fn4038(m *base.Module, l0 int32)
+
+//go:linkname Fn4040 github.com/goccy/pythonwasm2go/p1.Fn4040
+func Fn4040(m *base.Module, l0 int32)
+
+//go:linkname Fn4041 github.com/goccy/pythonwasm2go/p2.Fn4041
+func Fn4041(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+
+//go:linkname Fn4042 github.com/goccy/pythonwasm2go/p2.Fn4042
+func Fn4042(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn4045 github.com/goccy/pythonwasm2go/p1.Fn4045
+func Fn4045(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn4047 github.com/goccy/pythonwasm2go/p2.Fn4047
+func Fn4047(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4050 github.com/goccy/pythonwasm2go/p2.Fn4050
+func Fn4050(m *base.Module, l0 int32)
+
+//go:linkname Fn4054 github.com/goccy/pythonwasm2go/p1.Fn4054
+func Fn4054(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn4059 github.com/goccy/pythonwasm2go/p2.Fn4059
+func Fn4059(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+
+//go:linkname Fn4071 github.com/goccy/pythonwasm2go/p2.Fn4071
+func Fn4071(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4073 github.com/goccy/pythonwasm2go/p2.Fn4073
-func Fn4073(m *base.Module, l0 int32, l1 int32) int32
+func Fn4073(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn4074 github.com/goccy/pythonwasm2go/p1.Fn4074
+func Fn4074(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
 //go:linkname Fn4075 github.com/goccy/pythonwasm2go/p2.Fn4075
-func Fn4075(m *base.Module, l0 int32)
+func Fn4075(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4076 github.com/goccy/pythonwasm2go/p2.Fn4076
+func Fn4076(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
 //go:linkname Fn4077 github.com/goccy/pythonwasm2go/p2.Fn4077
-func Fn4077(m *base.Module, l0 int32, l1 int32)
+func Fn4077(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
-//go:linkname Fn4078 github.com/goccy/pythonwasm2go/p2.Fn4078
-func Fn4078(m *base.Module, l0 float64, l1 int32)
-
-//go:linkname Fn4079 github.com/goccy/pythonwasm2go/p2.Fn4079
-func Fn4079(m *base.Module, l0 float64, l1 int32)
-
-//go:linkname Fn4080 github.com/goccy/pythonwasm2go/p2.Fn4080
-func Fn4080(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn4081 github.com/goccy/pythonwasm2go/p2.Fn4081
-func Fn4081(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn4082 github.com/goccy/pythonwasm2go/p2.Fn4082
+func Fn4082(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn4083 github.com/goccy/pythonwasm2go/p2.Fn4083
-func Fn4083(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4084 github.com/goccy/pythonwasm2go/p1.Fn4084
-func Fn4084(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4085 github.com/goccy/pythonwasm2go/p2.Fn4085
-func Fn4085(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4086 github.com/goccy/pythonwasm2go/p2.Fn4086
-func Fn4086(m *base.Module, l0 int32) int32
+func Fn4083(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4087 github.com/goccy/pythonwasm2go/p2.Fn4087
-func Fn4087(m *base.Module, l0 int32) int32
+func Fn4087(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4094 github.com/goccy/pythonwasm2go/p2.Fn4094
-func Fn4094(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4095 github.com/goccy/pythonwasm2go/p2.Fn4095
-func Fn4095(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4096 github.com/goccy/pythonwasm2go/p2.Fn4096
-func Fn4096(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4097 github.com/goccy/pythonwasm2go/p2.Fn4097
-func Fn4097(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4098 github.com/goccy/pythonwasm2go/p2.Fn4098
-func Fn4098(m *base.Module, l0 int32) float64
-
-//go:linkname Fn4099 github.com/goccy/pythonwasm2go/p2.Fn4099
-func Fn4099(m *base.Module, l0 int32) float64
-
-//go:linkname Fn4105 github.com/goccy/pythonwasm2go/p2.Fn4105
-func Fn4105(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4114 github.com/goccy/pythonwasm2go/p2.Fn4114
-func Fn4114(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4115 github.com/goccy/pythonwasm2go/p2.Fn4115
-func Fn4115(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4116 github.com/goccy/pythonwasm2go/p2.Fn4116
-func Fn4116(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4117 github.com/goccy/pythonwasm2go/p2.Fn4117
-func Fn4117(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4118 github.com/goccy/pythonwasm2go/p2.Fn4118
-func Fn4118(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4119 github.com/goccy/pythonwasm2go/p2.Fn4119
-func Fn4119(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4121 github.com/goccy/pythonwasm2go/p2.Fn4121
-func Fn4121(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4122 github.com/goccy/pythonwasm2go/p2.Fn4122
-func Fn4122(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn4123 github.com/goccy/pythonwasm2go/p2.Fn4123
+func Fn4123(m *base.Module, l0 int32) int32
 
 //go:linkname Fn4124 github.com/goccy/pythonwasm2go/p2.Fn4124
-func Fn4124(m *base.Module, l0 int32)
+func Fn4124(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4126 github.com/goccy/pythonwasm2go/p2.Fn4126
-func Fn4126(m *base.Module, l0 int32)
+func Fn4126(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn4132 github.com/goccy/pythonwasm2go/p2.Fn4132
-func Fn4132(m *base.Module)
+//go:linkname Fn4127 github.com/goccy/pythonwasm2go/p2.Fn4127
+func Fn4127(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4133 github.com/goccy/pythonwasm2go/p2.Fn4133
-func Fn4133(m *base.Module, l0 int32)
+//go:linkname Fn4128 github.com/goccy/pythonwasm2go/p2.Fn4128
+func Fn4128(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4134 github.com/goccy/pythonwasm2go/p1.Fn4134
-func Fn4134(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn4129 github.com/goccy/pythonwasm2go/p2.Fn4129
+func Fn4129(m *base.Module, l0 int32)
 
-//go:linkname Fn4135 github.com/goccy/pythonwasm2go/p2.Fn4135
-func Fn4135(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4136 github.com/goccy/pythonwasm2go/p2.Fn4136
-func Fn4136(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4139 github.com/goccy/pythonwasm2go/p2.Fn4139
-func Fn4139(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn4140 github.com/goccy/pythonwasm2go/p2.Fn4140
-func Fn4140(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn4141 github.com/goccy/pythonwasm2go/p2.Fn4141
-func Fn4141(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn4142 github.com/goccy/pythonwasm2go/p2.Fn4142
-func Fn4142(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4143 github.com/goccy/pythonwasm2go/p2.Fn4143
-func Fn4143(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn4144 github.com/goccy/pythonwasm2go/p2.Fn4144
-func Fn4144(m *base.Module) int32
-
-//go:linkname Fn4147 github.com/goccy/pythonwasm2go/p2.Fn4147
-func Fn4147(m *base.Module, l0 int32)
-
-//go:linkname Fn4149 github.com/goccy/pythonwasm2go/p2.Fn4149
-func Fn4149(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4154 github.com/goccy/pythonwasm2go/p1.Fn4154
-func Fn4154(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn4162 github.com/goccy/pythonwasm2go/p1.Fn4162
-func Fn4162(m *base.Module, l0 int32)
-
-//go:linkname Fn4164 github.com/goccy/pythonwasm2go/p2.Fn4164
-func Fn4164(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4165 github.com/goccy/pythonwasm2go/p2.Fn4165
-func Fn4165(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4166 github.com/goccy/pythonwasm2go/p2.Fn4166
-func Fn4166(m *base.Module, l0 int32)
-
-//go:linkname Fn4168 github.com/goccy/pythonwasm2go/p2.Fn4168
-func Fn4168(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn4169 github.com/goccy/pythonwasm2go/p1.Fn4169
-func Fn4169(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn4170 github.com/goccy/pythonwasm2go/p1.Fn4170
-func Fn4170(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn4172 github.com/goccy/pythonwasm2go/p1.Fn4172
-func Fn4172(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4188 github.com/goccy/pythonwasm2go/p2.Fn4188
-func Fn4188(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4192 github.com/goccy/pythonwasm2go/p2.Fn4192
-func Fn4192(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4193 github.com/goccy/pythonwasm2go/p1.Fn4193
-func Fn4193(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn4196 github.com/goccy/pythonwasm2go/p2.Fn4196
-func Fn4196(m *base.Module)
-
-//go:linkname Fn4197 github.com/goccy/pythonwasm2go/p1.Fn4197
-func Fn4197(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn4186 github.com/goccy/pythonwasm2go/p2.Fn4186
+func Fn4186(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn4198 github.com/goccy/pythonwasm2go/p2.Fn4198
-func Fn4198(m *base.Module, l0 int32)
+func Fn4198(m *base.Module, l0 int32, l1 int32)
+
+//go:linkname Fn4199 github.com/goccy/pythonwasm2go/p2.Fn4199
+func Fn4199(m *base.Module, l0 int32)
+
+//go:linkname Fn4200 github.com/goccy/pythonwasm2go/p2.Fn4200
+func Fn4200(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4201 github.com/goccy/pythonwasm2go/p2.Fn4201
+func Fn4201(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4203 github.com/goccy/pythonwasm2go/p2.Fn4203
 func Fn4203(m *base.Module, l0 int32)
 
-//go:linkname Fn4205 github.com/goccy/pythonwasm2go/p2.Fn4205
-func Fn4205(m *base.Module, l0 int32)
+//go:linkname Fn4208 github.com/goccy/pythonwasm2go/p2.Fn4208
+func Fn4208(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn4206 github.com/goccy/pythonwasm2go/p2.Fn4206
-func Fn4206(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn4211 github.com/goccy/pythonwasm2go/p1.Fn4211
+func Fn4211(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4213 github.com/goccy/pythonwasm2go/p2.Fn4213
+func Fn4213(m *base.Module, l0 int32) int32
 
 //go:linkname Fn4215 github.com/goccy/pythonwasm2go/p2.Fn4215
-func Fn4215(m *base.Module, l0 int32)
+func Fn4215(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4224 github.com/goccy/pythonwasm2go/p2.Fn4224
-func Fn4224(m *base.Module, l0 int32) int32
+//go:linkname Fn4216 github.com/goccy/pythonwasm2go/p2.Fn4216
+func Fn4216(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4230 github.com/goccy/pythonwasm2go/p2.Fn4230
-func Fn4230(m *base.Module, l0 int32)
+//go:linkname Fn4220 github.com/goccy/pythonwasm2go/p2.Fn4220
+func Fn4220(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn4234 github.com/goccy/pythonwasm2go/p2.Fn4234
-func Fn4234(m *base.Module, l0 int32)
+//go:linkname Fn4221 github.com/goccy/pythonwasm2go/p2.Fn4221
+func Fn4221(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4235 github.com/goccy/pythonwasm2go/p2.Fn4235
-func Fn4235(m *base.Module) int32
+//go:linkname Fn4241 github.com/goccy/pythonwasm2go/p2.Fn4241
+func Fn4241(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4237 github.com/goccy/pythonwasm2go/p2.Fn4237
-func Fn4237(m *base.Module) int32
-
-//go:linkname Fn4243 github.com/goccy/pythonwasm2go/p2.Fn4243
-func Fn4243(m *base.Module, l0 int32, l1 int32)
-
-//go:linkname Fn4244 github.com/goccy/pythonwasm2go/p2.Fn4244
-func Fn4244(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4245 github.com/goccy/pythonwasm2go/p2.Fn4245
-func Fn4245(m *base.Module, l0 int32)
-
-//go:linkname Fn4246 github.com/goccy/pythonwasm2go/p2.Fn4246
-func Fn4246(m *base.Module) int32
+//go:linkname Fn4242 github.com/goccy/pythonwasm2go/p2.Fn4242
+func Fn4242(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn4248 github.com/goccy/pythonwasm2go/p2.Fn4248
-func Fn4248(m *base.Module, l0 int32)
+func Fn4248(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn4250 github.com/goccy/pythonwasm2go/p2.Fn4250
-func Fn4250(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32)
+//go:linkname Fn4249 github.com/goccy/pythonwasm2go/p2.Fn4249
+func Fn4249(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn4251 github.com/goccy/pythonwasm2go/p1.Fn4251
-func Fn4251(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32)
+//go:linkname Fn4251 github.com/goccy/pythonwasm2go/p2.Fn4251
+func Fn4251(m *base.Module, l0 int32)
 
-//go:linkname Fn4254 github.com/goccy/pythonwasm2go/p2.Fn4254
-func Fn4254(m *base.Module, l0 int32)
-
-//go:linkname Fn4255 github.com/goccy/pythonwasm2go/p1.Fn4255
-func Fn4255(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn4256 github.com/goccy/pythonwasm2go/p1.Fn4256
-func Fn4256(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4257 github.com/goccy/pythonwasm2go/p2.Fn4257
-func Fn4257(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4258 github.com/goccy/pythonwasm2go/p2.Fn4258
-func Fn4258(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4259 github.com/goccy/pythonwasm2go/p2.Fn4259
-func Fn4259(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4260 github.com/goccy/pythonwasm2go/p2.Fn4260
-func Fn4260(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4261 github.com/goccy/pythonwasm2go/p2.Fn4261
-func Fn4261(m *base.Module, l0 int32) int32
+//go:linkname Fn4253 github.com/goccy/pythonwasm2go/p2.Fn4253
+func Fn4253(m *base.Module, l0 int32)
 
 //go:linkname Fn4262 github.com/goccy/pythonwasm2go/p2.Fn4262
-func Fn4262(m *base.Module, l0 int32) int32
+func Fn4262(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4263 github.com/goccy/pythonwasm2go/p2.Fn4263
 func Fn4263(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4264 github.com/goccy/pythonwasm2go/p2.Fn4264
-func Fn4264(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn4264(m *base.Module, l0 int32)
 
 //go:linkname Fn4265 github.com/goccy/pythonwasm2go/p2.Fn4265
-func Fn4265(m *base.Module, l0 int32, l1 int32) int32
+func Fn4265(m *base.Module, l0 int32)
 
-//go:linkname Fn4266 github.com/goccy/pythonwasm2go/p2.Fn4266
-func Fn4266(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4267 github.com/goccy/pythonwasm2go/p2.Fn4267
+func Fn4267(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn4267 github.com/goccy/pythonwasm2go/p1.Fn4267
-func Fn4267(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4268 github.com/goccy/pythonwasm2go/p2.Fn4268
+func Fn4268(m *base.Module, l0 int32, l1 int32)
 
 //go:linkname Fn4269 github.com/goccy/pythonwasm2go/p2.Fn4269
-func Fn4269(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn4269(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4271 github.com/goccy/pythonwasm2go/p2.Fn4271
-func Fn4271(m *base.Module, l0 int32, l1 int32) int32
+func Fn4271(m *base.Module) int32
 
 //go:linkname Fn4272 github.com/goccy/pythonwasm2go/p2.Fn4272
-func Fn4272(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn4272(m *base.Module, l0 int32) int32
 
 //go:linkname Fn4273 github.com/goccy/pythonwasm2go/p2.Fn4273
-func Fn4273(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn4273(m *base.Module, l0 int32)
 
-//go:linkname Fn4274 github.com/goccy/pythonwasm2go/p1.Fn4274
-func Fn4274(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn4274 github.com/goccy/pythonwasm2go/p2.Fn4274
+func Fn4274(m *base.Module, l0 int32)
 
 //go:linkname Fn4275 github.com/goccy/pythonwasm2go/p2.Fn4275
-func Fn4275(m *base.Module, l0 int32) int32
+func Fn4275(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4277 github.com/goccy/pythonwasm2go/p2.Fn4277
-func Fn4277(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4279 github.com/goccy/pythonwasm2go/p2.Fn4279
-func Fn4279(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4280 github.com/goccy/pythonwasm2go/p2.Fn4280
-func Fn4280(m *base.Module, l0 int32) int32
+//go:linkname Fn4276 github.com/goccy/pythonwasm2go/p2.Fn4276
+func Fn4276(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4281 github.com/goccy/pythonwasm2go/p1.Fn4281
-func Fn4281(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn4282 github.com/goccy/pythonwasm2go/p1.Fn4282
-func Fn4282(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn4283 github.com/goccy/pythonwasm2go/p1.Fn4283
-func Fn4283(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4284 github.com/goccy/pythonwasm2go/p1.Fn4284
-func Fn4284(m *base.Module, l0 int32) int32
+func Fn4281(m *base.Module, l0 int32, l1 int32)
 
 //go:linkname Fn4285 github.com/goccy/pythonwasm2go/p2.Fn4285
-func Fn4285(m *base.Module, l0 int32) int32
+func Fn4285(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4287 github.com/goccy/pythonwasm2go/p1.Fn4287
-func Fn4287(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn4289 github.com/goccy/pythonwasm2go/p1.Fn4289
+func Fn4289(m *base.Module, l0 int32)
 
-//go:linkname Fn4288 github.com/goccy/pythonwasm2go/p2.Fn4288
-func Fn4288(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4293 github.com/goccy/pythonwasm2go/p2.Fn4293
+func Fn4293(m *base.Module, l0 int32)
 
-//go:linkname Fn4289 github.com/goccy/pythonwasm2go/p2.Fn4289
-func Fn4289(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4295 github.com/goccy/pythonwasm2go/p2.Fn4295
+func Fn4295(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn4290 github.com/goccy/pythonwasm2go/p2.Fn4290
-func Fn4290(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4291 github.com/goccy/pythonwasm2go/p2.Fn4291
-func Fn4291(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32) int32
-
-//go:linkname Fn4292 github.com/goccy/pythonwasm2go/p2.Fn4292
-func Fn4292(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4296 github.com/goccy/pythonwasm2go/p1.Fn4296
-func Fn4296(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4297 github.com/goccy/pythonwasm2go/p1.Fn4297
-func Fn4297(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4298 github.com/goccy/pythonwasm2go/p1.Fn4298
-func Fn4298(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4300 github.com/goccy/pythonwasm2go/p1.Fn4300
-func Fn4300(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4302 github.com/goccy/pythonwasm2go/p1.Fn4302
-func Fn4302(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4311 github.com/goccy/pythonwasm2go/p1.Fn4311
-func Fn4311(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4312 github.com/goccy/pythonwasm2go/p1.Fn4312
-func Fn4312(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4313 github.com/goccy/pythonwasm2go/p1.Fn4313
-func Fn4313(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4314 github.com/goccy/pythonwasm2go/p2.Fn4314
-func Fn4314(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4299 github.com/goccy/pythonwasm2go/p1.Fn4299
+func Fn4299(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4315 github.com/goccy/pythonwasm2go/p2.Fn4315
-func Fn4315(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn4315(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4320 github.com/goccy/pythonwasm2go/p1.Fn4320
+func Fn4320(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
 //go:linkname Fn4323 github.com/goccy/pythonwasm2go/p2.Fn4323
-func Fn4323(m *base.Module, l0 int32) int32
+func Fn4323(m *base.Module)
 
-//go:linkname Fn4326 github.com/goccy/pythonwasm2go/p1.Fn4326
-func Fn4326(m *base.Module, l0 int32) int32
+//go:linkname Fn4324 github.com/goccy/pythonwasm2go/p1.Fn4324
+func Fn4324(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn4327 github.com/goccy/pythonwasm2go/p1.Fn4327
-func Fn4327(m *base.Module, l0 int32) int32
+//go:linkname Fn4325 github.com/goccy/pythonwasm2go/p2.Fn4325
+func Fn4325(m *base.Module, l0 int32)
 
-//go:linkname Fn4328 github.com/goccy/pythonwasm2go/p2.Fn4328
-func Fn4328(m *base.Module, l0 int32) int32
+//go:linkname Fn4330 github.com/goccy/pythonwasm2go/p2.Fn4330
+func Fn4330(m *base.Module, l0 int32)
 
-//go:linkname Fn4332 github.com/goccy/pythonwasm2go/p2.Fn4332
-func Fn4332(m *base.Module, l0 int32) int32
+//go:linkname Fn4342 github.com/goccy/pythonwasm2go/p2.Fn4342
+func Fn4342(m *base.Module, l0 int32)
 
-//go:linkname Fn4333 github.com/goccy/pythonwasm2go/p1.Fn4333
-func Fn4333(m *base.Module, l0 int32) int32
+//go:linkname Fn4351 github.com/goccy/pythonwasm2go/p2.Fn4351
+func Fn4351(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4342 github.com/goccy/pythonwasm2go/p1.Fn4342
-func Fn4342(m *base.Module, l0 int32) int32
+//go:linkname Fn4357 github.com/goccy/pythonwasm2go/p2.Fn4357
+func Fn4357(m *base.Module, l0 int32)
 
-//go:linkname Fn4343 github.com/goccy/pythonwasm2go/p1.Fn4343
-func Fn4343(m *base.Module, l0 int32) int32
+//go:linkname Fn4361 github.com/goccy/pythonwasm2go/p2.Fn4361
+func Fn4361(m *base.Module, l0 int32)
 
-//go:linkname Fn4344 github.com/goccy/pythonwasm2go/p1.Fn4344
-func Fn4344(m *base.Module, l0 int32) int32
+//go:linkname Fn4362 github.com/goccy/pythonwasm2go/p2.Fn4362
+func Fn4362(m *base.Module) int32
+
+//go:linkname Fn4364 github.com/goccy/pythonwasm2go/p2.Fn4364
+func Fn4364(m *base.Module) int32
+
+//go:linkname Fn4370 github.com/goccy/pythonwasm2go/p2.Fn4370
+func Fn4370(m *base.Module, l0 int32, l1 int32)
+
+//go:linkname Fn4373 github.com/goccy/pythonwasm2go/p2.Fn4373
+func Fn4373(m *base.Module) int32
+
+//go:linkname Fn4374 github.com/goccy/pythonwasm2go/p1.Fn4374
+func Fn4374(m *base.Module, l0 int32)
+
+//go:linkname Fn4376 github.com/goccy/pythonwasm2go/p1.Fn4376
+func Fn4376(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn4377 github.com/goccy/pythonwasm2go/p2.Fn4377
+func Fn4377(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32)
+
+//go:linkname Fn4378 github.com/goccy/pythonwasm2go/p1.Fn4378
+func Fn4378(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32)
 
 //go:linkname Fn4381 github.com/goccy/pythonwasm2go/p2.Fn4381
-func Fn4381(m *base.Module, l0 int32) int32
+func Fn4381(m *base.Module, l0 int32)
 
-//go:linkname Fn4386 github.com/goccy/pythonwasm2go/p2.Fn4386
-func Fn4386(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn4382 github.com/goccy/pythonwasm2go/p1.Fn4382
+func Fn4382(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn4383 github.com/goccy/pythonwasm2go/p1.Fn4383
+func Fn4383(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn4384 github.com/goccy/pythonwasm2go/p2.Fn4384
+func Fn4384(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4385 github.com/goccy/pythonwasm2go/p2.Fn4385
+func Fn4385(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn4391 github.com/goccy/pythonwasm2go/p2.Fn4391
-func Fn4391(m *base.Module, l0 int32, l1 int32) int32
+func Fn4391(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4404 github.com/goccy/pythonwasm2go/p1.Fn4404
-func Fn4404(m *base.Module, l0 int32) int32
+//go:linkname Fn4392 github.com/goccy/pythonwasm2go/p2.Fn4392
+func Fn4392(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4411 github.com/goccy/pythonwasm2go/p2.Fn4411
-func Fn4411(m *base.Module, l0 int32)
+//go:linkname Fn4393 github.com/goccy/pythonwasm2go/p2.Fn4393
+func Fn4393(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4418 github.com/goccy/pythonwasm2go/p1.Fn4418
-func Fn4418(m *base.Module, l0 int32) int32
+//go:linkname Fn4394 github.com/goccy/pythonwasm2go/p1.Fn4394
+func Fn4394(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4422 github.com/goccy/pythonwasm2go/p1.Fn4422
-func Fn4422(m *base.Module, l0 int32) int32
+//go:linkname Fn4395 github.com/goccy/pythonwasm2go/p1.Fn4395
+func Fn4395(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4424 github.com/goccy/pythonwasm2go/p2.Fn4424
-func Fn4424(m *base.Module, l0 int32) int32
+//go:linkname Fn4396 github.com/goccy/pythonwasm2go/p2.Fn4396
+func Fn4396(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn4397 github.com/goccy/pythonwasm2go/p2.Fn4397
+func Fn4397(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn4398 github.com/goccy/pythonwasm2go/p2.Fn4398
+func Fn4398(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4400 github.com/goccy/pythonwasm2go/p2.Fn4400
+func Fn4400(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn4402 github.com/goccy/pythonwasm2go/p2.Fn4402
+func Fn4402(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4405 github.com/goccy/pythonwasm2go/p2.Fn4405
+func Fn4405(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4409 github.com/goccy/pythonwasm2go/p1.Fn4409
+func Fn4409(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+
+//go:linkname Fn4410 github.com/goccy/pythonwasm2go/p1.Fn4410
+func Fn4410(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4411 github.com/goccy/pythonwasm2go/p1.Fn4411
+func Fn4411(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4413 github.com/goccy/pythonwasm2go/p1.Fn4413
+func Fn4413(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4414 github.com/goccy/pythonwasm2go/p1.Fn4414
+func Fn4414(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn4417 github.com/goccy/pythonwasm2go/p2.Fn4417
+func Fn4417(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn4423 github.com/goccy/pythonwasm2go/p1.Fn4423
+func Fn4423(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4425 github.com/goccy/pythonwasm2go/p1.Fn4425
+func Fn4425(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4427 github.com/goccy/pythonwasm2go/p1.Fn4427
+func Fn4427(m *base.Module, l0 int32) int32
 
 //go:linkname Fn4429 github.com/goccy/pythonwasm2go/p1.Fn4429
 func Fn4429(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4432 github.com/goccy/pythonwasm2go/p2.Fn4432
-func Fn4432(m *base.Module, l0 int32) int32
+//go:linkname Fn4438 github.com/goccy/pythonwasm2go/p1.Fn4438
+func Fn4438(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4433 github.com/goccy/pythonwasm2go/p1.Fn4433
-func Fn4433(m *base.Module, l0 int32) int32
+//go:linkname Fn4439 github.com/goccy/pythonwasm2go/p1.Fn4439
+func Fn4439(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4436 github.com/goccy/pythonwasm2go/p2.Fn4436
-func Fn4436(m *base.Module, l0 int32) int32
+//go:linkname Fn4440 github.com/goccy/pythonwasm2go/p1.Fn4440
+func Fn4440(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4437 github.com/goccy/pythonwasm2go/p1.Fn4437
-func Fn4437(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4441 github.com/goccy/pythonwasm2go/p1.Fn4441
-func Fn4441(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4452 github.com/goccy/pythonwasm2go/p2.Fn4452
-func Fn4452(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4453 github.com/goccy/pythonwasm2go/p1.Fn4453
-func Fn4453(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4455 github.com/goccy/pythonwasm2go/p2.Fn4455
-func Fn4455(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4456 github.com/goccy/pythonwasm2go/p1.Fn4456
-func Fn4456(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4457 github.com/goccy/pythonwasm2go/p2.Fn4457
-func Fn4457(m *base.Module, l0 int32) int32
+//go:linkname Fn4442 github.com/goccy/pythonwasm2go/p2.Fn4442
+func Fn4442(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn4458 github.com/goccy/pythonwasm2go/p1.Fn4458
 func Fn4458(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4459 github.com/goccy/pythonwasm2go/p1.Fn4459
-func Fn4459(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4460 github.com/goccy/pythonwasm2go/p1.Fn4460
-func Fn4460(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4461 github.com/goccy/pythonwasm2go/p1.Fn4461
-func Fn4461(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4462 github.com/goccy/pythonwasm2go/p1.Fn4462
-func Fn4462(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4463 github.com/goccy/pythonwasm2go/p1.Fn4463
-func Fn4463(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4464 github.com/goccy/pythonwasm2go/p1.Fn4464
-func Fn4464(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4465 github.com/goccy/pythonwasm2go/p1.Fn4465
-func Fn4465(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4473 github.com/goccy/pythonwasm2go/p2.Fn4473
-func Fn4473(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4484 github.com/goccy/pythonwasm2go/p2.Fn4484
-func Fn4484(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4485 github.com/goccy/pythonwasm2go/p1.Fn4485
-func Fn4485(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4488 github.com/goccy/pythonwasm2go/p1.Fn4488
-func Fn4488(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4490 github.com/goccy/pythonwasm2go/p1.Fn4490
-func Fn4490(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4491 github.com/goccy/pythonwasm2go/p1.Fn4491
-func Fn4491(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4492 github.com/goccy/pythonwasm2go/p2.Fn4492
-func Fn4492(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4494 github.com/goccy/pythonwasm2go/p1.Fn4494
-func Fn4494(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4510 github.com/goccy/pythonwasm2go/p2.Fn4510
-func Fn4510(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4511 github.com/goccy/pythonwasm2go/p2.Fn4511
-func Fn4511(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
 //go:linkname Fn4513 github.com/goccy/pythonwasm2go/p2.Fn4513
-func Fn4513(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4514 github.com/goccy/pythonwasm2go/p2.Fn4514
-func Fn4514(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4515 github.com/goccy/pythonwasm2go/p2.Fn4515
-func Fn4515(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4516 github.com/goccy/pythonwasm2go/p2.Fn4516
-func Fn4516(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4517 github.com/goccy/pythonwasm2go/p2.Fn4517
-func Fn4517(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn4513(m *base.Module, l0 int32, l1 int32, l2 int32)
 
 //go:linkname Fn4518 github.com/goccy/pythonwasm2go/p2.Fn4518
 func Fn4518(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4519 github.com/goccy/pythonwasm2go/p2.Fn4519
-func Fn4519(m *base.Module, l0 int32) int32
+//go:linkname Fn4531 github.com/goccy/pythonwasm2go/p1.Fn4531
+func Fn4531(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4521 github.com/goccy/pythonwasm2go/p2.Fn4521
-func Fn4521(m *base.Module, l0 int32) int32
+//go:linkname Fn4545 github.com/goccy/pythonwasm2go/p1.Fn4545
+func Fn4545(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4522 github.com/goccy/pythonwasm2go/p1.Fn4522
-func Fn4522(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4549 github.com/goccy/pythonwasm2go/p1.Fn4549
+func Fn4549(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4523 github.com/goccy/pythonwasm2go/p2.Fn4523
-func Fn4523(m *base.Module, l0 int32) int32
+//go:linkname Fn4556 github.com/goccy/pythonwasm2go/p1.Fn4556
+func Fn4556(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4524 github.com/goccy/pythonwasm2go/p1.Fn4524
-func Fn4524(m *base.Module, l0 int32) int32
+//go:linkname Fn4559 github.com/goccy/pythonwasm2go/p2.Fn4559
+func Fn4559(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4529 github.com/goccy/pythonwasm2go/p2.Fn4529
-func Fn4529(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
-
-//go:linkname Fn4532 github.com/goccy/pythonwasm2go/p2.Fn4532
-func Fn4532(m *base.Module, l0 int32)
-
-//go:linkname Fn4533 github.com/goccy/pythonwasm2go/p2.Fn4533
-func Fn4533(m *base.Module)
-
-//go:linkname Fn4534 github.com/goccy/pythonwasm2go/p2.Fn4534
-func Fn4534(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4535 github.com/goccy/pythonwasm2go/p2.Fn4535
-func Fn4535(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4536 github.com/goccy/pythonwasm2go/p2.Fn4536
-func Fn4536(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn4537 github.com/goccy/pythonwasm2go/p1.Fn4537
-func Fn4537(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn4553 github.com/goccy/pythonwasm2go/p2.Fn4553
-func Fn4553(m *base.Module, l0 int64, l1 int64) int64
-
-//go:linkname Fn4554 github.com/goccy/pythonwasm2go/p2.Fn4554
-func Fn4554(m *base.Module, l0 int32, l1 int64) int32
-
-//go:linkname Fn4555 github.com/goccy/pythonwasm2go/p2.Fn4555
-func Fn4555(m *base.Module, l0 int64, l1 int64) int64
-
-//go:linkname Fn4560 github.com/goccy/pythonwasm2go/p2.Fn4560
+//go:linkname Fn4560 github.com/goccy/pythonwasm2go/p1.Fn4560
 func Fn4560(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4569 github.com/goccy/pythonwasm2go/p2.Fn4569
-func Fn4569(m *base.Module, l0 int64) float64
+//go:linkname Fn4563 github.com/goccy/pythonwasm2go/p2.Fn4563
+func Fn4563(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4570 github.com/goccy/pythonwasm2go/p2.Fn4570
-func Fn4570(m *base.Module, l0 int64, l1 int32) int64
+//go:linkname Fn4564 github.com/goccy/pythonwasm2go/p2.Fn4564
+func Fn4564(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4575 github.com/goccy/pythonwasm2go/p2.Fn4575
-func Fn4575(m *base.Module, l0 int64, l1 int32)
+//go:linkname Fn4568 github.com/goccy/pythonwasm2go/p1.Fn4568
+func Fn4568(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4588 github.com/goccy/pythonwasm2go/p1.Fn4588
-func Fn4588(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4580 github.com/goccy/pythonwasm2go/p1.Fn4580
+func Fn4580(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4589 github.com/goccy/pythonwasm2go/p2.Fn4589
-func Fn4589(m *base.Module, l0 int32)
+//go:linkname Fn4611 github.com/goccy/pythonwasm2go/p2.Fn4611
+func Fn4611(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4590 github.com/goccy/pythonwasm2go/p2.Fn4590
-func Fn4590(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4618 github.com/goccy/pythonwasm2go/p1.Fn4618
+func Fn4618(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4591 github.com/goccy/pythonwasm2go/p1.Fn4591
-func Fn4591(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4592 github.com/goccy/pythonwasm2go/p2.Fn4592
-func Fn4592(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn4593 github.com/goccy/pythonwasm2go/p2.Fn4593
-func Fn4593(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4594 github.com/goccy/pythonwasm2go/p2.Fn4594
-func Fn4594(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
-
-//go:linkname Fn4595 github.com/goccy/pythonwasm2go/p2.Fn4595
-func Fn4595(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4596 github.com/goccy/pythonwasm2go/p2.Fn4596
-func Fn4596(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4597 github.com/goccy/pythonwasm2go/p2.Fn4597
-func Fn4597(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4598 github.com/goccy/pythonwasm2go/p2.Fn4598
-func Fn4598(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4599 github.com/goccy/pythonwasm2go/p2.Fn4599
-func Fn4599(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4621 github.com/goccy/pythonwasm2go/p2.Fn4621
-func Fn4621(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn4624 github.com/goccy/pythonwasm2go/p2.Fn4624
+//go:linkname Fn4624 github.com/goccy/pythonwasm2go/p1.Fn4624
 func Fn4624(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4627 github.com/goccy/pythonwasm2go/p1.Fn4627
-func Fn4627(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn4625 github.com/goccy/pythonwasm2go/p2.Fn4625
+func Fn4625(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4628 github.com/goccy/pythonwasm2go/p2.Fn4628
-func Fn4628(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4629 github.com/goccy/pythonwasm2go/p2.Fn4629
-func Fn4629(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn4630 github.com/goccy/pythonwasm2go/p1.Fn4630
-func Fn4630(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn4631 github.com/goccy/pythonwasm2go/p2.Fn4631
-func Fn4631(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4632 github.com/goccy/pythonwasm2go/p1.Fn4632
-func Fn4632(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
-
-//go:linkname Fn4633 github.com/goccy/pythonwasm2go/p1.Fn4633
-func Fn4633(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4634 github.com/goccy/pythonwasm2go/p1.Fn4634
-func Fn4634(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn4635 github.com/goccy/pythonwasm2go/p1.Fn4635
-func Fn4635(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4636 github.com/goccy/pythonwasm2go/p2.Fn4636
-func Fn4636(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4638 github.com/goccy/pythonwasm2go/p2.Fn4638
-func Fn4638(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4637 github.com/goccy/pythonwasm2go/p2.Fn4637
+func Fn4637(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn4639 github.com/goccy/pythonwasm2go/p1.Fn4639
-func Fn4639(m *base.Module, l0 int32, l1 int32) int32
+func Fn4639(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4641 github.com/goccy/pythonwasm2go/p1.Fn4641
-func Fn4641(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4641 github.com/goccy/pythonwasm2go/p2.Fn4641
+func Fn4641(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn4642 github.com/goccy/pythonwasm2go/p2.Fn4642
-func Fn4642(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn4642(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn4643 github.com/goccy/pythonwasm2go/p2.Fn4643
 func Fn4643(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4644 github.com/goccy/pythonwasm2go/p2.Fn4644
-func Fn4644(m *base.Module, l0 int32)
+func Fn4644(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
 //go:linkname Fn4645 github.com/goccy/pythonwasm2go/p2.Fn4645
-func Fn4645(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn4645(m *base.Module, l0 int32, l1 int32) int32
 
 //go:linkname Fn4646 github.com/goccy/pythonwasm2go/p2.Fn4646
-func Fn4646(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn4646(m *base.Module, l0 int32) int32
 
 //go:linkname Fn4647 github.com/goccy/pythonwasm2go/p2.Fn4647
-func Fn4647(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+func Fn4647(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4649 github.com/goccy/pythonwasm2go/p2.Fn4649
-func Fn4649(m *base.Module, l0 int32) int32
+//go:linkname Fn4648 github.com/goccy/pythonwasm2go/p2.Fn4648
+func Fn4648(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4650 github.com/goccy/pythonwasm2go/p2.Fn4650
-func Fn4650(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn4649 github.com/goccy/pythonwasm2go/p1.Fn4649
+func Fn4649(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4651 github.com/goccy/pythonwasm2go/p2.Fn4651
-func Fn4651(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4651 github.com/goccy/pythonwasm2go/p1.Fn4651
+func Fn4651(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4652 github.com/goccy/pythonwasm2go/p2.Fn4652
-func Fn4652(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4653 github.com/goccy/pythonwasm2go/p1.Fn4653
+func Fn4653(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
 //go:linkname Fn4654 github.com/goccy/pythonwasm2go/p2.Fn4654
-func Fn4654(m *base.Module, l0 int32) int32
+func Fn4654(m *base.Module, l0 int32)
 
-//go:linkname Fn4656 github.com/goccy/pythonwasm2go/p1.Fn4656
-func Fn4656(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4655 github.com/goccy/pythonwasm2go/p1.Fn4655
+func Fn4655(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4656 github.com/goccy/pythonwasm2go/p2.Fn4656
+func Fn4656(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
 
 //go:linkname Fn4657 github.com/goccy/pythonwasm2go/p2.Fn4657
-func Fn4657(m *base.Module, l0 int32, l1 int32) int32
+func Fn4657(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4662 github.com/goccy/pythonwasm2go/p2.Fn4662
-func Fn4662(m *base.Module, l0 int32) int32
+//go:linkname Fn4664 github.com/goccy/pythonwasm2go/p1.Fn4664
+func Fn4664(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 
-//go:linkname Fn4667 github.com/goccy/pythonwasm2go/p2.Fn4667
-func Fn4667(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4665 github.com/goccy/pythonwasm2go/p2.Fn4665
+func Fn4665(m *base.Module, l0 int32)
 
-//go:linkname Fn4672 github.com/goccy/pythonwasm2go/p2.Fn4672
-func Fn4672(m *base.Module, l0 int32) int32
+//go:linkname Fn4680 github.com/goccy/pythonwasm2go/p2.Fn4680
+func Fn4680(m *base.Module, l0 int64, l1 int64) int64
 
-//go:linkname Fn4674 github.com/goccy/pythonwasm2go/p2.Fn4674
-func Fn4674(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4681 github.com/goccy/pythonwasm2go/p2.Fn4681
+func Fn4681(m *base.Module, l0 int32, l1 int64) int32
 
-//go:linkname Fn4676 github.com/goccy/pythonwasm2go/p2.Fn4676
-func Fn4676(m *base.Module, l0 int32)
+//go:linkname Fn4682 github.com/goccy/pythonwasm2go/p2.Fn4682
+func Fn4682(m *base.Module, l0 int64, l1 int64) int64
 
-//go:linkname Fn4678 github.com/goccy/pythonwasm2go/p1.Fn4678
-func Fn4678(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4683 github.com/goccy/pythonwasm2go/p2.Fn4683
+func Fn4683(m *base.Module, l0 int32, l1 int64) int32
 
-//go:linkname Fn4679 github.com/goccy/pythonwasm2go/p2.Fn4679
-func Fn4679(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4700 github.com/goccy/pythonwasm2go/p2.Fn4700
+func Fn4700(m *base.Module, l0 int64, l1 int64, l2 int32) int64
 
-//go:linkname Fn4750 github.com/goccy/pythonwasm2go/p2.Fn4750
-func Fn4750(m *base.Module) int64
+//go:linkname Fn4706 github.com/goccy/pythonwasm2go/p2.Fn4706
+func Fn4706(m *base.Module, l0 int64, l1 int32)
 
-//go:linkname Fn4751 github.com/goccy/pythonwasm2go/p2.Fn4751
-func Fn4751(m *base.Module) int32
+//go:linkname Fn4720 github.com/goccy/pythonwasm2go/p1.Fn4720
+func Fn4720(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4752 github.com/goccy/pythonwasm2go/p2.Fn4752
-func Fn4752(m *base.Module, l0 int32)
+//go:linkname Fn4722 github.com/goccy/pythonwasm2go/p2.Fn4722
+func Fn4722(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4754 github.com/goccy/pythonwasm2go/p2.Fn4754
-func Fn4754(m *base.Module, l0 int32)
+//go:linkname Fn4727 github.com/goccy/pythonwasm2go/p2.Fn4727
+func Fn4727(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4756 github.com/goccy/pythonwasm2go/p2.Fn4756
-func Fn4756(m *base.Module, l0 int32) int32
+//go:linkname Fn4729 github.com/goccy/pythonwasm2go/p2.Fn4729
+func Fn4729(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4757 github.com/goccy/pythonwasm2go/p2.Fn4757
-func Fn4757(m *base.Module, l0 int32)
+//go:linkname Fn4753 github.com/goccy/pythonwasm2go/p2.Fn4753
+func Fn4753(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn4758 github.com/goccy/pythonwasm2go/p2.Fn4758
-func Fn4758(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4759 github.com/goccy/pythonwasm2go/p1.Fn4759
+func Fn4759(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn4759 github.com/goccy/pythonwasm2go/p2.Fn4759
-func Fn4759(m *base.Module, l0 int32) int32
+//go:linkname Fn4760 github.com/goccy/pythonwasm2go/p2.Fn4760
+func Fn4760(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4763 github.com/goccy/pythonwasm2go/p2.Fn4763
-func Fn4763(m *base.Module, l0 int32)
+//go:linkname Fn4761 github.com/goccy/pythonwasm2go/p2.Fn4761
+func Fn4761(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn4767 github.com/goccy/pythonwasm2go/p2.Fn4767
-func Fn4767(m *base.Module, l0 int32) int32
+//go:linkname Fn4762 github.com/goccy/pythonwasm2go/p1.Fn4762
+func Fn4762(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn4774 github.com/goccy/pythonwasm2go/p2.Fn4774
-func Fn4774(m *base.Module, l0 int32) int32
+//go:linkname Fn4765 github.com/goccy/pythonwasm2go/p1.Fn4765
+func Fn4765(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4775 github.com/goccy/pythonwasm2go/p2.Fn4775
-func Fn4775(m *base.Module, l0 int32) int32
+//go:linkname Fn4766 github.com/goccy/pythonwasm2go/p1.Fn4766
+func Fn4766(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn4771 github.com/goccy/pythonwasm2go/p1.Fn4771
+func Fn4771(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4779 github.com/goccy/pythonwasm2go/p2.Fn4779
+func Fn4779(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn4781 github.com/goccy/pythonwasm2go/p2.Fn4781
+func Fn4781(m *base.Module, l0 int32) int32
+
+//go:linkname Fn4782 github.com/goccy/pythonwasm2go/p2.Fn4782
+func Fn4782(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn4784 github.com/goccy/pythonwasm2go/p2.Fn4784
-func Fn4784(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn4784(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4785 github.com/goccy/pythonwasm2go/p2.Fn4785
+func Fn4785(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn4786 github.com/goccy/pythonwasm2go/p2.Fn4786
+func Fn4786(m *base.Module, l0 int32) int32
 
 //go:linkname Fn4787 github.com/goccy/pythonwasm2go/p2.Fn4787
-func Fn4787(m *base.Module) int32
+func Fn4787(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4788 github.com/goccy/pythonwasm2go/p2.Fn4788
-func Fn4788(m *base.Module) int32
+//go:linkname Fn4792 github.com/goccy/pythonwasm2go/p2.Fn4792
+func Fn4792(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4789 github.com/goccy/pythonwasm2go/p2.Fn4789
-func Fn4789(m *base.Module, l0 int32) int32
+//go:linkname Fn4807 github.com/goccy/pythonwasm2go/p2.Fn4807
+func Fn4807(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn4792 github.com/goccy/pythonwasm2go/p1.Fn4792
-func Fn4792(m *base.Module, l0 int32) int32
+//go:linkname Fn4812 github.com/goccy/pythonwasm2go/p1.Fn4812
+func Fn4812(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn4808 github.com/goccy/pythonwasm2go/p2.Fn4808
-func Fn4808(m *base.Module)
+//go:linkname Fn4878 github.com/goccy/pythonwasm2go/p2.Fn4878
+func Fn4878(m *base.Module)
 
-//go:linkname Fn4811 github.com/goccy/pythonwasm2go/p2.Fn4811
-func Fn4811(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4824 github.com/goccy/pythonwasm2go/p2.Fn4824
-func Fn4824(m *base.Module)
-
-//go:linkname Fn4825 github.com/goccy/pythonwasm2go/p1.Fn4825
-func Fn4825(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4830 github.com/goccy/pythonwasm2go/p1.Fn4830
-func Fn4830(m *base.Module, l0 int32, l1 int32, l2 int32) float64
-
-//go:linkname Fn4832 github.com/goccy/pythonwasm2go/p1.Fn4832
-func Fn4832(m *base.Module, l0 float64, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn4837 github.com/goccy/pythonwasm2go/p2.Fn4837
-func Fn4837(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4838 github.com/goccy/pythonwasm2go/p2.Fn4838
-func Fn4838(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4839 github.com/goccy/pythonwasm2go/p1.Fn4839
-func Fn4839(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4840 github.com/goccy/pythonwasm2go/p2.Fn4840
-func Fn4840(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4841 github.com/goccy/pythonwasm2go/p2.Fn4841
-func Fn4841(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4842 github.com/goccy/pythonwasm2go/p1.Fn4842
-func Fn4842(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4843 github.com/goccy/pythonwasm2go/p2.Fn4843
-func Fn4843(m *base.Module, l0 int32)
-
-//go:linkname Fn4844 github.com/goccy/pythonwasm2go/p1.Fn4844
-func Fn4844(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4845 github.com/goccy/pythonwasm2go/p1.Fn4845
-func Fn4845(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4846 github.com/goccy/pythonwasm2go/p2.Fn4846
-func Fn4846(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4847 github.com/goccy/pythonwasm2go/p2.Fn4847
-func Fn4847(m *base.Module, l0 int32, l1 int32) float64
-
-//go:linkname Fn4848 github.com/goccy/pythonwasm2go/p2.Fn4848
-func Fn4848(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4849 github.com/goccy/pythonwasm2go/p1.Fn4849
-func Fn4849(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4850 github.com/goccy/pythonwasm2go/p2.Fn4850
-func Fn4850(m *base.Module, l0 int32)
-
-//go:linkname Fn4852 github.com/goccy/pythonwasm2go/p2.Fn4852
-func Fn4852(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn4853 github.com/goccy/pythonwasm2go/p2.Fn4853
-func Fn4853(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4854 github.com/goccy/pythonwasm2go/p2.Fn4854
-func Fn4854(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4855 github.com/goccy/pythonwasm2go/p2.Fn4855
-func Fn4855(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4866 github.com/goccy/pythonwasm2go/p2.Fn4866
-func Fn4866(m *base.Module, l0 int32) int32
-
-//go:linkname Fn4875 github.com/goccy/pythonwasm2go/p2.Fn4875
-func Fn4875(m *base.Module) int32
-
-//go:linkname Fn4877 github.com/goccy/pythonwasm2go/p2.Fn4877
-func Fn4877(m *base.Module) int32
-
-//go:linkname Fn4879 github.com/goccy/pythonwasm2go/p1.Fn4879
-func Fn4879(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
-
-//go:linkname Fn4881 github.com/goccy/pythonwasm2go/p2.Fn4881
-func Fn4881(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn4884 github.com/goccy/pythonwasm2go/p2.Fn4884
-func Fn4884(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn4879 github.com/goccy/pythonwasm2go/p2.Fn4879
+func Fn4879(m *base.Module) int32
 
 //go:linkname Fn4885 github.com/goccy/pythonwasm2go/p2.Fn4885
-func Fn4885(m *base.Module, l0 int32, l1 int32) int32
+func Fn4885(m *base.Module) int64
 
-//go:linkname Fn4886 github.com/goccy/pythonwasm2go/p2.Fn4886
-func Fn4886(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4887 github.com/goccy/pythonwasm2go/p2.Fn4887
+func Fn4887(m *base.Module, l0 int32)
 
-//go:linkname Fn4892 github.com/goccy/pythonwasm2go/p1.Fn4892
-func Fn4892(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4889 github.com/goccy/pythonwasm2go/p2.Fn4889
+func Fn4889(m *base.Module, l0 int32)
 
-//go:linkname Fn4899 github.com/goccy/pythonwasm2go/p2.Fn4899
-func Fn4899(m *base.Module, l0 int32) int32
+//go:linkname Fn4891 github.com/goccy/pythonwasm2go/p2.Fn4891
+func Fn4891(m *base.Module, l0 int32) int32
 
-//go:linkname Fn4905 github.com/goccy/pythonwasm2go/p2.Fn4905
-func Fn4905(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4892 github.com/goccy/pythonwasm2go/p2.Fn4892
+func Fn4892(m *base.Module, l0 int32)
 
-//go:linkname Fn4907 github.com/goccy/pythonwasm2go/p1.Fn4907
-func Fn4907(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4893 github.com/goccy/pythonwasm2go/p2.Fn4893
+func Fn4893(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5063 github.com/goccy/pythonwasm2go/p2.Fn5063
-func Fn5063(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4894 github.com/goccy/pythonwasm2go/p2.Fn4894
+func Fn4894(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5065 github.com/goccy/pythonwasm2go/p2.Fn5065
-func Fn5065(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4910 github.com/goccy/pythonwasm2go/p2.Fn4910
+func Fn4910(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5076 github.com/goccy/pythonwasm2go/p2.Fn5076
-func Fn5076(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4911 github.com/goccy/pythonwasm2go/p2.Fn4911
+func Fn4911(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5077 github.com/goccy/pythonwasm2go/p2.Fn5077
-func Fn5077(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4920 github.com/goccy/pythonwasm2go/p2.Fn4920
+func Fn4920(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5078 github.com/goccy/pythonwasm2go/p2.Fn5078
-func Fn5078(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4928 github.com/goccy/pythonwasm2go/p1.Fn4928
+func Fn4928(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5079 github.com/goccy/pythonwasm2go/p1.Fn5079
-func Fn5079(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4945 github.com/goccy/pythonwasm2go/p2.Fn4945
+func Fn4945(m *base.Module, l0 int32)
 
-//go:linkname Fn5080 github.com/goccy/pythonwasm2go/p1.Fn5080
-func Fn5080(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn4947 github.com/goccy/pythonwasm2go/p2.Fn4947
+func Fn4947(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5081 github.com/goccy/pythonwasm2go/p2.Fn5081
-func Fn5081(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4948 github.com/goccy/pythonwasm2go/p2.Fn4948
+func Fn4948(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5082 github.com/goccy/pythonwasm2go/p2.Fn5082
-func Fn5082(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn4960 github.com/goccy/pythonwasm2go/p2.Fn4960
+func Fn4960(m *base.Module)
 
-//go:linkname Fn5160 github.com/goccy/pythonwasm2go/p2.Fn5160
-func Fn5160(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4961 github.com/goccy/pythonwasm2go/p1.Fn4961
+func Fn4961(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5161 github.com/goccy/pythonwasm2go/p2.Fn5161
-func Fn5161(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4964 github.com/goccy/pythonwasm2go/p2.Fn4964
+func Fn4964(m *base.Module, l0 int32, l1 int32) float64
 
-//go:linkname Fn5162 github.com/goccy/pythonwasm2go/p2.Fn5162
-func Fn5162(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn4966 github.com/goccy/pythonwasm2go/p2.Fn4966
+func Fn4966(m *base.Module, l0 int32, l1 int32, l2 int32) float64
 
-//go:linkname Fn5163 github.com/goccy/pythonwasm2go/p2.Fn5163
-func Fn5163(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn4967 github.com/goccy/pythonwasm2go/p2.Fn4967
+func Fn4967(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn5164 github.com/goccy/pythonwasm2go/p2.Fn5164
-func Fn5164(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn4968 github.com/goccy/pythonwasm2go/p1.Fn4968
+func Fn4968(m *base.Module, l0 float64, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn5165 github.com/goccy/pythonwasm2go/p2.Fn5165
-func Fn5165(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn4973 github.com/goccy/pythonwasm2go/p2.Fn4973
+func Fn4973(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5223 github.com/goccy/pythonwasm2go/p1.Fn5223
-func Fn5223(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn4974 github.com/goccy/pythonwasm2go/p2.Fn4974
+func Fn4974(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5225 github.com/goccy/pythonwasm2go/p2.Fn5225
-func Fn5225(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn4978 github.com/goccy/pythonwasm2go/p1.Fn4978
+func Fn4978(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5233 github.com/goccy/pythonwasm2go/p2.Fn5233
-func Fn5233(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn4979 github.com/goccy/pythonwasm2go/p2.Fn4979
+func Fn4979(m *base.Module, l0 int32)
 
-//go:linkname Fn5240 github.com/goccy/pythonwasm2go/p2.Fn5240
-func Fn5240(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4982 github.com/goccy/pythonwasm2go/p2.Fn4982
+func Fn4982(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5241 github.com/goccy/pythonwasm2go/p2.Fn5241
-func Fn5241(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4990 github.com/goccy/pythonwasm2go/p2.Fn4990
+func Fn4990(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5242 github.com/goccy/pythonwasm2go/p2.Fn5242
-func Fn5242(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn4991 github.com/goccy/pythonwasm2go/p2.Fn4991
+func Fn4991(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5243 github.com/goccy/pythonwasm2go/p1.Fn5243
-func Fn5243(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5002 github.com/goccy/pythonwasm2go/p2.Fn5002
+func Fn5002(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5244 github.com/goccy/pythonwasm2go/p2.Fn5244
-func Fn5244(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5012 github.com/goccy/pythonwasm2go/p2.Fn5012
+func Fn5012(m *base.Module) int32
 
-//go:linkname Fn5290 github.com/goccy/pythonwasm2go/p2.Fn5290
-func Fn5290(m *base.Module, l0 int32) int32
+//go:linkname Fn5013 github.com/goccy/pythonwasm2go/p2.Fn5013
+func Fn5013(m *base.Module) int32
 
-//go:linkname Fn5302 github.com/goccy/pythonwasm2go/p1.Fn5302
-func Fn5302(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5014 github.com/goccy/pythonwasm2go/p2.Fn5014
+func Fn5014(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5304 github.com/goccy/pythonwasm2go/p2.Fn5304
-func Fn5304(m *base.Module, l0 int32)
+//go:linkname Fn5015 github.com/goccy/pythonwasm2go/p1.Fn5015
+func Fn5015(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn5305 github.com/goccy/pythonwasm2go/p2.Fn5305
-func Fn5305(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5016 github.com/goccy/pythonwasm2go/p1.Fn5016
+func Fn5016(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn5306 github.com/goccy/pythonwasm2go/p2.Fn5306
-func Fn5306(m *base.Module, l0 int32) int32
+//go:linkname Fn5017 github.com/goccy/pythonwasm2go/p2.Fn5017
+func Fn5017(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5307 github.com/goccy/pythonwasm2go/p2.Fn5307
-func Fn5307(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5018 github.com/goccy/pythonwasm2go/p1.Fn5018
+func Fn5018(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn5308 github.com/goccy/pythonwasm2go/p2.Fn5308
-func Fn5308(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5020 github.com/goccy/pythonwasm2go/p2.Fn5020
+func Fn5020(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn5310 github.com/goccy/pythonwasm2go/p2.Fn5310
-func Fn5310(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn5021 github.com/goccy/pythonwasm2go/p2.Fn5021
+func Fn5021(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5311 github.com/goccy/pythonwasm2go/p2.Fn5311
-func Fn5311(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn5026 github.com/goccy/pythonwasm2go/p2.Fn5026
+func Fn5026(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5312 github.com/goccy/pythonwasm2go/p2.Fn5312
-func Fn5312(m *base.Module) int32
+//go:linkname Fn5033 github.com/goccy/pythonwasm2go/p2.Fn5033
+func Fn5033(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5313 github.com/goccy/pythonwasm2go/p1.Fn5313
-func Fn5313(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5034 github.com/goccy/pythonwasm2go/p2.Fn5034
+func Fn5034(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5314 github.com/goccy/pythonwasm2go/p2.Fn5314
-func Fn5314(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5035 github.com/goccy/pythonwasm2go/p2.Fn5035
+func Fn5035(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5318 github.com/goccy/pythonwasm2go/p2.Fn5318
-func Fn5318(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn5044 github.com/goccy/pythonwasm2go/p1.Fn5044
+func Fn5044(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn5320 github.com/goccy/pythonwasm2go/p2.Fn5320
-func Fn5320(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5207 github.com/goccy/pythonwasm2go/p2.Fn5207
+func Fn5207(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5323 github.com/goccy/pythonwasm2go/p2.Fn5323
-func Fn5323(m *base.Module, l0 int32) int32
+//go:linkname Fn5215 github.com/goccy/pythonwasm2go/p1.Fn5215
+func Fn5215(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5324 github.com/goccy/pythonwasm2go/p2.Fn5324
-func Fn5324(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn5217 github.com/goccy/pythonwasm2go/p2.Fn5217
+func Fn5217(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5325 github.com/goccy/pythonwasm2go/p2.Fn5325
-func Fn5325(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5219 github.com/goccy/pythonwasm2go/p1.Fn5219
+func Fn5219(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5329 github.com/goccy/pythonwasm2go/p2.Fn5329
-func Fn5329(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn5220 github.com/goccy/pythonwasm2go/p2.Fn5220
+func Fn5220(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5330 github.com/goccy/pythonwasm2go/p2.Fn5330
-func Fn5330(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn5221 github.com/goccy/pythonwasm2go/p2.Fn5221
+func Fn5221(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn5331 github.com/goccy/pythonwasm2go/p2.Fn5331
-func Fn5331(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5359 github.com/goccy/pythonwasm2go/p1.Fn5359
+func Fn5359(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5332 github.com/goccy/pythonwasm2go/p2.Fn5332
-func Fn5332(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5376 github.com/goccy/pythonwasm2go/p2.Fn5376
+func Fn5376(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5333 github.com/goccy/pythonwasm2go/p2.Fn5333
-func Fn5333(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5378 github.com/goccy/pythonwasm2go/p2.Fn5378
+func Fn5378(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5334 github.com/goccy/pythonwasm2go/p2.Fn5334
-func Fn5334(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5426 github.com/goccy/pythonwasm2go/p2.Fn5426
+func Fn5426(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5335 github.com/goccy/pythonwasm2go/p2.Fn5335
-func Fn5335(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5428 github.com/goccy/pythonwasm2go/p2.Fn5428
+func Fn5428(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5336 github.com/goccy/pythonwasm2go/p2.Fn5336
-func Fn5336(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5438 github.com/goccy/pythonwasm2go/p1.Fn5438
+func Fn5438(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5337 github.com/goccy/pythonwasm2go/p1.Fn5337
-func Fn5337(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn5440 github.com/goccy/pythonwasm2go/p2.Fn5440
+func Fn5440(m *base.Module, l0 int32)
 
-//go:linkname Fn5338 github.com/goccy/pythonwasm2go/p2.Fn5338
-func Fn5338(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn5441 github.com/goccy/pythonwasm2go/p2.Fn5441
+func Fn5441(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5339 github.com/goccy/pythonwasm2go/p1.Fn5339
-func Fn5339(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5442 github.com/goccy/pythonwasm2go/p2.Fn5442
+func Fn5442(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5340 github.com/goccy/pythonwasm2go/p2.Fn5340
-func Fn5340(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5443 github.com/goccy/pythonwasm2go/p2.Fn5443
+func Fn5443(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5341 github.com/goccy/pythonwasm2go/p2.Fn5341
-func Fn5341(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5447 github.com/goccy/pythonwasm2go/p2.Fn5447
+func Fn5447(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn5342 github.com/goccy/pythonwasm2go/p2.Fn5342
-func Fn5342(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5450 github.com/goccy/pythonwasm2go/p2.Fn5450
+func Fn5450(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5343 github.com/goccy/pythonwasm2go/p2.Fn5343
-func Fn5343(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5457 github.com/goccy/pythonwasm2go/p2.Fn5457
+func Fn5457(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn5344 github.com/goccy/pythonwasm2go/p2.Fn5344
-func Fn5344(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5458 github.com/goccy/pythonwasm2go/p2.Fn5458
+func Fn5458(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5345 github.com/goccy/pythonwasm2go/p2.Fn5345
-func Fn5345(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5461 github.com/goccy/pythonwasm2go/p2.Fn5461
+func Fn5461(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5346 github.com/goccy/pythonwasm2go/p2.Fn5346
-func Fn5346(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5462 github.com/goccy/pythonwasm2go/p1.Fn5462
+func Fn5462(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5347 github.com/goccy/pythonwasm2go/p2.Fn5347
-func Fn5347(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5465 github.com/goccy/pythonwasm2go/p2.Fn5465
+func Fn5465(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn5348 github.com/goccy/pythonwasm2go/p1.Fn5348
-func Fn5348(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5466 github.com/goccy/pythonwasm2go/p2.Fn5466
+func Fn5466(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5349 github.com/goccy/pythonwasm2go/p1.Fn5349
-func Fn5349(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5467 github.com/goccy/pythonwasm2go/p2.Fn5467
+func Fn5467(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5350 github.com/goccy/pythonwasm2go/p1.Fn5350
-func Fn5350(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5472 github.com/goccy/pythonwasm2go/p2.Fn5472
+func Fn5472(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5351 github.com/goccy/pythonwasm2go/p2.Fn5351
-func Fn5351(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5473 github.com/goccy/pythonwasm2go/p1.Fn5473
+func Fn5473(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5352 github.com/goccy/pythonwasm2go/p1.Fn5352
-func Fn5352(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn5474 github.com/goccy/pythonwasm2go/p2.Fn5474
+func Fn5474(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn5353 github.com/goccy/pythonwasm2go/p2.Fn5353
-func Fn5353(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5480 github.com/goccy/pythonwasm2go/p2.Fn5480
+func Fn5480(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5354 github.com/goccy/pythonwasm2go/p2.Fn5354
-func Fn5354(m *base.Module, l0 int32)
+//go:linkname Fn5484 github.com/goccy/pythonwasm2go/p1.Fn5484
+func Fn5484(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5355 github.com/goccy/pythonwasm2go/p2.Fn5355
-func Fn5355(m *base.Module, l0 int32) int32
+//go:linkname Fn5485 github.com/goccy/pythonwasm2go/p1.Fn5485
+func Fn5485(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5563 github.com/goccy/pythonwasm2go/p2.Fn5563
-func Fn5563(m *base.Module, l0 int32)
+//go:linkname Fn5488 github.com/goccy/pythonwasm2go/p1.Fn5488
+func Fn5488(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn5582 github.com/goccy/pythonwasm2go/p2.Fn5582
-func Fn5582(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn5490 github.com/goccy/pythonwasm2go/p2.Fn5490
+func Fn5490(m *base.Module, l0 int32)
 
-//go:linkname Fn5583 github.com/goccy/pythonwasm2go/p2.Fn5583
-func Fn5583(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5492 github.com/goccy/pythonwasm2go/p1.Fn5492
+func Fn5492(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5584 github.com/goccy/pythonwasm2go/p2.Fn5584
-func Fn5584(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5493 github.com/goccy/pythonwasm2go/p2.Fn5493
+func Fn5493(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5585 github.com/goccy/pythonwasm2go/p2.Fn5585
-func Fn5585(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn5495 github.com/goccy/pythonwasm2go/p2.Fn5495
+func Fn5495(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5586 github.com/goccy/pythonwasm2go/p2.Fn5586
-func Fn5586(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn5587 github.com/goccy/pythonwasm2go/p2.Fn5587
-func Fn5587(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32)
-
-//go:linkname Fn5657 github.com/goccy/pythonwasm2go/p2.Fn5657
-func Fn5657(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5711 github.com/goccy/pythonwasm2go/p2.Fn5711
-func Fn5711(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn5716 github.com/goccy/pythonwasm2go/p2.Fn5716
-func Fn5716(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn5717 github.com/goccy/pythonwasm2go/p2.Fn5717
-func Fn5717(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn5699 github.com/goccy/pythonwasm2go/p2.Fn5699
+func Fn5699(m *base.Module, l0 int32)
 
 //go:linkname Fn5718 github.com/goccy/pythonwasm2go/p2.Fn5718
 func Fn5718(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn5742 github.com/goccy/pythonwasm2go/p2.Fn5742
-func Fn5742(m *base.Module, l0 int32) int32
+//go:linkname Fn5721 github.com/goccy/pythonwasm2go/p2.Fn5721
+func Fn5721(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5745 github.com/goccy/pythonwasm2go/p2.Fn5745
-func Fn5745(m *base.Module, l0 int32) int32
+//go:linkname Fn5722 github.com/goccy/pythonwasm2go/p2.Fn5722
+func Fn5722(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5746 github.com/goccy/pythonwasm2go/p2.Fn5746
-func Fn5746(m *base.Module, l0 int32) int32
+//go:linkname Fn5724 github.com/goccy/pythonwasm2go/p2.Fn5724
+func Fn5724(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5749 github.com/goccy/pythonwasm2go/p2.Fn5749
-func Fn5749(m *base.Module, l0 int32) int32
+//go:linkname Fn5843 github.com/goccy/pythonwasm2go/p2.Fn5843
+func Fn5843(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5750 github.com/goccy/pythonwasm2go/p2.Fn5750
-func Fn5750(m *base.Module, l0 int32) int32
+//go:linkname Fn5851 github.com/goccy/pythonwasm2go/p1.Fn5851
+func Fn5851(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5753 github.com/goccy/pythonwasm2go/p2.Fn5753
-func Fn5753(m *base.Module, l0 int32)
+//go:linkname Fn5866 github.com/goccy/pythonwasm2go/p2.Fn5866
+func Fn5866(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5754 github.com/goccy/pythonwasm2go/p2.Fn5754
-func Fn5754(m *base.Module, l0 int32)
+//go:linkname Fn5885 github.com/goccy/pythonwasm2go/p2.Fn5885
+func Fn5885(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5761 github.com/goccy/pythonwasm2go/p2.Fn5761
-func Fn5761(m *base.Module, l0 int32) int32
+//go:linkname Fn5886 github.com/goccy/pythonwasm2go/p2.Fn5886
+func Fn5886(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5762 github.com/goccy/pythonwasm2go/p2.Fn5762
-func Fn5762(m *base.Module, l0 int32) int32
+//go:linkname Fn5888 github.com/goccy/pythonwasm2go/p2.Fn5888
+func Fn5888(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5763 github.com/goccy/pythonwasm2go/p2.Fn5763
-func Fn5763(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn5889 github.com/goccy/pythonwasm2go/p2.Fn5889
+func Fn5889(m *base.Module, l0 int32)
 
-//go:linkname Fn5764 github.com/goccy/pythonwasm2go/p2.Fn5764
-func Fn5764(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn5890 github.com/goccy/pythonwasm2go/p2.Fn5890
+func Fn5890(m *base.Module, l0 int32)
 
-//go:linkname Fn5767 github.com/goccy/pythonwasm2go/p1.Fn5767
-func Fn5767(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn5894 github.com/goccy/pythonwasm2go/p2.Fn5894
+func Fn5894(m *base.Module, l0 int32)
 
-//go:linkname Fn5773 github.com/goccy/pythonwasm2go/p2.Fn5773
-func Fn5773(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn5896 github.com/goccy/pythonwasm2go/p2.Fn5896
+func Fn5896(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5775 github.com/goccy/pythonwasm2go/p2.Fn5775
-func Fn5775(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn5897 github.com/goccy/pythonwasm2go/p2.Fn5897
+func Fn5897(m *base.Module, l0 int32) int32
 
-//go:linkname Fn5776 github.com/goccy/pythonwasm2go/p1.Fn5776
-func Fn5776(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5777 github.com/goccy/pythonwasm2go/p2.Fn5777
-func Fn5777(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5778 github.com/goccy/pythonwasm2go/p2.Fn5778
-func Fn5778(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5779 github.com/goccy/pythonwasm2go/p2.Fn5779
-func Fn5779(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5781 github.com/goccy/pythonwasm2go/p2.Fn5781
-func Fn5781(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn5782 github.com/goccy/pythonwasm2go/p2.Fn5782
-func Fn5782(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5783 github.com/goccy/pythonwasm2go/p2.Fn5783
-func Fn5783(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn5784 github.com/goccy/pythonwasm2go/p1.Fn5784
-func Fn5784(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn5791 github.com/goccy/pythonwasm2go/p1.Fn5791
-func Fn5791(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5798 github.com/goccy/pythonwasm2go/p1.Fn5798
-func Fn5798(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn5816 github.com/goccy/pythonwasm2go/p2.Fn5816
-func Fn5816(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5817 github.com/goccy/pythonwasm2go/p1.Fn5817
-func Fn5817(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5822 github.com/goccy/pythonwasm2go/p1.Fn5822
-func Fn5822(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5823 github.com/goccy/pythonwasm2go/p1.Fn5823
-func Fn5823(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn5828 github.com/goccy/pythonwasm2go/p2.Fn5828
-func Fn5828(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
-
-//go:linkname Fn5829 github.com/goccy/pythonwasm2go/p1.Fn5829
-func Fn5829(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5837 github.com/goccy/pythonwasm2go/p2.Fn5837
-func Fn5837(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5838 github.com/goccy/pythonwasm2go/p1.Fn5838
-func Fn5838(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn5841 github.com/goccy/pythonwasm2go/p2.Fn5841
-func Fn5841(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5854 github.com/goccy/pythonwasm2go/p2.Fn5854
-func Fn5854(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-
-//go:linkname Fn5856 github.com/goccy/pythonwasm2go/p2.Fn5856
-func Fn5856(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5857 github.com/goccy/pythonwasm2go/p2.Fn5857
-func Fn5857(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5858 github.com/goccy/pythonwasm2go/p2.Fn5858
-func Fn5858(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5867 github.com/goccy/pythonwasm2go/p2.Fn5867
-func Fn5867(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5868 github.com/goccy/pythonwasm2go/p2.Fn5868
-func Fn5868(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5869 github.com/goccy/pythonwasm2go/p2.Fn5869
-func Fn5869(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5870 github.com/goccy/pythonwasm2go/p2.Fn5870
-func Fn5870(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5872 github.com/goccy/pythonwasm2go/p2.Fn5872
-func Fn5872(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5875 github.com/goccy/pythonwasm2go/p2.Fn5875
-func Fn5875(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn5877 github.com/goccy/pythonwasm2go/p2.Fn5877
-func Fn5877(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn5879 github.com/goccy/pythonwasm2go/p2.Fn5879
-func Fn5879(m *base.Module) int32
-
-//go:linkname Fn5880 github.com/goccy/pythonwasm2go/p2.Fn5880
-func Fn5880(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn5881 github.com/goccy/pythonwasm2go/p2.Fn5881
-func Fn5881(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn5886 github.com/goccy/pythonwasm2go/p1.Fn5886
-func Fn5886(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn5891 github.com/goccy/pythonwasm2go/p2.Fn5891
-func Fn5891(m *base.Module, l0 int32) int32
-
-//go:linkname Fn5892 github.com/goccy/pythonwasm2go/p2.Fn5892
-func Fn5892(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-
-//go:linkname Fn5893 github.com/goccy/pythonwasm2go/p1.Fn5893
-func Fn5893(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32)
+//go:linkname Fn5900 github.com/goccy/pythonwasm2go/p2.Fn5900
+func Fn5900(m *base.Module, l0 int32, l1 int32, l2 int32)
 
 //go:linkname Fn5903 github.com/goccy/pythonwasm2go/p2.Fn5903
-func Fn5903(m *base.Module, l0 int32) int32
+func Fn5903(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn5924 github.com/goccy/pythonwasm2go/p2.Fn5924
-func Fn5924(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5904 github.com/goccy/pythonwasm2go/p1.Fn5904
+func Fn5904(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn5925 github.com/goccy/pythonwasm2go/p2.Fn5925
-func Fn5925(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5905 github.com/goccy/pythonwasm2go/p1.Fn5905
+func Fn5905(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn5906 github.com/goccy/pythonwasm2go/p2.Fn5906
+func Fn5906(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn5907 github.com/goccy/pythonwasm2go/p2.Fn5907
+func Fn5907(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn5909 github.com/goccy/pythonwasm2go/p2.Fn5909
+func Fn5909(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+
+//go:linkname Fn5910 github.com/goccy/pythonwasm2go/p2.Fn5910
+func Fn5910(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn5911 github.com/goccy/pythonwasm2go/p2.Fn5911
+func Fn5911(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+
+//go:linkname Fn5912 github.com/goccy/pythonwasm2go/p1.Fn5912
+func Fn5912(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn5915 github.com/goccy/pythonwasm2go/p2.Fn5915
+func Fn5915(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn5917 github.com/goccy/pythonwasm2go/p2.Fn5917
+func Fn5917(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn5919 github.com/goccy/pythonwasm2go/p2.Fn5919
+func Fn5919(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+
+//go:linkname Fn5920 github.com/goccy/pythonwasm2go/p1.Fn5920
+func Fn5920(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+
+//go:linkname Fn5921 github.com/goccy/pythonwasm2go/p2.Fn5921
+func Fn5921(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
 //go:linkname Fn5928 github.com/goccy/pythonwasm2go/p2.Fn5928
-func Fn5928(m *base.Module, l0 int32) int32
+func Fn5928(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn5930 github.com/goccy/pythonwasm2go/p2.Fn5930
-func Fn5930(m *base.Module, l0 int32) int32
+//go:linkname Fn5934 github.com/goccy/pythonwasm2go/p1.Fn5934
+func Fn5934(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn5935 github.com/goccy/pythonwasm2go/p1.Fn5935
-func Fn5935(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5943 github.com/goccy/pythonwasm2go/p1.Fn5943
+func Fn5943(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 
-//go:linkname Fn5937 github.com/goccy/pythonwasm2go/p2.Fn5937
-func Fn5937(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn5951 github.com/goccy/pythonwasm2go/p2.Fn5951
+func Fn5951(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn5953 github.com/goccy/pythonwasm2go/p1.Fn5953
+func Fn5953(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn5958 github.com/goccy/pythonwasm2go/p1.Fn5958
+func Fn5958(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn5959 github.com/goccy/pythonwasm2go/p1.Fn5959
+func Fn5959(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+
+//go:linkname Fn5965 github.com/goccy/pythonwasm2go/p1.Fn5965
+func Fn5965(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn5973 github.com/goccy/pythonwasm2go/p2.Fn5973
+func Fn5973(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn5974 github.com/goccy/pythonwasm2go/p1.Fn5974
+func Fn5974(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+
+//go:linkname Fn5977 github.com/goccy/pythonwasm2go/p2.Fn5977
+func Fn5977(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn5994 github.com/goccy/pythonwasm2go/p2.Fn5994
+func Fn5994(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn5998 github.com/goccy/pythonwasm2go/p2.Fn5998
+func Fn5998(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+
+//go:linkname Fn6011 github.com/goccy/pythonwasm2go/p2.Fn6011
+func Fn6011(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn6013 github.com/goccy/pythonwasm2go/p2.Fn6013
+func Fn6013(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn6014 github.com/goccy/pythonwasm2go/p2.Fn6014
-func Fn6014(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+func Fn6014(m *base.Module, l0 int32) int32
 
-//go:linkname Fn6015 github.com/goccy/pythonwasm2go/p2.Fn6015
-func Fn6015(m *base.Module, l0 int32) int32
+//go:linkname Fn6016 github.com/goccy/pythonwasm2go/p2.Fn6016
+func Fn6016(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn6213 github.com/goccy/pythonwasm2go/p2.Fn6213
-func Fn6213(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn6017 github.com/goccy/pythonwasm2go/p2.Fn6017
+func Fn6017(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn6292 github.com/goccy/pythonwasm2go/p2.Fn6292
-func Fn6292(m *base.Module, l0 int32) int32
+//go:linkname Fn6027 github.com/goccy/pythonwasm2go/p1.Fn6027
+func Fn6027(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6296 github.com/goccy/pythonwasm2go/p1.Fn6296
-func Fn6296(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn6036 github.com/goccy/pythonwasm2go/p2.Fn6036
+func Fn6036(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn6371 github.com/goccy/pythonwasm2go/p2.Fn6371
-func Fn6371(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn6037 github.com/goccy/pythonwasm2go/p2.Fn6037
+func Fn6037(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn6399 github.com/goccy/pythonwasm2go/p1.Fn6399
-func Fn6399(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn6046 github.com/goccy/pythonwasm2go/p2.Fn6046
+func Fn6046(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn6400 github.com/goccy/pythonwasm2go/p1.Fn6400
-func Fn6400(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6057 github.com/goccy/pythonwasm2go/p2.Fn6057
+func Fn6057(m *base.Module, l0 int32)
 
-//go:linkname Fn6401 github.com/goccy/pythonwasm2go/p1.Fn6401
-func Fn6401(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6071 github.com/goccy/pythonwasm2go/p2.Fn6071
+func Fn6071(m *base.Module, l0 int32) int32
 
-//go:linkname Fn6402 github.com/goccy/pythonwasm2go/p1.Fn6402
-func Fn6402(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6078 github.com/goccy/pythonwasm2go/p2.Fn6078
+func Fn6078(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn6404 github.com/goccy/pythonwasm2go/p1.Fn6404
-func Fn6404(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6429 github.com/goccy/pythonwasm2go/p2.Fn6429
-func Fn6429(m *base.Module, l0 int32, l1 int32) int32
-
-//go:linkname Fn6430 github.com/goccy/pythonwasm2go/p1.Fn6430
-func Fn6430(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn6431 github.com/goccy/pythonwasm2go/p1.Fn6431
-func Fn6431(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6432 github.com/goccy/pythonwasm2go/p1.Fn6432
-func Fn6432(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6433 github.com/goccy/pythonwasm2go/p1.Fn6433
-func Fn6433(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6435 github.com/goccy/pythonwasm2go/p1.Fn6435
-func Fn6435(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6453 github.com/goccy/pythonwasm2go/p1.Fn6453
-func Fn6453(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn6454 github.com/goccy/pythonwasm2go/p1.Fn6454
-func Fn6454(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6455 github.com/goccy/pythonwasm2go/p1.Fn6455
-func Fn6455(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6456 github.com/goccy/pythonwasm2go/p1.Fn6456
-func Fn6456(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6458 github.com/goccy/pythonwasm2go/p1.Fn6458
-func Fn6458(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
-
-//go:linkname Fn6525 github.com/goccy/pythonwasm2go/p1.Fn6525
-func Fn6525(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-
-//go:linkname Fn6530 github.com/goccy/pythonwasm2go/p2.Fn6530
-func Fn6530(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-
-//go:linkname Fn6531 github.com/goccy/pythonwasm2go/p2.Fn6531
-func Fn6531(m *base.Module, l0 int32, l1 int32, l2 int32)
-
-//go:linkname Fn6532 github.com/goccy/pythonwasm2go/p1.Fn6532
-func Fn6532(m *base.Module, l0 int32)
-
-//go:linkname Fn6533 github.com/goccy/pythonwasm2go/p2.Fn6533
-func Fn6533(m *base.Module, l0 int32)
-
-//go:linkname Fn6534 github.com/goccy/pythonwasm2go/p2.Fn6534
-func Fn6534(m *base.Module, l0 int32) int32
+//go:linkname Fn6436 github.com/goccy/pythonwasm2go/p1.Fn6436
+func Fn6436(m *base.Module, l0 int32, l1 int32, l2 int32)
 
 //go:linkname Fn6539 github.com/goccy/pythonwasm2go/p2.Fn6539
-func Fn6539(m *base.Module, l0 int32, l1 int32) int32
+func Fn6539(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
 //go:linkname Fn6540 github.com/goccy/pythonwasm2go/p1.Fn6540
 func Fn6540(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn6541 github.com/goccy/pythonwasm2go/p1.Fn6541
-func Fn6541(m *base.Module, l0 int32) int32
+func Fn6541(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
 //go:linkname Fn6542 github.com/goccy/pythonwasm2go/p1.Fn6542
 func Fn6542(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6543 github.com/goccy/pythonwasm2go/p1.Fn6543
-func Fn6543(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn6544 github.com/goccy/pythonwasm2go/p1.Fn6544
+func Fn6544(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6546 github.com/goccy/pythonwasm2go/p1.Fn6546
-func Fn6546(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn6569 github.com/goccy/pythonwasm2go/p2.Fn6569
+func Fn6569(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn6553 github.com/goccy/pythonwasm2go/p2.Fn6553
-func Fn6553(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn6572 github.com/goccy/pythonwasm2go/p1.Fn6572
+func Fn6572(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6590 github.com/goccy/pythonwasm2go/p2.Fn6590
-func Fn6590(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn6575 github.com/goccy/pythonwasm2go/p1.Fn6575
+func Fn6575(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6601 github.com/goccy/pythonwasm2go/p1.Fn6601
-func Fn6601(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn6595 github.com/goccy/pythonwasm2go/p1.Fn6595
+func Fn6595(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6602 github.com/goccy/pythonwasm2go/p2.Fn6602
-func Fn6602(m *base.Module, l0 int32)
+//go:linkname Fn6598 github.com/goccy/pythonwasm2go/p1.Fn6598
+func Fn6598(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6603 github.com/goccy/pythonwasm2go/p1.Fn6603
-func Fn6603(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6665 github.com/goccy/pythonwasm2go/p1.Fn6665
+func Fn6665(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn6604 github.com/goccy/pythonwasm2go/p2.Fn6604
-func Fn6604(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6666 github.com/goccy/pythonwasm2go/p2.Fn6666
+func Fn6666(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn6605 github.com/goccy/pythonwasm2go/p2.Fn6605
-func Fn6605(m *base.Module, l0 int32)
+//go:linkname Fn6670 github.com/goccy/pythonwasm2go/p2.Fn6670
+func Fn6670(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn6606 github.com/goccy/pythonwasm2go/p2.Fn6606
-func Fn6606(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6671 github.com/goccy/pythonwasm2go/p2.Fn6671
+func Fn6671(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn6607 github.com/goccy/pythonwasm2go/p2.Fn6607
-func Fn6607(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6672 github.com/goccy/pythonwasm2go/p1.Fn6672
+func Fn6672(m *base.Module, l0 int32)
 
-//go:linkname Fn6608 github.com/goccy/pythonwasm2go/p1.Fn6608
-func Fn6608(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6674 github.com/goccy/pythonwasm2go/p2.Fn6674
+func Fn6674(m *base.Module, l0 int32) int32
 
-//go:linkname Fn6609 github.com/goccy/pythonwasm2go/p2.Fn6609
-func Fn6609(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6679 github.com/goccy/pythonwasm2go/p2.Fn6679
+func Fn6679(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn6610 github.com/goccy/pythonwasm2go/p1.Fn6610
-func Fn6610(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn6680 github.com/goccy/pythonwasm2go/p1.Fn6680
+func Fn6680(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6611 github.com/goccy/pythonwasm2go/p1.Fn6611
-func Fn6611(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname Fn6681 github.com/goccy/pythonwasm2go/p1.Fn6681
+func Fn6681(m *base.Module, l0 int32) int32
 
-//go:linkname Fn6612 github.com/goccy/pythonwasm2go/p1.Fn6612
-func Fn6612(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn6683 github.com/goccy/pythonwasm2go/p1.Fn6683
+func Fn6683(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn6613 github.com/goccy/pythonwasm2go/p2.Fn6613
-func Fn6613(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn6686 github.com/goccy/pythonwasm2go/p1.Fn6686
+func Fn6686(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn6614 github.com/goccy/pythonwasm2go/p1.Fn6614
-func Fn6614(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname Fn6730 github.com/goccy/pythonwasm2go/p2.Fn6730
+func Fn6730(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
-//go:linkname Fn6616 github.com/goccy/pythonwasm2go/p2.Fn6616
-func Fn6616(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6737 github.com/goccy/pythonwasm2go/p2.Fn6737
+func Fn6737(m *base.Module, l0 int32) int32
 
-//go:linkname Fn6617 github.com/goccy/pythonwasm2go/p1.Fn6617
-func Fn6617(m *base.Module, l0 int32) int32
+//go:linkname Fn6743 github.com/goccy/pythonwasm2go/p1.Fn6743
+func Fn6743(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6618 github.com/goccy/pythonwasm2go/p2.Fn6618
-func Fn6618(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6744 github.com/goccy/pythonwasm2go/p2.Fn6744
+func Fn6744(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6619 github.com/goccy/pythonwasm2go/p2.Fn6619
-func Fn6619(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6748 github.com/goccy/pythonwasm2go/p1.Fn6748
+func Fn6748(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6620 github.com/goccy/pythonwasm2go/p2.Fn6620
-func Fn6620(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6749 github.com/goccy/pythonwasm2go/p2.Fn6749
+func Fn6749(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6621 github.com/goccy/pythonwasm2go/p2.Fn6621
-func Fn6621(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn6752 github.com/goccy/pythonwasm2go/p1.Fn6752
+func Fn6752(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn6627 github.com/goccy/pythonwasm2go/p1.Fn6627
-func Fn6627(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn6753 github.com/goccy/pythonwasm2go/p2.Fn6753
+func Fn6753(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn6632 github.com/goccy/pythonwasm2go/p2.Fn6632
-func Fn6632(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn6754 github.com/goccy/pythonwasm2go/p1.Fn6754
+func Fn6754(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 
-//go:linkname Fn6633 github.com/goccy/pythonwasm2go/p2.Fn6633
-func Fn6633(m *base.Module, l0 int32) int32
+//go:linkname Fn6756 github.com/goccy/pythonwasm2go/p2.Fn6756
+func Fn6756(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6634 github.com/goccy/pythonwasm2go/p2.Fn6634
-func Fn6634(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn6758 github.com/goccy/pythonwasm2go/p2.Fn6758
+func Fn6758(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6635 github.com/goccy/pythonwasm2go/p2.Fn6635
-func Fn6635(m *base.Module, l0 int32) int64
+//go:linkname Fn6759 github.com/goccy/pythonwasm2go/p2.Fn6759
+func Fn6759(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn6638 github.com/goccy/pythonwasm2go/p2.Fn6638
-func Fn6638(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn6761 github.com/goccy/pythonwasm2go/p2.Fn6761
+func Fn6761(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn6639 github.com/goccy/pythonwasm2go/p1.Fn6639
-func Fn6639(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn6762 github.com/goccy/pythonwasm2go/p2.Fn6762
+func Fn6762(m *base.Module, l0 int32) float32
 
-//go:linkname Fn6640 github.com/goccy/pythonwasm2go/p1.Fn6640
-func Fn6640(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname Fn6763 github.com/goccy/pythonwasm2go/p2.Fn6763
+func Fn6763(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn6648 github.com/goccy/pythonwasm2go/p2.Fn6648
-func Fn6648(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn6766 github.com/goccy/pythonwasm2go/p2.Fn6766
+func Fn6766(m *base.Module, l0 int32) int32
 
-//go:linkname Fn7057 github.com/goccy/pythonwasm2go/p2.Fn7057
-func Fn7057(m *base.Module, l0 int32)
+//go:linkname Fn6767 github.com/goccy/pythonwasm2go/p1.Fn6767
+func Fn6767(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn7136 github.com/goccy/pythonwasm2go/p2.Fn7136
-func Fn7136(m *base.Module, l0 int32)
+//go:linkname Fn6768 github.com/goccy/pythonwasm2go/p1.Fn6768
+func Fn6768(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 
-//go:linkname Fn7141 github.com/goccy/pythonwasm2go/p2.Fn7141
-func Fn7141(m *base.Module, l0 int32)
+//go:linkname Fn6770 github.com/goccy/pythonwasm2go/p2.Fn6770
+func Fn6770(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
-//go:linkname Fn7146 github.com/goccy/pythonwasm2go/p2.Fn7146
-func Fn7146(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn6776 github.com/goccy/pythonwasm2go/p2.Fn6776
+func Fn6776(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn7155 github.com/goccy/pythonwasm2go/p1.Fn7155
-func Fn7155(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn6778 github.com/goccy/pythonwasm2go/p2.Fn6778
+func Fn6778(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn7227 github.com/goccy/pythonwasm2go/p2.Fn7227
-func Fn7227(m *base.Module, l0 int32) int32
+//go:linkname Fn6779 github.com/goccy/pythonwasm2go/p1.Fn6779
+func Fn6779(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn7228 github.com/goccy/pythonwasm2go/p2.Fn7228
-func Fn7228(m *base.Module, l0 int32) int32
+//go:linkname Fn6780 github.com/goccy/pythonwasm2go/p1.Fn6780
+func Fn6780(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn7229 github.com/goccy/pythonwasm2go/p2.Fn7229
-func Fn7229(m *base.Module, l0 int32) int32
+//go:linkname Fn6788 github.com/goccy/pythonwasm2go/p2.Fn6788
+func Fn6788(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn7325 github.com/goccy/pythonwasm2go/p2.Fn7325
-func Fn7325(m *base.Module, l0 int32) int32
+//go:linkname Fn7365 github.com/goccy/pythonwasm2go/p2.Fn7365
+func Fn7365(m *base.Module, l0 int32) int32
 
-//go:linkname Fn7412 github.com/goccy/pythonwasm2go/p2.Fn7412
-func Fn7412(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn8220 github.com/goccy/pythonwasm2go/p2.Fn8220
+func Fn8220(m *base.Module, l0 int32)
 
-//go:linkname Fn7858 github.com/goccy/pythonwasm2go/p2.Fn7858
-func Fn7858(m *base.Module, l0 int32) int32
+//go:linkname Fn8568 github.com/goccy/pythonwasm2go/p2.Fn8568
+func Fn8568(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn7859 github.com/goccy/pythonwasm2go/p2.Fn7859
-func Fn7859(m *base.Module, l0 int32) int32
+//go:linkname Fn8569 github.com/goccy/pythonwasm2go/p2.Fn8569
+func Fn8569(m *base.Module)
 
-//go:linkname Fn7860 github.com/goccy/pythonwasm2go/p2.Fn7860
-func Fn7860(m *base.Module, l0 int32) int32
+//go:linkname Fn8570 github.com/goccy/pythonwasm2go/p2.Fn8570
+func Fn8570(m *base.Module, l0 int32)
 
-//go:linkname Fn7861 github.com/goccy/pythonwasm2go/p2.Fn7861
-func Fn7861(m *base.Module, l0 int32) int32
+//go:linkname Fn8595 github.com/goccy/pythonwasm2go/p1.Fn8595
+func Fn8595(m *base.Module, l0 int32) int32
 
-//go:linkname Fn7982 github.com/goccy/pythonwasm2go/p2.Fn7982
-func Fn7982(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn8722 github.com/goccy/pythonwasm2go/p2.Fn8722
+func Fn8722(m *base.Module, l0 int32) int32
 
-//go:linkname Fn7983 github.com/goccy/pythonwasm2go/p2.Fn7983
-func Fn7983(m *base.Module)
+//go:linkname Fn8747 github.com/goccy/pythonwasm2go/p2.Fn8747
+func Fn8747(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn8009 github.com/goccy/pythonwasm2go/p1.Fn8009
-func Fn8009(m *base.Module, l0 int32) int32
+//go:linkname Fn8748 github.com/goccy/pythonwasm2go/p2.Fn8748
+func Fn8748(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn8108 github.com/goccy/pythonwasm2go/p2.Fn8108
-func Fn8108(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn8749 github.com/goccy/pythonwasm2go/p2.Fn8749
+func Fn8749(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 
-//go:linkname Fn8109 github.com/goccy/pythonwasm2go/p2.Fn8109
-func Fn8109(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn8750 github.com/goccy/pythonwasm2go/p2.Fn8750
+func Fn8750(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
 
-//go:linkname Fn8136 github.com/goccy/pythonwasm2go/p2.Fn8136
-func Fn8136(m *base.Module, l0 int32) int32
+//go:linkname Fn8756 github.com/goccy/pythonwasm2go/p2.Fn8756
+func Fn8756(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8161 github.com/goccy/pythonwasm2go/p1.Fn8161
-func Fn8161(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname Fn9478 github.com/goccy/pythonwasm2go/p2.Fn9478
+func Fn9478(m *base.Module, l0 int32)
 
-//go:linkname Fn8162 github.com/goccy/pythonwasm2go/p2.Fn8162
-func Fn8162(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn9480 github.com/goccy/pythonwasm2go/p1.Fn9480
+func Fn9480(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8163 github.com/goccy/pythonwasm2go/p2.Fn8163
-func Fn8163(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname Fn9483 github.com/goccy/pythonwasm2go/p2.Fn9483
+func Fn9483(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8164 github.com/goccy/pythonwasm2go/p2.Fn8164
-func Fn8164(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
+//go:linkname Fn9484 github.com/goccy/pythonwasm2go/p2.Fn9484
+func Fn9484(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8165 github.com/goccy/pythonwasm2go/p2.Fn8165
-func Fn8165(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9827 github.com/goccy/pythonwasm2go/p2.Fn9827
+func Fn9827(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8504 github.com/goccy/pythonwasm2go/p2.Fn8504
-func Fn8504(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9828 github.com/goccy/pythonwasm2go/p1.Fn9828
+func Fn9828(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8508 github.com/goccy/pythonwasm2go/p2.Fn8508
-func Fn8508(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn9829 github.com/goccy/pythonwasm2go/p2.Fn9829
+func Fn9829(m *base.Module)
 
-//go:linkname Fn8536 github.com/goccy/pythonwasm2go/p2.Fn8536
-func Fn8536(m *base.Module, l0 int32) int32
+//go:linkname Fn9830 github.com/goccy/pythonwasm2go/p2.Fn9830
+func Fn9830(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn8620 github.com/goccy/pythonwasm2go/p2.Fn8620
-func Fn8620(m *base.Module, l0 int32) int32
+//go:linkname Fn9833 github.com/goccy/pythonwasm2go/p1.Fn9833
+func Fn9833(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn8621 github.com/goccy/pythonwasm2go/p2.Fn8621
-func Fn8621(m *base.Module, l0 int32) int32
+//go:linkname Fn9834 github.com/goccy/pythonwasm2go/p2.Fn9834
+func Fn9834(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn8622 github.com/goccy/pythonwasm2go/p2.Fn8622
-func Fn8622(m *base.Module, l0 int32) int32
+//go:linkname Fn9835 github.com/goccy/pythonwasm2go/p2.Fn9835
+func Fn9835(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn8623 github.com/goccy/pythonwasm2go/p2.Fn8623
-func Fn8623(m *base.Module, l0 int32) int32
+//go:linkname Fn9848 github.com/goccy/pythonwasm2go/p2.Fn9848
+func Fn9848(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8626 github.com/goccy/pythonwasm2go/p1.Fn8626
-func Fn8626(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9849 github.com/goccy/pythonwasm2go/p2.Fn9849
+func Fn9849(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8639 github.com/goccy/pythonwasm2go/p2.Fn8639
-func Fn8639(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9854 github.com/goccy/pythonwasm2go/p2.Fn9854
+func Fn9854(m *base.Module) int32
 
-//go:linkname Fn8675 github.com/goccy/pythonwasm2go/p2.Fn8675
-func Fn8675(m *base.Module, l0 int32) int32
+//go:linkname Fn9858 github.com/goccy/pythonwasm2go/p1.Fn9858
+func Fn9858(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8685 github.com/goccy/pythonwasm2go/p2.Fn8685
-func Fn8685(m *base.Module, l0 int32) int32
+//go:linkname Fn9859 github.com/goccy/pythonwasm2go/p2.Fn9859
+func Fn9859(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8686 github.com/goccy/pythonwasm2go/p2.Fn8686
-func Fn8686(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9860 github.com/goccy/pythonwasm2go/p2.Fn9860
+func Fn9860(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8687 github.com/goccy/pythonwasm2go/p1.Fn8687
-func Fn8687(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9861 github.com/goccy/pythonwasm2go/p2.Fn9861
+func Fn9861(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn8688 github.com/goccy/pythonwasm2go/p1.Fn8688
-func Fn8688(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9866 github.com/goccy/pythonwasm2go/p2.Fn9866
+func Fn9866(m *base.Module, l0 int32, l1 int64, l2 int32) int64
 
-//go:linkname Fn8689 github.com/goccy/pythonwasm2go/p2.Fn8689
-func Fn8689(m *base.Module, l0 int32) int32
+//go:linkname Fn9870 github.com/goccy/pythonwasm2go/p2.Fn9870
+func Fn9870(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn8700 github.com/goccy/pythonwasm2go/p2.Fn8700
-func Fn8700(m *base.Module, l0 int32) int32
+//go:linkname Fn9871 github.com/goccy/pythonwasm2go/p2.Fn9871
+func Fn9871(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8701 github.com/goccy/pythonwasm2go/p1.Fn8701
-func Fn8701(m *base.Module, l0 int32) int32
+//go:linkname Fn9872 github.com/goccy/pythonwasm2go/p2.Fn9872
+func Fn9872(m *base.Module, l0 int32, l1 int64, l2 int32) int32
 
-//go:linkname Fn8723 github.com/goccy/pythonwasm2go/p2.Fn8723
-func Fn8723(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9873 github.com/goccy/pythonwasm2go/p2.Fn9873
+func Fn9873(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8725 github.com/goccy/pythonwasm2go/p2.Fn8725
-func Fn8725(m *base.Module, l0 int32) int32
+//go:linkname Fn9877 github.com/goccy/pythonwasm2go/p2.Fn9877
+func Fn9877(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn8893 github.com/goccy/pythonwasm2go/p2.Fn8893
-func Fn8893(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9894 github.com/goccy/pythonwasm2go/p2.Fn9894
+func Fn9894(m *base.Module)
 
-//go:linkname Fn8894 github.com/goccy/pythonwasm2go/p1.Fn8894
-func Fn8894(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9896 github.com/goccy/pythonwasm2go/p2.Fn9896
+func Fn9896(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8895 github.com/goccy/pythonwasm2go/p1.Fn8895
-func Fn8895(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9916 github.com/goccy/pythonwasm2go/p2.Fn9916
+func Fn9916(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8896 github.com/goccy/pythonwasm2go/p2.Fn8896
-func Fn8896(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9917 github.com/goccy/pythonwasm2go/p2.Fn9917
+func Fn9917(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn8897 github.com/goccy/pythonwasm2go/p2.Fn8897
-func Fn8897(m *base.Module, l0 int32) int32
+//go:linkname Fn9918 github.com/goccy/pythonwasm2go/p1.Fn9918
+func Fn9918(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn8898 github.com/goccy/pythonwasm2go/p2.Fn8898
-func Fn8898(m *base.Module, l0 int32) int32
+//go:linkname Fn9919 github.com/goccy/pythonwasm2go/p2.Fn9919
+func Fn9919(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8900 github.com/goccy/pythonwasm2go/p2.Fn8900
-func Fn8900(m *base.Module, l0 int32) int32
+//go:linkname Fn9920 github.com/goccy/pythonwasm2go/p2.Fn9920
+func Fn9920(m *base.Module, l0 int32) int32
 
-//go:linkname Fn8901 github.com/goccy/pythonwasm2go/p2.Fn8901
-func Fn8901(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn9921 github.com/goccy/pythonwasm2go/p2.Fn9921
+func Fn9921(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 
-//go:linkname Fn9101 github.com/goccy/pythonwasm2go/p2.Fn9101
-func Fn9101(m *base.Module, l0 int32) int32
+//go:linkname Fn9924 github.com/goccy/pythonwasm2go/p1.Fn9924
+func Fn9924(m *base.Module, l0 int32)
 
-//go:linkname Fn9102 github.com/goccy/pythonwasm2go/p2.Fn9102
-func Fn9102(m *base.Module, l0 int32) int32
+//go:linkname Fn9932 github.com/goccy/pythonwasm2go/p2.Fn9932
+func Fn9932(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9224 github.com/goccy/pythonwasm2go/p2.Fn9224
-func Fn9224(m *base.Module) int32
+//go:linkname Fn9933 github.com/goccy/pythonwasm2go/p2.Fn9933
+func Fn9933(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9225 github.com/goccy/pythonwasm2go/p2.Fn9225
-func Fn9225(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9943 github.com/goccy/pythonwasm2go/p2.Fn9943
+func Fn9943(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9226 github.com/goccy/pythonwasm2go/p2.Fn9226
-func Fn9226(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9944 github.com/goccy/pythonwasm2go/p2.Fn9944
+func Fn9944(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9227 github.com/goccy/pythonwasm2go/p2.Fn9227
-func Fn9227(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9945 github.com/goccy/pythonwasm2go/p2.Fn9945
+func Fn9945(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9228 github.com/goccy/pythonwasm2go/p2.Fn9228
-func Fn9228(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9947 github.com/goccy/pythonwasm2go/p2.Fn9947
+func Fn9947(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9243 github.com/goccy/pythonwasm2go/p2.Fn9243
-func Fn9243(m *base.Module, l0 int32)
+//go:linkname Fn9950 github.com/goccy/pythonwasm2go/p1.Fn9950
+func Fn9950(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9256 github.com/goccy/pythonwasm2go/p2.Fn9256
-func Fn9256(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9977 github.com/goccy/pythonwasm2go/p2.Fn9977
+func Fn9977(m *base.Module, l0 float64, l1 int32) float64
 
-//go:linkname Fn9257 github.com/goccy/pythonwasm2go/p2.Fn9257
-func Fn9257(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn9979 github.com/goccy/pythonwasm2go/p2.Fn9979
+func Fn9979(m *base.Module, l0 float64, l1 int32) float64
 
-//go:linkname Fn9263 github.com/goccy/pythonwasm2go/p2.Fn9263
-func Fn9263(m *base.Module, l0 int32, l1 int64, l2 int32) int64
+//go:linkname Fn9982 github.com/goccy/pythonwasm2go/p1.Fn9982
+func Fn9982(m *base.Module, l0 float64) float64
 
-//go:linkname Fn9267 github.com/goccy/pythonwasm2go/p2.Fn9267
-func Fn9267(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn9989 github.com/goccy/pythonwasm2go/p2.Fn9989
+func Fn9989(m *base.Module, l0 float64, l1 int32) float64
 
-//go:linkname Fn9268 github.com/goccy/pythonwasm2go/p2.Fn9268
-func Fn9268(m *base.Module, l0 int32) int32
+//go:linkname Fn9995 github.com/goccy/pythonwasm2go/p1.Fn9995
+func Fn9995(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9295 github.com/goccy/pythonwasm2go/p2.Fn9295
-func Fn9295(m *base.Module, l0 int32) int32
+//go:linkname Fn9996 github.com/goccy/pythonwasm2go/p2.Fn9996
+func Fn9996(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9311 github.com/goccy/pythonwasm2go/p2.Fn9311
-func Fn9311(m *base.Module, l0 int32) int32
+//go:linkname Fn10004 github.com/goccy/pythonwasm2go/p2.Fn10004
+func Fn10004(m *base.Module, l0 int32)
 
-//go:linkname Fn9315 github.com/goccy/pythonwasm2go/p1.Fn9315
-func Fn9315(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10005 github.com/goccy/pythonwasm2go/p2.Fn10005
+func Fn10005(m *base.Module, l0 int32)
 
-//go:linkname Fn9317 github.com/goccy/pythonwasm2go/p2.Fn9317
-func Fn9317(m *base.Module, l0 int32) int32
+//go:linkname Fn10006 github.com/goccy/pythonwasm2go/p2.Fn10006
+func Fn10006(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9318 github.com/goccy/pythonwasm2go/p2.Fn9318
-func Fn9318(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname Fn10009 github.com/goccy/pythonwasm2go/p2.Fn10009
+func Fn10009(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9320 github.com/goccy/pythonwasm2go/p1.Fn9320
-func Fn9320(m *base.Module, l0 int32)
+//go:linkname Fn10010 github.com/goccy/pythonwasm2go/p2.Fn10010
+func Fn10010(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9328 github.com/goccy/pythonwasm2go/p2.Fn9328
-func Fn9328(m *base.Module, l0 int32) int32
+//go:linkname Fn10015 github.com/goccy/pythonwasm2go/p2.Fn10015
+func Fn10015(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn9331 github.com/goccy/pythonwasm2go/p1.Fn9331
-func Fn9331(m *base.Module, l0 int32) int64
+//go:linkname Fn10017 github.com/goccy/pythonwasm2go/p2.Fn10017
+func Fn10017(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn9333 github.com/goccy/pythonwasm2go/p2.Fn9333
-func Fn9333(m *base.Module, l0 int32) int32
+//go:linkname Fn10018 github.com/goccy/pythonwasm2go/p2.Fn10018
+func Fn10018(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn9335 github.com/goccy/pythonwasm2go/p2.Fn9335
-func Fn9335(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10019 github.com/goccy/pythonwasm2go/p2.Fn10019
+func Fn10019(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9338 github.com/goccy/pythonwasm2go/p2.Fn9338
-func Fn9338(m *base.Module, l0 int32) int32
+//go:linkname Fn10020 github.com/goccy/pythonwasm2go/p2.Fn10020
+func Fn10020(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9339 github.com/goccy/pythonwasm2go/p2.Fn9339
-func Fn9339(m *base.Module, l0 int32) int32
+//go:linkname Fn10022 github.com/goccy/pythonwasm2go/p2.Fn10022
+func Fn10022(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn9341 github.com/goccy/pythonwasm2go/p2.Fn9341
-func Fn9341(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10023 github.com/goccy/pythonwasm2go/p2.Fn10023
+func Fn10023(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn9345 github.com/goccy/pythonwasm2go/p1.Fn9345
-func Fn9345(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10024 github.com/goccy/pythonwasm2go/p2.Fn10024
+func Fn10024(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9370 github.com/goccy/pythonwasm2go/p1.Fn9370
-func Fn9370(m *base.Module, l0 float64, l1 float64, l2 float64) float64
+//go:linkname Fn10025 github.com/goccy/pythonwasm2go/p2.Fn10025
+func Fn10025(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9372 github.com/goccy/pythonwasm2go/p2.Fn9372
-func Fn9372(m *base.Module, l0 float64, l1 int32) float64
+//go:linkname Fn10026 github.com/goccy/pythonwasm2go/p2.Fn10026
+func Fn10026(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn9374 github.com/goccy/pythonwasm2go/p2.Fn9374
-func Fn9374(m *base.Module, l0 float64, l1 int32) float64
+//go:linkname Fn10030 github.com/goccy/pythonwasm2go/p2.Fn10030
+func Fn10030(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn9384 github.com/goccy/pythonwasm2go/p2.Fn9384
-func Fn9384(m *base.Module, l0 float64, l1 int32) float64
+//go:linkname Fn10031 github.com/goccy/pythonwasm2go/p2.Fn10031
+func Fn10031(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9399 github.com/goccy/pythonwasm2go/p2.Fn9399
-func Fn9399(m *base.Module, l0 int32)
+//go:linkname Fn10034 github.com/goccy/pythonwasm2go/p2.Fn10034
+func Fn10034(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn9400 github.com/goccy/pythonwasm2go/p2.Fn9400
-func Fn9400(m *base.Module, l0 int32)
+//go:linkname Fn10036 github.com/goccy/pythonwasm2go/p2.Fn10036
+func Fn10036(m *base.Module, l0 int32)
 
-//go:linkname Fn9401 github.com/goccy/pythonwasm2go/p1.Fn9401
-func Fn9401(m *base.Module, l0 int32) int32
+//go:linkname Fn10038 github.com/goccy/pythonwasm2go/p1.Fn10038
+func Fn10038(m *base.Module, l0 int32, l1 int32, l2 int64) int64
 
-//go:linkname Fn9404 github.com/goccy/pythonwasm2go/p2.Fn9404
-func Fn9404(m *base.Module, l0 int32) int32
+//go:linkname Fn10040 github.com/goccy/pythonwasm2go/p2.Fn10040
+func Fn10040(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9410 github.com/goccy/pythonwasm2go/p2.Fn9410
-func Fn9410(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn10041 github.com/goccy/pythonwasm2go/p2.Fn10041
+func Fn10041(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9413 github.com/goccy/pythonwasm2go/p2.Fn9413
-func Fn9413(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn10043 github.com/goccy/pythonwasm2go/p1.Fn10043
+func Fn10043(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9414 github.com/goccy/pythonwasm2go/p2.Fn9414
-func Fn9414(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10044 github.com/goccy/pythonwasm2go/p2.Fn10044
+func Fn10044(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9417 github.com/goccy/pythonwasm2go/p2.Fn9417
-func Fn9417(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn10045 github.com/goccy/pythonwasm2go/p2.Fn10045
+func Fn10045(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9418 github.com/goccy/pythonwasm2go/p2.Fn9418
-func Fn9418(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn10046 github.com/goccy/pythonwasm2go/p2.Fn10046
+func Fn10046(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9420 github.com/goccy/pythonwasm2go/p2.Fn9420
-func Fn9420(m *base.Module, l0 int32) int32
+//go:linkname Fn10047 github.com/goccy/pythonwasm2go/p1.Fn10047
+func Fn10047(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9421 github.com/goccy/pythonwasm2go/p2.Fn9421
-func Fn9421(m *base.Module, l0 int32, l1 int32)
+//go:linkname Fn10048 github.com/goccy/pythonwasm2go/p2.Fn10048
+func Fn10048(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9422 github.com/goccy/pythonwasm2go/p2.Fn9422
-func Fn9422(m *base.Module)
+//go:linkname Fn10049 github.com/goccy/pythonwasm2go/p1.Fn10049
+func Fn10049(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9423 github.com/goccy/pythonwasm2go/p2.Fn9423
-func Fn9423(m *base.Module)
+//go:linkname Fn10050 github.com/goccy/pythonwasm2go/p2.Fn10050
+func Fn10050(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9425 github.com/goccy/pythonwasm2go/p2.Fn9425
-func Fn9425(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname Fn10052 github.com/goccy/pythonwasm2go/p2.Fn10052
+func Fn10052(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9426 github.com/goccy/pythonwasm2go/p2.Fn9426
-func Fn9426(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10053 github.com/goccy/pythonwasm2go/p2.Fn10053
+func Fn10053(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9434 github.com/goccy/pythonwasm2go/p2.Fn9434
-func Fn9434(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10054 github.com/goccy/pythonwasm2go/p1.Fn10054
+func Fn10054(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9435 github.com/goccy/pythonwasm2go/p2.Fn9435
-func Fn9435(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10055 github.com/goccy/pythonwasm2go/p2.Fn10055
+func Fn10055(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9438 github.com/goccy/pythonwasm2go/p1.Fn9438
-func Fn9438(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10057 github.com/goccy/pythonwasm2go/p2.Fn10057
+func Fn10057(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9439 github.com/goccy/pythonwasm2go/p2.Fn9439
-func Fn9439(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10058 github.com/goccy/pythonwasm2go/p2.Fn10058
+func Fn10058(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9441 github.com/goccy/pythonwasm2go/p2.Fn9441
-func Fn9441(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10060 github.com/goccy/pythonwasm2go/p2.Fn10060
+func Fn10060(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9443 github.com/goccy/pythonwasm2go/p2.Fn9443
-func Fn9443(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10061 github.com/goccy/pythonwasm2go/p2.Fn10061
+func Fn10061(m *base.Module, l0 int32, l1 int32, l2 int32)
 
-//go:linkname Fn9444 github.com/goccy/pythonwasm2go/p1.Fn9444
-func Fn9444(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10062 github.com/goccy/pythonwasm2go/p2.Fn10062
+func Fn10062(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9445 github.com/goccy/pythonwasm2go/p2.Fn9445
-func Fn9445(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10067 github.com/goccy/pythonwasm2go/p2.Fn10067
+func Fn10067(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9447 github.com/goccy/pythonwasm2go/p2.Fn9447
-func Fn9447(m *base.Module, l0 int32) int32
+//go:linkname Fn10068 github.com/goccy/pythonwasm2go/p2.Fn10068
+func Fn10068(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9448 github.com/goccy/pythonwasm2go/p2.Fn9448
-func Fn9448(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10069 github.com/goccy/pythonwasm2go/p2.Fn10069
+func Fn10069(m *base.Module, l0 int32) int32
 
-//go:linkname Fn9449 github.com/goccy/pythonwasm2go/p1.Fn9449
-func Fn9449(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10070 github.com/goccy/pythonwasm2go/p2.Fn10070
+func Fn10070(m *base.Module)
 
-//go:linkname Fn9450 github.com/goccy/pythonwasm2go/p2.Fn9450
-func Fn9450(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10071 github.com/goccy/pythonwasm2go/p2.Fn10071
+func Fn10071(m *base.Module)
 
-//go:linkname Fn9452 github.com/goccy/pythonwasm2go/p2.Fn9452
-func Fn9452(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10073 github.com/goccy/pythonwasm2go/p1.Fn10073
+func Fn10073(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9453 github.com/goccy/pythonwasm2go/p2.Fn9453
-func Fn9453(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10078 github.com/goccy/pythonwasm2go/p1.Fn10078
+func Fn10078(m *base.Module, l0 int32)
 
-//go:linkname Fn9455 github.com/goccy/pythonwasm2go/p2.Fn9455
-func Fn9455(m *base.Module, l0 int32) int32
+//go:linkname Fn10080 github.com/goccy/pythonwasm2go/p1.Fn10080
+func Fn10080(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9457 github.com/goccy/pythonwasm2go/p2.Fn9457
-func Fn9457(m *base.Module, l0 int32) int32
+//go:linkname Fn10111 github.com/goccy/pythonwasm2go/p2.Fn10111
+func Fn10111(m *base.Module, l0 int32, l1 int32) int32
 
-//go:linkname Fn9458 github.com/goccy/pythonwasm2go/p2.Fn9458
-func Fn9458(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10147 github.com/goccy/pythonwasm2go/p2.Fn10147
+func Fn10147(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn9459 github.com/goccy/pythonwasm2go/p2.Fn9459
-func Fn9459(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10148 github.com/goccy/pythonwasm2go/p2.Fn10148
+func Fn10148(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn9462 github.com/goccy/pythonwasm2go/p2.Fn9462
-func Fn9462(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10150 github.com/goccy/pythonwasm2go/p2.Fn10150
+func Fn10150(m *base.Module, l0 int32, l1 int32)
 
-//go:linkname Fn9463 github.com/goccy/pythonwasm2go/p2.Fn9463
-func Fn9463(m *base.Module, l0 int32) int32
+//go:linkname Fn10162 github.com/goccy/pythonwasm2go/p2.Fn10162
+func Fn10162(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 
-//go:linkname Fn9464 github.com/goccy/pythonwasm2go/p2.Fn9464
-func Fn9464(m *base.Module, l0 int32) int32
+//go:linkname Fn10163 github.com/goccy/pythonwasm2go/p2.Fn10163
+func Fn10163(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9467 github.com/goccy/pythonwasm2go/p2.Fn9467
-func Fn9467(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10167 github.com/goccy/pythonwasm2go/p2.Fn10167
+func Fn10167(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9468 github.com/goccy/pythonwasm2go/p1.Fn9468
-func Fn9468(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname Fn10183 github.com/goccy/pythonwasm2go/p2.Fn10183
+func Fn10183(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 
-//go:linkname Fn9470 github.com/goccy/pythonwasm2go/p1.Fn9470
-func Fn9470(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname Fn10190 github.com/goccy/pythonwasm2go/p2.Fn10190
+func Fn10190(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 
-//go:linkname Fn9471 github.com/goccy/pythonwasm2go/p2.Fn9471
-func Fn9471(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname Fn10191 github.com/goccy/pythonwasm2go/p2.Fn10191
+func Fn10191(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32, l14 int32) int32
 
-//go:linkname Fn9473 github.com/goccy/pythonwasm2go/p1.Fn9473
-func Fn9473(m *base.Module, l0 int32)
+//go:linkname Fn10192 github.com/goccy/pythonwasm2go/p2.Fn10192
+func Fn10192(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32) int32
 
-//go:linkname Fn9474 github.com/goccy/pythonwasm2go/p2.Fn9474
-func Fn9474(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname Fn10193 github.com/goccy/pythonwasm2go/p2.Fn10193
+func Fn10193(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32, l14 int32, l15 int32, l16 int32) int32
+
+//go:linkname Fn10194 github.com/goccy/pythonwasm2go/p2.Fn10194
+func Fn10194(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32, l14 int32, l15 int32, l16 int32) int32
+
+//go:linkname Fn10195 github.com/goccy/pythonwasm2go/p2.Fn10195
+func Fn10195(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32) int32
+
+//go:linkname Fn10196 github.com/goccy/pythonwasm2go/p2.Fn10196
+func Fn10196(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32, l14 int32) int32
+
+//go:linkname Fn10197 github.com/goccy/pythonwasm2go/p2.Fn10197
+func Fn10197(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32) int32
+
+//go:linkname Fn10198 github.com/goccy/pythonwasm2go/p2.Fn10198
+func Fn10198(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32) int32
+
+//go:linkname Fn10199 github.com/goccy/pythonwasm2go/p2.Fn10199
+func Fn10199(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
+
+//go:linkname Fn10200 github.com/goccy/pythonwasm2go/p2.Fn10200
+func Fn10200(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32) int32
+
+//go:linkname Fn10201 github.com/goccy/pythonwasm2go/p2.Fn10201
+func Fn10201(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+
+//go:linkname Fn10202 github.com/goccy/pythonwasm2go/p2.Fn10202
+func Fn10202(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) int32
+
+//go:linkname Fn10203 github.com/goccy/pythonwasm2go/p2.Fn10203
+func Fn10203(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
+
+//go:linkname Fn10211 github.com/goccy/pythonwasm2go/p2.Fn10211
+func Fn10211(m *base.Module, l0 int32, l1 int32, l2 int32)
+
+//go:linkname Fn10212 github.com/goccy/pythonwasm2go/p2.Fn10212
+func Fn10212(m *base.Module, l0 int32, l1 int32) int32
+
+//go:linkname Fn10223 github.com/goccy/pythonwasm2go/p2.Fn10223
+func Fn10223(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+
+//go:linkname Fn10285 github.com/goccy/pythonwasm2go/p2.Fn10285
+func Fn10285(m *base.Module, l0 int32, l1 int32) int32
